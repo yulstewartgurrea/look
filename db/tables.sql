@@ -15,10 +15,10 @@
 CREATE TABLE UserAccount(
 	user_id SERIAL PRIMARY KEY,
 	email_address TEXT UNIQUE NOT NULL,
-	password TEXT
+	password TEXT,
 	is_admin BOOLEAN DEFAULT FALSE,
 	is_establishment BOOLEAN DEFAULT FALSE,
-	is_customer BOOLEAN DEFAULT TRUE,
+	is_customer BOOLEAN DEFAULT FALSE,
 	is_active BOOLEAN DEFAULT TRUE
 
 );
