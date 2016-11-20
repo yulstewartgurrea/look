@@ -2,8 +2,12 @@ from flask import Flask, render_template, jsonify
 from config import *
 app = Flask(__name__)
 
-# test if db is connected
 @app.route("/")
+def index():
+	return render_template("index.html")
+
+# test if db is connected
+@app.route("/sa")
 def get_users():
 	res = spcall('get_users', ())
 
@@ -21,7 +25,7 @@ def get_users():
 def new_admin():
 	jsn = json.loads(request.data)
 
-	if invalid(jsn['email']):
+	if invalid(jsn['email_address']):
 		return jsonify({'status': 'error', 'message': 'Error'})
 
 	res = spcall("new_admin",(

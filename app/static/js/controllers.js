@@ -1,33 +1,54 @@
-angular.module('movieApp.controllers', []).controller('MovieListController', function($scope, $state, popupService, $window, Movie) {
-  $scope.movies = Movie.query(); //fetch all movies. Issues a GET to /api/movies
+// angular.module('myApp').controller('userController',
+//   ['$scope', '$location', '$window', '$AuthService',
+//     function ($scope, $location, $window, $AuthService) {
+//       $scope.isAuthenticated = false;
+      
+//       $scope.new_admin = function() {
+//         $scope.error = false;
+//         $scope.disabled = true;
 
-  $scope.deleteMovie = function(movie) { // Delete a movie. Issues a DELETE to /api/movies/:id
-    if (popupService.showPopup('Really delete this?')) {
-      movie.$delete(function() {
-        $window.location.href = ''; //redirect to home
-      });
-    }
-  };
-}).controller('MovieViewController', function($scope, $stateParams, Movie) {
-  $scope.movie = Movie.get({ id: $stateParams.id }); //Get a single movie.Issues a GET to /api/movies/:id
-}).controller('MovieCreateController', function($scope, $state, $stateParams, Movie) {
-  $scope.movie = new Movie();  //create new movie instance. Properties will be set via ng-model on UI
+//         AuthService.register(
+//           $scope.new_adminForm.email_address,
+//           $scope.new_adminForm.password)
 
-  $scope.addMovie = function() { //create a new movie. Issues a POST to /api/movies
-    $scope.movie.$save(function() {
-      $state.go('movies'); // on success go back to home i.e. movies state.
-    });
-  };
-}).controller('MovieEditController', function($scope, $state, $stateParams, Movie) {
-  $scope.updateMovie = function() { //Update the edited movie. Issues a PUT to /api/movies/:id
-    $scope.movie.$update(function() {
-      $state.go('movies'); // on success go back to home i.e. movies state.
-    });
-  };
+//           //handle success
+//           .then(function(){
+//             $location.path('/');
+//             $scope.disabled = false;
+//             $scope.new_adminForm = {}
+//           })
+//           //handle error
+//           .catch(function(){
+//             $scope.error = true;
+//             $scope.errorMessage = "Something went wrong!";
+//             $scope.disabled = false;
+//             $scope.new_adminForm = {};
+//           });
+//       };
 
-  $scope.loadMovie = function() { //Issues a GET request to /api/movies/:id to get a movie to update
-    $scope.movie = Movie.get({ id: $stateParams.id });
-  };
 
-  $scope.loadMovie(); // Load a movie which can be edited on UI
+//     };
+
+
+//   ]);
+
+angular.module('myApp').controller('scotchController', function($scope) {
+    
+    $scope.message = 'test';
+   
+    $scope.scotches = [
+        {
+            name: 'Macallan 12',
+            price: 50
+        },
+        {
+            name: 'Chivas Regal Royal Salute',
+            price: 10000
+        },
+        {
+            name: 'Glenfiddich 1937',
+            price: 20000
+        }
+    ];
+    
 });
