@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="30b9607b-c823-445c-838b-671b34af6de3" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/admin.feature" afterPath="$PROJECT_DIR$/tests/admin.feature" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/customer.feature" afterPath="$PROJECT_DIR$/tests/customer.feature" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/establishment.feature" afterPath="$PROJECT_DIR$/tests/establishment.feature" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/product.feature" afterPath="$PROJECT_DIR$/tests/product.feature" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/product_categorize.feature" afterPath="$PROJECT_DIR$/tests/product_categorize.feature" />
     </list>
     <ignored path="look.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -62,7 +60,7 @@
         <entry file="file://$PROJECT_DIR$/tests/product_categorize.feature">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <caret line="0" column="37" selection-start-line="0" selection-start-column="37" selection-end-line="0" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -71,18 +69,8 @@
       <file leaf-file-name="establishment.feature" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tests/establishment.feature">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
-              <caret line="16" column="42" selection-start-line="16" selection-start-column="42" selection-end-line="16" selection-end-column="42" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="admin.feature" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tests/admin.feature">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="57" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+            <state relative-caret-position="506">
+              <caret line="23" column="36" selection-start-line="23" selection-start-column="36" selection-end-line="23" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -90,6 +78,16 @@
       </file>
       <file leaf-file-name="customer.feature" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tests/customer.feature">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="396">
+              <caret line="18" column="49" selection-start-line="18" selection-start-column="49" selection-end-line="18" selection-end-column="49" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="admin.feature" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tests/admin.feature">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="528">
               <caret line="24" column="56" selection-start-line="24" selection-start-column="56" selection-end-line="24" selection-end-column="56" />
@@ -115,9 +113,10 @@
         <option value="$PROJECT_DIR$/db/tables.sql" />
         <option value="$PROJECT_DIR$/tests/useraccount.feature" />
         <option value="$PROJECT_DIR$/tests/product.feature" />
-        <option value="$PROJECT_DIR$/tests/admin.feature" />
         <option value="$PROJECT_DIR$/tests/establishment.feature" />
         <option value="$PROJECT_DIR$/tests/customer.feature" />
+        <option value="$PROJECT_DIR$/tests/admin.feature" />
+        <option value="$PROJECT_DIR$/tests/product_categorize.feature" />
       </list>
     </option>
   </component>
@@ -811,22 +810,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/admin.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="57" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/establishment.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="16" column="42" selection-start-line="16" selection-start-column="42" selection-end-line="16" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/db/tables.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-387">
@@ -835,10 +818,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/customer.feature">
+    <entry file="file://$PROJECT_DIR$/tests/admin.feature">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="528">
           <caret line="24" column="56" selection-start-line="24" selection-start-column="56" selection-end-line="24" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/customer.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="18" column="49" selection-start-line="18" selection-start-column="49" selection-end-line="18" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/establishment.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="506">
+          <caret line="23" column="36" selection-start-line="23" selection-start-column="36" selection-end-line="23" selection-end-column="36" />
           <folding />
         </state>
       </provider>
@@ -854,7 +853,7 @@
     <entry file="file://$PROJECT_DIR$/tests/product_categorize.feature">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="0" column="37" selection-start-line="0" selection-start-column="37" selection-end-line="0" selection-end-column="37" />
           <folding />
         </state>
       </provider>
