@@ -8,6 +8,13 @@ Feature: Adding, Updating, Deleting, Retrieving Products
     Then I will get a '200' response
     And it should have a field message containing "Ok"
 
+  Scenario: Adding a hotel that already exist
+    Given I want to add an existing product:
+    |product_name | product_description | product_gender | product_catalog | product_category | product_subcategory | product_color|
+    | sample1     | sample1 description | male           | clothing        | shirts           | formal              | blue         |
+    When I add the product in the system
+    Then i will get a '200' response
+    And it should have a field message "Product already existed"
 
   Scenario: Add product with product_name empty
     Given I want to add a product with the following details:
