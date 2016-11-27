@@ -27,13 +27,13 @@ myApp.config(function($stateProvider, $urlRouterProvider){
 
 		.state('home', {
 			url:'/home',
-			templateUrl: 'static/partials/sample-home.html'
+			templateUrl: 'partials/sample-home.html'
 		})
 
 		// nested list with custom controller
 		.state('home.list', {
         url: '/list',
-        templateUrl: 'static/partials/sample-list.html',
+        templateUrl: 'partials/sample-list.html',
         controller: function($scope) {
             $scope.dogs = ['Bernese', 'Husky', 'Goldendoodle'];
         	}
@@ -50,14 +50,14 @@ myApp.config(function($stateProvider, $urlRouterProvider){
         views: {
 
             // the main template will be placed here (relatively named)
-            '': { templateUrl: 'static/partials/sample-about.html' },
+            '': { templateUrl: 'partials/sample-about.html' },
 
             // the child views will be defined here (absolutely named)
             'columnOne@about': { template: 'Look I am a column!' },
 
             // for column two, we'll define a separate controller 
             'columnTwo@about': { 
-                templateUrl: 'static/partials/sample-table.html',
+                templateUrl: 'partials/sample-table.html',
                 controller: 'scotchController'
             }
         }
