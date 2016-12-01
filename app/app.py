@@ -1,6 +1,7 @@
 from flask import Flask, jsonify, request
 from config import *
-app = Flask(__name__)
+
+from __init__ import *
 import json
 
 # test if db is connected
@@ -67,6 +68,3 @@ def new_customer():
 	return jsonify({'status': 'ok', 'message': res[0][0]})
 
 
-
-if __name__ == '__main__':
-	app.run(debug=True)

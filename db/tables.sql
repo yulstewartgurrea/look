@@ -39,10 +39,23 @@ CREATE TABLE Establishment(
 
 );
 
+-- CREATE TABLE Catalog(
+-- 	catalog_id SERIAL PRIMARY KEY,
+-- 	catalog_name TEXT,
+--
+-- );
+
+-- CREATE TABLE Gender(
+-- 	gender_id SERIAL PRIMARY KEY,
+-- 	gender_name TEXT
+--  catalog_id INT REFERENCES Catalog(catalog_id)
+--
+-- );
+
 CREATE TABLE Gender(
 	gender_id SERIAL PRIMARY KEY,
 	gender_name TEXT
-	 
+
 );
 
 CREATE TABLE Catalog(
