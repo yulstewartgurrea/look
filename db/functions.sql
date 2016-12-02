@@ -107,8 +107,25 @@ $$
 $$
 	language 'sql'
 
---Get gender by id
--- create or replace function get_genderbyid
+-- Get establishments by id
+create or replace function get_establishmentbyid(In par_establishment_id int, par_establishment_name text, par_establishment_is_active boolean) returns setof record as
+$$
+	select establishment_name, establishment_is_active from Establishment where establishment_id = par_establishment_id
+
+-- Update establishment
+create or replace function update_establishment(par_establishment_id int, par_establishment_name text, par_establishment_is_active boolean) returns setof records as
+$$
+	update Establishment
+	set 
+		establishment_name = par_establishment_name,
+		establishment_is_active = par_establishment_is_active
+
+	where establishment_id = par_establish_id;
+
+$$
+	language 'sql';
+
+-- UPDATE COMPANY SET SALARY = 15000 WHERE ID = 3;
 
 --Add Catalog
 create or replace function new_catalog(p_catalog_name text) returns text as
