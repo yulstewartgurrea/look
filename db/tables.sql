@@ -56,27 +56,14 @@ CREATE TABLE Catalog(
 CREATE TABLE Gender(
 	gender_id SERIAL PRIMARY KEY,
 	gender_name TEXT
- 	catalog_id INT REFERENCES Catalog(catalog_id)
 
 );
-
--- CREATE TABLE Gender(
--- 	gender_id SERIAL PRIMARY KEY,
--- 	gender_name TEXT
-
--- );
-
--- CREATE TABLE Catalog(
--- 	catalog_id SERIAL PRIMARY KEY,
--- 	catalog_name TEXT,
--- 	gender_id INT REFERENCES Gender(gender_id)
-
--- );
 
 CREATE TABLE Category(
 	category_id SERIAL PRIMARY KEY,
 	category_name TEXT,
-	catalog_id INT REFERENCES Catalog(catalog_id)
+	catalog_id INT REFERENCES Catalog(catalog_id),
+	gender_id INT REFERENCES Gender(gender_id)
 
 );
 
@@ -94,13 +81,22 @@ CREATE TABLE Color(
 
 CREATE TABLE Product(
 	product_id SERIAL PRIMARY KEY,
+	-- image TEXT,
+	price NUMERIC,
 	product_name TEXT,
 	product_description TEXT,
-	product_gender INT REFERENCES Gender(gender_id),
-	product_catalog INT REFERENCES Catalog(catalog_id),
-	product_category INT REFERENCES Category(category_id),
-	product_subcategory INT REFERENCES SubCategory(subcategory_id),
-	product_color INT REFERENCES Color(color_id)
+	date_added DATE DEFAULT CURRENT_DATE
+	catalog_id INT REFERENCES Catalog(catalog_id),
+	gender_id INT REFERENCES Gender(gender_id),
+	category_id INT REFERENCES Category(category_id),
+	subcategory_id INT REFERENCES SubCategory(subcategory_id),
+
+);
+
+CREATE TABLE Color_Product(
+	color_id INT REFERENCES Color(color_id),
+	product_id INT REFERENCES Product(product_id),
+	CONSTRAINT color_product_id PRIMARY KEY (color_id, product_id)
 
 );
 
@@ -113,7 +109,18 @@ CREATE TABLE Stocks(
 
 CREATE TABLE Size(
 	size_id SERIAL PRIMARY KEY,
-	size_num text,
+	size_num TEXT,
+	product_count NUMERIC,
+	product_id INT REFERENCES Product(product_id)
+);
+
+CREATE TABLE Image(
+	image_id SERIAL PRIMARY KEY,
+	image1 TEXT,
+	image2 TEXT,
+	image3 TEXT,
+	image4 TEXT,
+	product_id INT REFERENCES Product(product_id)
 
 );
 
@@ -124,6 +131,11 @@ CREATE TABLE PriceRange(
 CREATE TABLE Image(
 );
 
+CREATE TABLE Cart(
+);
+
+CREATE TABLE Cart_items(
+);
 
 
 
