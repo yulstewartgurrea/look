@@ -1,22 +1,3 @@
-// var myApp = angular.module('myApp', ['ui.router']);
-
-// myApp.config(function ($stateProvider, $urlRouterProvider){
-
-// 	// $urlRouterProvider.otherwise("/404");
-
-// 	$stateProvider
-// 		.state('home', {
-// 			url: "/home",
-// 			templateUrl: "templates/home,html"
-// 		})
-// 		.state('list', {
-
-// 		})
-
-
-
-// });
-
 var myApp = angular.module('myApp', ['ui.router']);
 
 myApp.config(function($stateProvider, $urlRouterProvider){
@@ -65,28 +46,5 @@ myApp.config(function($stateProvider, $urlRouterProvider){
     });
 
 }); // closes $routerApp.config()
-
-
-// let's define the scotch controller that we call up in the about state
-// myApp.controller('scotchController', function($scope) {
-    
-//     $scope.message = 'test';
-   
-//     $scope.scotches = [
-//         {
-//             name: 'Macallan 12',
-//             price: 50
-//         },
-//         {
-//             name: 'Chivas Regal Royal Salute',
-//             price: 10000
-//         },
-//         {
-//             name: 'Glenfiddich 1937',
-//             price: 20000
-//         }
-//     ];
-    
-// });
 
 

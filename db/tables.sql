@@ -81,7 +81,7 @@ CREATE TABLE Color(
 
 CREATE TABLE Product(
 	product_id SERIAL PRIMARY KEY,
-	-- image TEXT,
+	image TEXT,
 	price NUMERIC,
 	product_name TEXT,
 	product_description TEXT,
@@ -132,9 +132,17 @@ CREATE TABLE Image(
 );
 
 CREATE TABLE Cart(
+  cart_id SERIAL PRIMARY KEY,
+  total NUMERIC ,
+  date_added DATE DEFAULT CURRENT_DATE
+
 );
 
 CREATE TABLE Cart_items(
+  cart_id INT REFERENCES Cart(cart_id),
+  product_id INT REFERENCES Product(product_id),
+  quantity INT,
+  date_added DATE DEFAULT CURRENT_DATE
 );
 
 

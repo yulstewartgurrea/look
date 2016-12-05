@@ -1,9 +1,11 @@
+# -*- coding: utf-8 -*-
 from lettuce import step, world, before
 from nose.tools import assert_equals
-# from app import app
+from app import app
 from webtest import *
 import json
-import base64
+from app.app import *
+
 from app.__init__ import *
 
 @before.all
@@ -20,28 +22,28 @@ def given_customer_details(step):
 
 @step(u'When i add the customer in the system')
 def add_the_customer(step):
-    world.room_url = '/new_customer'
-    world.response = world.app.post(world.room_url, data = json.dumps(world.d))
+    # world.browser = TestApp(app)
+    world.customer_url = '/new_customer/'
+    world.response = world.app.post(world.customer_url, data = json.dumps(world.d))
 
-
-@step(u'Then I will get a \'([^\']*)\' response')
+@step(u'Then i will get a \'([^\']*)\' response')
 def then_i_should_get_response(step, expected_status_code):
     assert_equals(world.response.status_code, int(expected_status_code))
 
-@step(u'And it should have a field "message" containing "OK"')
+@step(u'And it should have a field "message" containing "Error"')
 def message_success(step):
     world.resp = json.loads(world.response.data)
     assert_equals(world.resp['message'], "OK")
 
 """Add existing customer"""
 
-@step(u'And it should have a field "message" containing "Customer already existed"')
+@step(u'And it should have a field "message" containing "Error"')
 def message_success(step):
     world.resp = json.loads(world.response.data)
-    assert_equals(world.resp['message'], "Customer already existed")
+    assert_equals(world.resp['message'], "Error")
 
 
-"""Adding a customer with field emial_address empty"""
+"""Adding a customer with field email_address empty"""
 
 @step(u'And it should have a field "message" containing "Error"')
 def message_error(step):

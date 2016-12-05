@@ -154,9 +154,22 @@ $$
 -- Get all catalog
 create or replace function get_catalog(out int, out text) returns setof record as
 $$ 
-	select catalog_id, catalog_name from  Catalog;
+	select catalog_id, catalog_name from Catalog;
 $$
 	language 'sql';
+
+-- Update Catalog
+
+create or replace function update_catalog(p_catalog_id int, p_catalog_name text) returns void as 
+$$
+	update Catalog
+	set 
+		catalog_name = p_catalog_name,
+
+	where 
+		catalog_id = p_catalog_id;
+$$
+	language 'sql'
 
 --Add Gender 
 create or replace function new_gender(p_gender_name text) returns text as
@@ -212,7 +225,7 @@ $$
 -- Get all category
 create or replace function get_category(out int, out text, out int, out int) returns setof record as
 $$
-	select category_id, category_name, catalog_id, gender_id, from Category;
+	select category_id, category_name, catalog_id, gender_id from Category;
 $$
 	language 'sql';
 
@@ -275,7 +288,7 @@ $$
 	language 'sql';
 
 -- Add product
-create or replace function new_product(p_price numeric, p_product_name text, p_product_description text, p_product_catalog int, p_product_gender int, p_product_category int,
+create or replace function new_product(p_price numeric, p_image text, p_product_name text, p_product_description text, p_product_catalog int, p_product_gender int, p_product_category int,
 									   p_product_subcategory int) returns text as
 $$
 declare 
@@ -286,9 +299,9 @@ begin
 	select into v_product_name product_name from Product where product_name = p_product_name;
 
 		if v_product_name isnull then
-			insert into Product(product_name, product_description, price, catalog_id, gender_id, category_id,
+			insert into Product(product_name, image, product_description, price, catalog_id, gender_id, category_id,
 								subcategory_id)
-				values(p_product_name, p_product_description, p_price, p_product_catalog, p_product_gender, p_product_category,
+				values(p_product_name, p_image, p_product_description, p_price, p_product_catalog, p_product_gender, p_product_category,
 						p_product_subcategory);
 			v_res = 'Ok';
 		else
@@ -303,47 +316,47 @@ $$
 -- select new_product(400.5, 'bag', 'lacoste ni bai', 1, 1, 1, 1)
 
 -- Get all product
-create or replace function get_product(out int, out text, out text) returns setof record as
+create or replace function get_product(out int, out text, out numeric, out text) returns setof record as
 $$
-	select product_id, product_name, price from product order by date_added;
+	select product_id, product_name, price, image from product order by date_added;
 $$
 	language 'sql'; 
 
 -- Get product by id 
 create or replace function get_productby_id(In par_id int, out text, out text) returns setof record as
 $$
-	select product_name, product_description from Product where product_id = par_id;
+	select product_name, product_description, image from Product where product_id = par_id;
 $$
 	language 'sql';
 
 -- -- Get product by catalog
-create or replace function get_productby_catalog(out int, out text, In par_product_catalog int) returns setof record as
+create or replace function get_productby_catalog(out numeric, out text, out int, out text, In par_product_catalog int) returns setof record as
 $$
-	select product_id, product_name from Product where catalog_id = par_product_catalog;
+	select product_id, product_name, price, image from Product where catalog_id = par_product_catalog;
 $$
 	language 'sql'; 
 
 -- -- Get product by catalog and gender
-create or replace function get_productby_catalog_gender(out int, out text, In par_product_catalog int, In par_product_gender int) returns setof record as
+create or replace function get_productby_catalog_gender(out int, out text, out numeric, out text, In par_product_catalog int, In par_product_gender int) returns setof record as
 $$
-	select product_id, product_name from Product where catalog_id = par_product_catalog and gender_id = par_product_gender;
+	select product_id, product_name, price, image from Product where catalog_id = par_product_catalog and gender_id = par_product_gender;
 $$
 	language 'sql';
 
 -- -- Get product by catalog, gender and category
-create or replace function get_productby_catalog_gender_category(out int, out text, In par_product_catalog int, In par_product_gender int,
+create or replace function get_productby_catalog_gender_category(out int, out text, out numeric, out text, In par_product_catalog int, In par_product_gender int,
 							In par_product_category int) returns setof record as
 $$
-	select product_id, product_name from Product where catalog_id = par_product_catalog and gender_id = par_product_gender and
+	select product_id, product_name, price, image from Product where catalog_id = par_product_catalog and gender_id = par_product_gender and
 			category_id = par_product_category;
 $$
 	language 'sql';
 
 -- -- Get product by catalog, gender, category and subcategory
-create or replace function get_productby_catalog_gender_category_subcategory(out int, out text, In par_product_catalog int, In par_product_gender int,
+create or replace function get_productby_catalog_gender_category_subcategory(out int, out text, out numeric, out text, In par_product_catalog int, In par_product_gender int,
 							In par_product_category int, In par_product_subcategory int) returns setof record as
 $$
-	select product_id, product_name from Product where catalog_id = par_product_catalog and gender_id = par_product_gender and
+	select product_id, product_name, price, image from Product where catalog_id = par_product_catalog and gender_id = par_product_gender and
 			category_id = par_product_category and subcategory_id = par_product_subcategory;
 $$
 	language 'sql';
