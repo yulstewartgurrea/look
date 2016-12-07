@@ -2,24 +2,24 @@ Feature: Adding, Updating, Deleting, Retrieving Products
 
   Scenario: Add product
     Given I want to add a product with the following details:
-    |product_name | product_description | product_gender | product_catalog | product_category | product_subcategory | product_color|
-    | sample1     | sample1 description | male           | clothing        | shirts           | formal              | blue         |
+    |product_name | product_description | product_gender | catalog_id | gender_id | category_id | subcategory_id | image | price |
+    | sample1     | sample1 description | male           | 1   | 1           | 1              | 1         | image.jpg | 32.50 |
     When I add the product in the system
     Then I will get a '200' response
     And it should have a field message containing "Ok"
 
-  Scenario: Adding a hotel that already exist
+  Scenario: Adding a product that already exist
     Given I want to add an existing product:
-    |product_name | product_description | product_gender | product_catalog | product_category | product_subcategory | product_color|
-    | sample1     | sample1 description | male           | clothing        | shirts           | formal              | blue         |
+    |product_name | product_description | product_gender | catalog_id | gender_id | category_id | subcategory_id | image | price |
+    | sample1     | sample1 description | male           | 1   | 1           | 1              | 1         | image.jpg | 32.50 |
     When I add the product in the system
     Then i will get a '200' response
     And it should have a field message "Product already existed"
 
   Scenario: Add product with product_name empty
     Given I want to add a product with the following details:
-    |product_name | product_description | product_gender | product_catalog | product_category | product_subcategory | product_color|
-    |             | sample1 description | male           | clothing        | shirts           | formal              | blue         |
+    |product_name | product_description | product_gender | catalog_id | gender_id | category_id | subcategory_id | image | price |
+    |     | sample1 description | male           | 1   | 1           | 1              | 1         | image.jpg | 32.50 |
     When I add the product in the system
     Then I will get a '200' response
     And it should have a field message containing "error"
@@ -29,22 +29,22 @@ Feature: Adding, Updating, Deleting, Retrieving Products
     When I retrieve a product with an id number '1'
     Then I will get a '200' response
     And the following details ae returned
-    |product_id |product_name | product_description | product_gender | product_catalog | product_category | product_subcategory | product_color|
-    |1          | sample2     | sample2 description | male           | clothing        | shirts           | formal              | blue         |
+    |product_id | product_name | product_description | product_gender | catalog_id | gender_id | category_id | subcategory_id | image | price |
+    |1          | sample1     | sample1 description | male           | 1   | 1           | 1              | 1         | image.jpg | 32.50 |
 
   Scenario: Retrieve a non-existent product
     Given a product with an id number '8'
     When I retrieve a product with an id number '8'
-    Then it should have a field "status" containing "error"
-    And it should have a field "message" containing "Results Not Found"
+    Then it should have a field "message" containing "Error"
+    And it should have a field "message" containing "Error"
 
   Scenario: Update product details
     Given I want to add a product with the following details:
-    |product_name | product_description | product_gender | product_catalog | product_category | product_subcategory | product_color|
-    | sample3     | sample3 description | male           | clothing        | shirts           | formal              | blue         |
+    |product_name | product_description | product_gender | catalog_id | gender_id | category_id | subcategory_id | image | price |
+    | sample1     | sample1 description | male           | 1   | 1           | 1              | 1         | image.jpg | 32.50 |
     When I update the product details to:
-    |product_name | product_description | product_gender | product_catalog | product_category | product_subcategory | product_color|
-    | sample5     | sample5 description | male           | clothing        | shirts           | formal              | blue         |
+    |product_name | product_description | product_gender | catalog_id | gender_id | category_id | subcategory_id | image | price |
+    | sample5     | sample1 description | male           | 1   | 1           | 1              | 1         | image.jpg | 32.50 |
     Then I will get a '200' response
     And field "status" containing "success"
 

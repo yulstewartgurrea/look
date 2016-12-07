@@ -18,7 +18,6 @@ CREATE TABLE UserProfile(
 );
 
 CREATE TABLE BillingAddress(
-	address_id SERIAL PRIMARY KEY,
 	postalcode TEXT,
 	brgy TEXT,
 	city TEXT,
@@ -29,7 +28,6 @@ CREATE TABLE BillingAddress(
 );
 
 CREATE TABLE PermanentAddress(
-	address_id SERIAL PRIMARY KEY,
 	postalcode TEXT,
 	brgy TEXT,
 	city TEXT,
@@ -85,11 +83,12 @@ CREATE TABLE Product(
 	price NUMERIC,
 	product_name TEXT,
 	product_description TEXT,
-	date_added DATE DEFAULT CURRENT_DATE
+	date_added DATE DEFAULT CURRENT_DATE,
 	catalog_id INT REFERENCES Catalog(catalog_id),
 	gender_id INT REFERENCES Gender(gender_id),
 	category_id INT REFERENCES Category(category_id),
 	subcategory_id INT REFERENCES SubCategory(subcategory_id),
+	establishment_id INT REFERENCES Establishment(establishment_id)
 
 );
 
@@ -134,16 +133,16 @@ CREATE TABLE Image(
 CREATE TABLE Cart(
   cart_id SERIAL PRIMARY KEY,
   total NUMERIC ,
-  date_added DATE DEFAULT CURRENT_DATE
-
+  date_added DATE DEFAULT CURRENT_DATE,
+  product_id INT REFERENCES Product(product_id)
 );
 
-CREATE TABLE Cart_items(
-  cart_id INT REFERENCES Cart(cart_id),
-  product_id INT REFERENCES Product(product_id),
-  quantity INT,
-  date_added DATE DEFAULT CURRENT_DATE
-);
+-- CREATE TABLE Cart_items(
+--   cart_id INT REFERENCES Cart(cart_id),
+--   product_id INT REFERENCES Product(product_id),
+--   quantity INT,
+--   date_added DATE DEFAULT CURRENT_DATE
+-- );
 
 
 

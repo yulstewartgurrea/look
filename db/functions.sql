@@ -1,3 +1,18 @@
+-- Get password
+create or replace function get_password(p_email text) returns boolean as
+$$
+declare
+	v_password text;
+begin
+	select into v_password password from UserAccount where email_address = p_email;
+    if v_password isnull then
+   		v_password = 'null';
+    end if;
+    return v_password;
+end;
+$$
+	language 'plpgsql';
+
 --User Account
 create or replace function new_admin(p_email text, p_password text) returns text as
 $$
@@ -164,7 +179,7 @@ create or replace function update_catalog(p_catalog_id int, p_catalog_name text)
 $$
 	update Catalog
 	set 
-		catalog_name = p_catalog_name,
+		catalog_name = p_catalog_name
 
 	where 
 		catalog_id = p_catalog_id;
@@ -200,6 +215,16 @@ $$
 $$
 	language 'sql';
 
+create or replace function update_gender(p_gender_id int, p_gender_name) returns void as
+$$
+	update Gender
+	set
+		gender_name = p_gender_name
+	where
+		gender_id = p_gender_id;
+$$
+	language 'sql'
+
 --Add Category
 create or replace function new_category(p_category_name text, p_catalog_id int, p_gender_id int) returns text as
 $$
@@ -229,6 +254,18 @@ $$
 $$
 	language 'sql';
 
+create or replace function update_category(p_category_id int, p_category_name text, p_catalog_id int, p_gender_id int) returns void as
+$$
+	update Category
+	set 
+		category_name = p_category_name,
+		catalog_id = p_catalog_id,
+		gender_id = p_gender_id
+	where
+		category_id = p_category_id;
+$$
+	language 'sql'
+
 --Add Subcategory
 create or replace function new_subcategory(p_subcategory_name text, p_category_id int) returns text as
 $$
@@ -257,6 +294,17 @@ $$
 	select subcategory_id, subcategory_name from Subcategory;
 $$
 	language 'sql';
+
+create or replace function update_subcategory(p_subcategory_id int, p_subcategory_name text, p_category_id int) returns void as
+$$
+	update Subcategory
+	set 
+		subcategory_name = p_subcategory_name,
+		category_id = p_category_id
+	where 
+		subcategory_id = p_subcategory_id;
+$$
+	language 'sql'
 
 --Add Color
 create or replace function new_color(p_color_name text) returns text as
@@ -315,6 +363,26 @@ $$
 -- select new_product('bag', 'nindut na bag', 400.5, '1', '1', '1', '1')
 -- select new_product(400.5, 'bag', 'lacoste ni bai', 1, 1, 1, 1)
 
+create or replace function update_product(p_product_id int, p_product_name text, p_product_description text, p_price numeric,
+							p_product_image text, p_catalog_id int, p_gender_id int, p_category_id int, p_subcategory_id int) returns void as 
+$$
+	update Product
+	set 
+		product_name = p_product_name,
+		product_description = p_product_description,
+		price = p_price,
+		product_image = p_product_image,
+		catalog_id = p_catalog_id,
+		gender_id = p_gender_id,
+		category_id = p_category_id,
+		subcategory_id = p_subcategory_id
+
+	where
+		product_id = p_product_id
+
+$$
+	language 'sql'
+
 -- Get all product
 create or replace function get_product(out int, out text, out numeric, out text) returns setof record as
 $$
@@ -367,3 +435,13 @@ $$
 	select image_id, image1, image2, image3, image4 from Image where product_id = par_image_id;
 $$
 	language 'sql';
+
+-- Not yet finished
+create or replace function loginauth(In p_email text, In p_pass text) returns text as
+$$
+declare 
+	v_email text;
+	v_res text;
+begin
+	select into v_email email_address from UserAccount where email_address = p_email;
+
