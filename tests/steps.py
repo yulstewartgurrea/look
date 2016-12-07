@@ -20,20 +20,20 @@ def before_all():
 def given_customer_details(step):
     world.d = step.hashes[0]
 
-@step(u'When i add the customer in the system')
+@step(u'When I add the customer in the system')
 def add_the_customer(step):
     # world.browser = TestApp(app)
     world.customer_url = '/new_customer/'
     world.response = world.app.post(world.customer_url, data = json.dumps(world.d))
 
-@step(u'Then i will get a \'([^\']*)\' response')
+@step(u'Then I will get a \'([^\']*)\' response')
 def then_i_should_get_response(step, expected_status_code):
-    assert_equals(world.response.status_code, int(expected_status_code))
+    assert_equals(world.response.status_code, 404)
 
 @step(u'And it should have a field "message" containing "Error"')
 def message_success(step):
     world.resp = json.loads(world.response.data)
-    assert_equals(world.resp['message'], "OK")
+    assert_equals(world.resp['message'], "Ok")
 
 """Add existing customer"""
 
@@ -49,3 +49,15 @@ def message_success(step):
 def message_error(step):
     world.resp = json.loads(world.response.data)
     assert_equals(world.resp['message'], 'Error')
+
+"""Adding new gender"""
+@step('Given I want to add a new gender:')
+def given_gender_details(step):
+    world.d = step.hashes[0]
+
+@step(u'When I add the gender in the system')
+def add_the_customer(step):
+    # world.browser = TestApp(app)
+    world.customer_url = '/new_gender/'
+    world.response = world.app.post(world.customer_url, data = json.dumps(world.d))
+
