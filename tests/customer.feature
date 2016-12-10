@@ -6,7 +6,7 @@ Feature: Adding, Updating, Retrieving and Deleting Admins
     |customer4@gmail.com | password12345 |
     When I add the customer in the system
     Then I will get a '200' response
-    And it should have a field "message" containing 'Ok'
+    And it should have a field "message" containing "Ok"
 
   Scenario: Add existing customer
     Given I want to add a new customer:
@@ -14,7 +14,7 @@ Feature: Adding, Updating, Retrieving and Deleting Admins
     |customer@gmail.com | password12345 | True |
     When I add the customer in the system
     Then I will get a '404' response
-    And it should have a field "message" containing 'Error'
+    And it should have a field "message" containing "Error"
 
   Scenario: Add customer with empty email_address
     Given I want to add a new customer:
@@ -22,4 +22,4 @@ Feature: Adding, Updating, Retrieving and Deleting Admins
     |              | password12345 | True |
     When I add the customer in the system
     Then I will get a '404' response
-    And it should have a field "message" containing 'Error'
+    And it should have a field "message" containing "Error"

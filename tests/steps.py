@@ -5,6 +5,7 @@ from app import app
 from webtest import *
 import json
 from app.app import *
+import os, sys
 
 from app.__init__ import *
 
@@ -30,25 +31,18 @@ def add_the_customer(step):
 def then_i_should_get_response(step, expected_status_code):
     assert_equals(world.response.status_code, 404)
 
-@step(u'And it should have a field "message" containing "Error"')
+@step(u'And it should have a field "message" containing "OK"')
 def message_success(step):
     world.resp = json.loads(world.response.data)
-    assert_equals(world.resp['message'], "Ok")
+    assert_equals(world.resp["message"], "Ok")
 
 """Add existing customer"""
-
-@step(u'And it should have a field "message" containing "Error"')
-def message_success(step):
-    world.resp = json.loads(world.response.data)
-    assert_equals(world.resp['message'], "Error")
-
-
 """Adding a customer with field email_address empty"""
 
 @step(u'And it should have a field "message" containing "Error"')
-def message_error(step):
+def message_success(step):
     world.resp = json.loads(world.response.data)
-    assert_equals(world.resp['message'], 'Error')
+    assert_equals(world.resp["message"], "Error")
 
 """Adding new gender"""
 @step('Given I want to add a new gender:')
@@ -57,7 +51,8 @@ def given_gender_details(step):
 
 @step(u'When I add the gender in the system')
 def add_the_customer(step):
-    # world.browser = TestApp(app)
     world.customer_url = '/new_gender/'
     world.response = world.app.post(world.customer_url, data = json.dumps(world.d))
+
+
 

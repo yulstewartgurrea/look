@@ -6,7 +6,7 @@
     | 1  | genderr |
     When I add the gender in the system
     Then I will get a '200' response
-    And it should have a field 'message' containg 'Ok'
+    And it should have a field "message" containing "Ok"
 
   Scenario: Add existings gender
   	Given I want to add a new gender:
@@ -14,7 +14,7 @@
     | male     | 
     When I add the gender in the system
     Then I will get a '404' response
-    And it should have a field 'message' containg 'Error'
+    And it should have a field "message" containing "Error"
 
   Scenario: Add catalog with empty name
   	Given I want to add a new gender:
@@ -22,4 +22,4 @@
     |    |
     When I add the gender in the system
     Then I will get a '404' response
-    And it should have a field 'message' containg 'Error'
+    And it should have a field "message" containing "Error"
