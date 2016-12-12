@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, session
 from config import *
 from __init__ import *
 import json, os, sys
@@ -41,6 +41,18 @@ def invalid(emailaddress, domains=GENERIC_DOMAINS):
 @app.route('/')
 def helloworld():
 	return "hello world"
+
+@app.route('/login', methods=['POST'])
+def login():
+	jsn = json.loads(request.json)
+	res = spcall('login', (jsn['email_address'], jsn['password']))
+
+	if res == [0][0]:
+		status = False
+		return jsonify({'status': status, 'message': 'Invalid email or password'})
+	else:
+		status = True
+		return jsonify({'status': status, 'message': 'Login successful'})
 
 # test if db is connected
 @app.route('/sa', methods=['GET'])
