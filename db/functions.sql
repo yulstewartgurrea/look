@@ -32,6 +32,15 @@ end;
 $$
 	language 'plpgsql';
 
+-- get info of user logged in
+
+create or replace function get_loginrole(in p_email, out p_is_admin boolean, out p_is_establishment boolean,
+										out p_is_cutomer boolean, out p_is_active boolean) returns record as
+$$
+	select email_address, is_admin, is_establishment, is_customer,_is_active from UserAccount where email_address = p_email;
+$$
+	language 'sql';
+
 --User Account
 create or replace function new_admin(p_email text, p_password text) returns text as
 $$
@@ -495,6 +504,4 @@ $$
 	select image_id, image1, image2, image3, image4 from Image where product_id = par_image_id;
 $$
 	language 'sql';
-
--- create or replace get_userid()
 

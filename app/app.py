@@ -44,15 +44,25 @@ def helloworld():
 
 @app.route('/login', methods=['POST'])
 def login():
-	jsn = json.loads(request.json)
+	jsn = json.loads(request.data)
 	res = spcall('login', (jsn['email_address'], jsn['password']))
 
-	if res == [0][0]:
+	if 'Invalid email or password' in str(res):
 		status = False
-		return jsonify({'status': status, 'message': 'Invalid email or password'})
-	else:
+		return jsonify({'status': status, 'message': res[0][0]})
+
+	if 'Login successful' in str(res):
 		status = True
-		return jsonify({'status': status, 'message': 'Login successful'})
+		role = get_loginrole(jsn['email_address'])
+		session['email_address'] = role[0][0]
+		session['is_admin'] = role[0][1]
+		session['is_establishment'] = role[0][2]
+		session['is_customer'] = role[0][3]
+		# session['is_active'] = role[0][4]
+		return jsonify({'status': status, 'message': res[0][0]})
+
+def get_loginrole(email_address):
+	return spcall('get_loginrole', (email_address,))
 
 # test if db is connected
 @app.route('/sa', methods=['GET'])
@@ -198,4 +208,5 @@ def new_product():
 	return jsonify({'status': 'ok', 'message': res[0][0]})
 
 if __name__ == '__main__':
+	app.secret_key = 'B1Zr98j/3yX R~XHH!jmN]LWX/,?RT'
 	app.run(debug=True)
