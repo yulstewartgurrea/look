@@ -54,12 +54,20 @@ def login():
 	if 'Login successful' in str(res):
 		status = True
 		role = get_loginrole(jsn['email_address'])
-		session['email_address'] = role[0][0]
-		session['is_admin'] = role[0][1]
-		session['is_establishment'] = role[0][2]
-		session['is_customer'] = role[0][3]
-		# session['is_active'] = role[0][4]
-		return jsonify({'status': status, 'message': res[0][0]})
+		# session['email_address'] = role[0][0]
+		session['is_admin'] = role[0][0]
+		session['is_establishment'] = role[0][1]
+		session['is_customer'] = role[0][2]
+		session['is_active'] = role[0][3]
+		return jsonify({'status': status, 'message': res[0][0], 'admin': session['is_admin'],
+						'establishment':session['is_establishment'], 'customer': session['is_customer'],
+						'active': session['is_active']})
+
+@app.route('/logout')
+def logout():
+    session.pop('logged_in', None)
+    session.clear()
+    return jsonify({'message': 'Successfuly logged out'})
 
 def get_loginrole(email_address):
 	return spcall('get_loginrole', (email_address,))
