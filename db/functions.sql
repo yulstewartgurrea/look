@@ -184,7 +184,7 @@ $$
 	where 
 		catalog_id = p_catalog_id;
 $$
-	language 'sql'
+	language 'sql';
 
 --Add Gender 
 create or replace function new_gender(p_gender_name text) returns text as
@@ -223,7 +223,7 @@ $$
 	where
 		gender_id = p_gender_id;
 $$
-	language 'sql'
+	language 'sql';
 
 --Add Category
 create or replace function new_category(p_category_name text, p_catalog_id int, p_gender_id int) returns text as
@@ -264,7 +264,7 @@ $$
 	where
 		category_id = p_category_id;
 $$
-	language 'sql'
+	language 'sql';
 
 --Add Subcategory
 create or replace function new_subcategory(p_subcategory_name text, p_category_id int) returns text as
@@ -304,7 +304,7 @@ $$
 	where 
 		subcategory_id = p_subcategory_id;
 $$
-	language 'sql'
+	language 'sql';
 
 --Add Color
 create or replace function new_color(p_color_name text) returns text as
@@ -381,7 +381,7 @@ $$
 		product_id = p_product_id
 
 $$
-	language 'sql'
+	language 'sql';
 
 -- Get all product
 create or replace function get_product(out int, out text, out numeric, out text) returns setof record as

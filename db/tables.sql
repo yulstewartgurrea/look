@@ -47,7 +47,7 @@ CREATE TABLE Establishment(
 
 CREATE TABLE Catalog(
 	catalog_id SERIAL PRIMARY KEY,
-	catalog_name TEXT,
+	catalog_name TEXT
 
 );
 
