@@ -1,7 +1,8 @@
-from flask import Flask, jsonify, request, session
+from flask import Flask, jsonify, request, session, render_template
 from config import *
 from __init__ import *
 import json, os, sys
+import flask
 
 app = Flask(__name__)
 
@@ -52,6 +53,7 @@ def login():
 		return jsonify({'status': status, 'message': res[0][0]})
 
 	if 'Login successful' in str(res):
+	# if str(res) == 'Login successful':
 		status = True
 		role = get_loginrole(jsn['email_address'])
 		# session['email_address'] = role[0][0]
@@ -73,7 +75,7 @@ def get_loginrole(email_address):
 	return spcall('get_loginrole', (email_address,))
 
 # test if db is connected
-@app.route('/sa', methods=['GET'])
+@app.route('/get_users', methods=['GET'])
 def get_users():
 	res = spcall('get_users', ())
 
@@ -148,6 +150,19 @@ def new_gender():
 
 	return jsonify({'status': 'ok', 'message': res[0][0]})
 
+@app.route('/get_gender', methods=['GET'])
+def get_gender():
+	res = spcall("get_gender", ())
+
+	if 'Error' in str(res[0][0]):
+		return jsonify({'status': 'error', 'message': res[0][0]})
+
+	recs = []
+	for r in res:
+		recs.append({'gender_id': str(r[0]), 'gender_name': str(r[1])})
+
+	return jsonify({'status': 'ok', 'entries': recs, 'count': len(recs)})
+
 @app.route("/new_catalog", methods=['POST'])
 def new_catalog():
 	jsn = json.loads(request.data)
@@ -159,6 +174,20 @@ def new_catalog():
 		return jsonify({'status': 'ok', 'message': res[0][0]})
 
 	return jsonify({'status': 'ok', 'message': res[0][0]})
+
+@app.route("/get_catalog", methods=['GET'])
+def get_catalog():
+	res = spcall("get_catalog", ())
+
+	if 'Error' in str(res[0][0]):
+		return jsonify({'status': 'error', 'message': res[0][0]})
+
+	recs = []
+
+	for r in res:
+		recs.append({'category_id': str(r[0]), 'category_name': str(r[1])})
+
+	return jsonify({'status': 'ok', 'entries': recs, 'count': len(recs)})
 
 @app.route("/new_category", methods=['POST'])
 def new_category():
@@ -172,6 +201,20 @@ def new_category():
 
 	return jsonify({'status': 'ok', 'message': res[0][0]})
 
+@app.route("/get_category", methods=['GET'])
+def get_category():
+	res = spcall("get_category", ())
+
+	if 'Error' in str(res[0][0]):
+		return jsonify({'status': 'error', 'message': res[0][0]})
+
+	recs = []
+
+	for r in res:
+		recs.append({'category_id': str(r[0]), 'category_name': str(r[1]), 'catalog_id': str(r[2]), 'gender_id': str(r[3])})
+
+	return jsonify({'status': 'ok', 'entries': recs, 'count': len(recs)})
+
 @app.route("/new_subcategory", methods=['POST'])
 def new_subcategory():
 	jsn = json.laods(request.data)
@@ -183,6 +226,20 @@ def new_subcategory():
 		return jsonify({'status': 'ok', 'message': res[0][0]})
 
 	return jsonify({'status': 'ok', 'message': res[0][0]})
+
+@app.route("/get_subcategory", methods=['GET'])
+def get_subcategory():
+	res = spcall("get_subcategory", ())
+
+	if 'Error' in str(res[0][0]):
+		return jsonify({'status': 'ok', 'message': res[0][0]})
+
+	recs = []
+
+	for r in res:
+		recs.append({'subcategory_id': str(r[0]), 'subcategory_name': str(r[1]), 'category_id': str(r[2])})
+
+	return jsonify({'status': 'ok', 'entries': recs, 'count': len(recs)})
 
 @app.route("/new_size", methods=['POST'])
 def new_size():
@@ -204,16 +261,47 @@ def new_product():
 	res = spcall('new_product', (
 		jsn['product_name'],
 		jsn['product_description'],
-		jsn['product_gender'],
-		jsn['product_catalog'],
-		jsn['product_category'],
-		jsn['product_subcategory'],
-		jsn['product_color'],), True)
+		jsn['gender_id'],
+		jsn['catalog_id'],
+		jsn['category_id'],
+		jsn['subcategory_id'],
+		jsn['establishment_id'],
+		jsn['image'],
+		jsn['price'],), True)
 
 	if 'Error' in res[0][0]:
 		return jsonify({'status': 'ok', 'message': res[0][0]})
 
 	return jsonify({'status': 'ok', 'message': res[0][0]})
+
+@app.route("/get_product", methods=['GET'])
+def get_product():
+	res = spcall('get_product', ())
+
+	if 'Error' in str(res[0][0]):
+		return jsonify({'status': 'ok', 'message': res[0][0]})
+
+	recs = []
+
+	for r in res:
+		recs.append({'product_id': str(r[0]), 'product_name': str(r[1]), 'price': str(r[2]), 'image': str(r[3])})
+
+	return jsonify({'status': 'ok', 'entries': recs, 'count': len(recs)})
+
+
+
+@app.after_request
+def add_cors(resp):
+    resp.headers['Access-Control-Allow-Origin'] = flask.request.headers.get('Origin', '*')
+    resp.headers['Access-Control-Allow-Credentials'] = True
+    resp.headers['Access-Control-Allow-Methods'] = 'POST, OPTIONS, GET, PUT, DELETE'
+    resp.headers['Access-Control-Allow-Headers'] = flask.request.headers.get('Access-Control-Request-Headers',
+                                                                             'Authorization')
+    # set low for debugging
+
+    if app.debug:
+        resp.headers["Access-Control-Max-Age"] = '1'
+    return resp
 
 if __name__ == '__main__':
 	app.secret_key = 'B1Zr98j/3yX R~XHH!jmN]LWX/,?RT'

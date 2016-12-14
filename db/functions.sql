@@ -261,9 +261,9 @@ $$
 	language 'plpgsql';
 
 --Get gender
-create or replace function get_gender(out int, out text, out int) returns setof record as
+create or replace function get_gender(out int, out text) returns setof record as
 $$
-	select gender_id, gender_name, catalog_id from Gender;
+	select gender_id, gender_name from Gender;
 $$
 	language 'sql';
 
@@ -349,9 +349,9 @@ $$
 	language 'plpgsql';
 
 -- Get all subcategory
-create or replace function get_subcategory(out int, out text) returns setof record as
+create or replace function get_subcategory(out int, out text, out int ) returns setof record as
 $$
-	select subcategory_id, subcategory_name from Subcategory;
+	select subcategory_id, subcategory_name, category_id from Subcategory;
 $$
 	language 'sql';
 
@@ -401,7 +401,7 @@ $$
 
 -- Add product
 create or replace function new_product(p_price numeric, p_image text, p_product_name text, p_product_description text, p_product_catalog int, p_product_gender int, p_product_category int,
-									   p_product_subcategory int) returns text as
+									   p_product_subcategory int, p_establishment_id int) returns text as
 $$
 declare 
 	v_product_name text;
@@ -412,13 +412,13 @@ begin
 
 		if v_product_name isnull then
 			if p_product_name = '' or p_image = '' or p_product_description = '' or p_price = null or p_product_catalog = null or
-				 p_product_gende = null or p_product_category = null or p_product_subcategory = null then
+				 p_product_gender = null or p_product_category = null or p_product_subcategory = null then
 				v_res = 'Error';
 			else
 				insert into Product(product_name, image, product_description, price, catalog_id, gender_id, category_id,
-								subcategory_id)
+								subcategory_id, establishment_id)
 				values(p_product_name, p_image, p_product_description, p_price, p_product_catalog, p_product_gender, p_product_category,
-							 p_product_subcategory);
+							 p_product_subcategory, p_establishment_id);
 							 v_res = 'Ok';
 				end if;
 		else
@@ -426,14 +426,19 @@ begin
 		end if;
 		return v_res;
 end;
-$$ 
+$$
 	language 'plpgsql';
 
--- select new_product('bag', 'nindut na bag', 400.5, '1', '1', '1', '1')
--- select new_product(400.5, 'bag', 'lacoste ni bai', 1, 1, 1, 1)
+-- select new_product(9.00, 'prod', 'prod', 'prod', 2 , 2, 1, 1, 1)
+-- select new_product(9.00, 'prod1', 'prod1', 'prod', 2 , 2, 1, 1, 1)
+-- select new_product(9.00, 'prod2', 'prod2', 'prod', 2 , 2, 1, 1, 1)
+-- select new_product(9.00, 'prod3', 'prod3', 'prod', 2 , 2, 1, 1, 1)
+-- select new_product(9.00, 'prod4', 'prod4', 'prod', 2 , 2, 1, 1, 1)
+
 
 create or replace function update_product(p_product_id int, p_product_name text, p_product_description text, p_price numeric,
-							p_product_image text, p_catalog_id int, p_gender_id int, p_category_id int, p_subcategory_id int) returns void as 
+							p_product_image text, p_catalog_id int, p_gender_id int, p_category_id int, p_subcategory_id int,
+							p_establishment_id int) returns void as
 $$
 	update Product
 	set 
@@ -444,9 +449,10 @@ $$
 		catalog_id = p_catalog_id,
 		gender_id = p_gender_id,
 		category_id = p_category_id,
-		subcategory_id = p_subcategory_id
+		subcategory_id = p_subcategory_id,
+		establishment_id = p_establishment_id
 
-	where
+		where
 		product_id = p_product_id
 
 $$
@@ -455,7 +461,7 @@ $$
 -- Get all product
 create or replace function get_product(out int, out text, out numeric, out text) returns setof record as
 $$
-	select product_id, product_name, price, image from product order by date_added;
+	select product_id, product_name, price, image from Product;
 $$
 	language 'sql'; 
 
