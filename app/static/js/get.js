@@ -8,7 +8,7 @@ function getusers() {
 
 $.ajax({
 	type: "GET",
-	url: "/getusers",
+	url: "http://127.0.0.1:5000/get_users",
 	dataType: 'json',
 	success: function(res) {
 		$("#users").html("");
@@ -35,4 +35,166 @@ $.ajax({
    			}
 	
 	});
+}
+
+function rowtask(gender_name)
+{
+   return '<div class="col-lg-12">' +
+          '<h4>' + gender_name + "&nbsp;&nbsp;"+ '</h4>'
+
+}
+
+function getgenders()
+{
+
+$.ajax({
+    		url: 'http://127.0.0.1:5000/get_gender',
+    		// url: 'http://127.0.0.1:5000/tasks',
+    		type:"GET",
+    		dataType: "json",
+    		success: function(resp) {
+				$("gender").html("");
+				if (resp.status  == 'ok') {
+				   for (i = 0; i < resp.count; i++)
+                                  {
+                                       gender_name = resp.entries[i].gender_name;
+
+                                       $("#gender").append(rowtask(gender_name));
+
+	                          }
+				} else
+				{
+                                       $("#gender").html("");
+					alert(resp.message);
+				}
+    		},
+    		error: function (e) {
+        		alert("danger");
+   			},
+
+		});
+}
+
+function getcatalog()
+{
+
+$.ajax({
+    		url: 'http://127.0.0.1:5000/get_catalog',
+    		// url: 'http://127.0.0.1:5000/tasks',
+    		type:"GET",
+    		dataType: "json",
+    		success: function(resp) {
+				$("catalog").html("");
+				if (resp.status  == 'ok') {
+				   for (i = 0; i < resp.count; i++)
+                                  {
+                                       catalog_name = resp.entries[i].catalog_name;
+
+                                       $("#catalog").append(rowtask(gender_name));
+
+	                          }
+				} else
+				{
+                                       $("#catalog").html("");
+					alert(resp.message);
+				}
+    		},
+    		error: function (e) {
+        		alert("danger");
+   			},
+
+		});
+}
+
+function products()
+{
+
+$.ajax({
+    		url: 'http://127.0.0.1:5000/get_gender',
+    		// url: 'http://127.0.0.1:5000/tasks',
+    		type:"GET",
+    		dataType: "json",
+    		success: function(resp) {
+				$("gender").html("");
+				if (resp.status  == 'ok') {
+				   for (i = 0; i < resp.count; i++)
+                                  {
+                                       gender_name = resp.entries[i].gender_name;
+
+                                       $("#gender").append(rowtask(gender_name));
+
+	                          }
+				} else
+				{
+                                       $("#gender").html("");
+					alert(resp.message);
+				}
+    		},
+    		error: function (e) {
+        		alert("danger");
+   			},
+
+		});
+}
+
+function getproductdetails()
+{
+
+$.ajax({
+    		url: 'http://127.0.0.1:5000/get_gender',
+    		// url: 'http://127.0.0.1:5000/tasks',
+    		type:"GET",
+    		dataType: "json",
+    		success: function(resp) {
+				$("gender").html("");
+				if (resp.status  == 'ok') {
+				   for (i = 0; i < resp.count; i++)
+                                  {
+                                       gender_name = resp.entries[i].gender_name;
+
+                                       $("#gender").append(rowtask(gender_name));
+
+	                          }
+				} else
+				{
+                                       $("#gender").html("");
+					alert(resp.message);
+				}
+    		},
+    		error: function (e) {
+        		alert("danger");
+   			},
+
+		});
+}
+
+function getproductbycatalog()
+{
+
+$.ajax({
+    		url: 'http://127.0.0.1:5000/get_',
+    		// url: 'http://127.0.0.1:5000/tasks',
+    		type:"GET",
+    		dataType: "json",
+    		success: function(resp) {
+				$("gender").html("");
+				if (resp.status  == 'ok') {
+				   for (i = 0; i < resp.count; i++)
+                                  {
+                                       gender_name = resp.entries[i].gender_name;
+
+                                       $("#gender").append(rowtask(gender_name));
+
+	                          }
+				} else
+				{
+                                       $("#gender").html("");
+					alert(resp.message);
+				}
+    		},
+    		error: function (e) {
+        		alert("danger");
+   			},
+
+		});
 }

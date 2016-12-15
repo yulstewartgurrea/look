@@ -67,30 +67,33 @@ function new_admin() {
     $.ajax({
         url: 'http://127.0.0.1:5000/new_admin',
         type: 'POST',
-        data: $('form').serialize(),
+        data:$('form').serialize(),
         dataType: 'json',
         success: function (res) {
             if (res.status == 'ok') {
-                console.log(res);
+                alert("success")
             } else {
-                console.log('error')
+                alert("error")
             }
         }
 
     });
 }
 
-function new_gender() {
+function addgender() {
+
+    var gender_name = $('#gender_name').val();
+
     $.ajax({
-        url: 'http://127.0.0.1:5000/new_gender',
+        url: 'http://127.0.0.1:5000/new_gender/'+gender_name,
+        data:$('form').serialize(),
         type: 'POST',
-        data: $('form').serialize(),
         dataType: 'json',
         success: function (res) {
-            if (res.status == 'ok') {
-                console.log(res);
+            if (res.message == 'Ok') {
+                alert("success")
             } else {
-                console.log('error')
+                alert("error")
             }
         }
 
