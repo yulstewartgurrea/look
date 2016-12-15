@@ -296,7 +296,7 @@ def new_product():
         jsn['catalog_id'],
         jsn['category_id'],
         jsn['subcategory_id'],
-        jsn['establishment_id'],
+        jsn['establishment_id'],-
         jsn['image'],
         jsn['price'],), True)
 
@@ -334,7 +334,36 @@ def get_productbycatalog():
 
     return jsonify({'status': 'ok', 'entries': recs, 'count': len(recs)})
 
-@app.route
+@app.route("/getproductbycatalogandgender", methods=['GET'])
+def get_productbycatalogandgender():
+    res = spcall('get_productby_catalog_gender', ())
+
+    if 'Error' in str(res[0][0]):
+        return jsonify({'status': 'ok', 'message': res[0][0]})
+
+    recs = []
+
+    for r in res:
+        recs.append({'product_id': str(r[0]), 'product_name': str(r[1]), 'price': str([2]), 'image': str([3])})
+
+    return jsonify({'status': 'ok', 'entires': recs, 'count': len(recs)})
+
+@app.route("/getproductbycatalogandgenderandcategory")
+def get_productbycatalogandgenderandcategory():
+    res = spcall('get_productby_catalog_gender_category', ())
+
+    if 'Error' in str(res[0][0]):
+        return jsonify({'status': 'ok', 'message': res[0][0]})
+
+    recs = []
+
+    for r in res:
+        recs.append({'product_id': str(r[0]), 'product_name': str(r[1]), 'price': str([2]), 'image': str([3])})
+
+    return jsonify({'status': 'ok', 'entires': recs, 'count': len(recs)})
+
+# @app.route()
+
 
 
 @app.after_request

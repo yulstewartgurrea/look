@@ -18,8 +18,8 @@ Feature: Adding, Updating, Deleting, Retrieving Products
 
   Scenario: Add product with product_name empty
     Given I want to add a product with the following details:
-    |product_name | product_description | product_gender | catalog_id | gender_id | category_id | subcategory_id | image | price |
-    |     | sample1 description | male           | 1   | 1           | 1              | 1         | image.jpg | 32.50 |
+    |product_name | product_description | product_gender | catalog_id | gender_id | category_id | subcategory_id | image | price | establishment_id |
+    |     | sample1 description | male           | 1   | 1           | 1              | 1         | image.jpg | 32.50 | 1                           |
     When I add the product in the system
     Then I will get a '200' response
     And it should have a field message containing "error"
@@ -29,8 +29,8 @@ Feature: Adding, Updating, Deleting, Retrieving Products
     When I retrieve a product with an id number '1'
     Then I will get a '200' response
     And the following details ae returned
-    |product_id | product_name | product_description | product_gender | catalog_id | gender_id | category_id | subcategory_id | image | price |
-    |1          | sample1     | sample1 description | male           | 1   | 1           | 1              | 1         | image.jpg | 32.50 |
+    |product_id | product_name | product_description | product_gender | catalog_id | gender_id | category_id | subcategory_id | image | price | establihsment_id |
+    |1          | sample1     | sample1 description | male           | 1   | 1           | 1              | 1         | image.jpg | 32.50 | 1                    |
 
   Scenario: Retrieve a non-existent product
     Given a product with an id number '8'
@@ -40,11 +40,11 @@ Feature: Adding, Updating, Deleting, Retrieving Products
 
   Scenario: Update product details
     Given I want to add a product with the following details:
-    |product_name | product_description | product_gender | catalog_id | gender_id | category_id | subcategory_id | image | price |
-    | sample1     | sample1 description | male           | 1   | 1           | 1              | 1         | image.jpg | 32.50 |
+    |product_name | product_description | product_gender | catalog_id | gender_id | category_id | subcategory_id | image | price | establishment_id |
+    | sample1     | sample1 description | male           | 1   | 1           | 1              | 1         | image.jpg | 32.50 | 1                   |
     When I update the product details to:
-    |product_name | product_description | product_gender | catalog_id | gender_id | category_id | subcategory_id | image | price |
-    | sample5     | sample1 description | male           | 1   | 1           | 1              | 1         | image.jpg | 32.50 |
+    |product_name | product_description | product_gender | catalog_id | gender_id | category_id | subcategory_id | image | price | establishment_id |
+    | sample5     | sample1 description | male           | 1   | 1           | 1              | 1         | image.jpg | 32.50 | 2                   |
     Then I will get a '200' response
     And field "status" containing "success"
 
