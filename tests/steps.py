@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 from lettuce import *
+from lettuce.terrain import before
 from nose.tools import *
+from nose.tools import assert_equals
 
 from app import app
 # from webtest import *
@@ -37,21 +39,21 @@ def message_success(step):
 
 """Add existing customer"""
 """Adding a customer with field email_address empty"""
-# #
-# @step(u'it should have a field "message" containing "Error"')
-# def message_success(step):
-#     world.resp = json.loads(world.response.data)
-#     assert_equals(world.resp["message"], "Error")
-#
-# """Adding new gender"""
-# @step('Given I want to add a new gender:')
-# def given_gender_details(step):
-#     world.d = step.hashes[0]
-#
-# @step(u'When I add the gender in the system')
-# def add_the_customer(step):
-#     world.customer_url = '/new_gender/'
-#     world.response = world.app.post(world.customer_url, data = json.dumps(world.d))
-#
-#
-#
+
+@step(u'it should have a field "message" containing "Error"')
+def message_success(step):
+    world.resp = json.loads(world.response.data)
+    assert_equals(world.resp["message"], "Error")
+
+"""Adding new gender"""
+@step('Given I want to add a new gender:')
+def given_gender_details(step):
+    world.d = step.hashes[0]
+
+@step(u'When I add the gender in the system')
+def add_the_customer(step):
+    world.customer_url = '/new_gender/'
+    world.response = world.app.post(world.customer_url, data = json.dumps(world.d))
+
+
+
