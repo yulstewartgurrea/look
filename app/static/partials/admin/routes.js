@@ -1,6 +1,10 @@
 $(document).ready(function(){
 	$("#users").click(function(){
-		$("#body").load("addusers.html");
+		$("#addusers").load("addusers.html");
+	});
+
+	$('#categories').click(function(){
+		$("#addcategories").load("addcategories.html")
 	});
 
 
