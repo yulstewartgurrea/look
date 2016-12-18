@@ -292,8 +292,7 @@ def get_category():
     recs = []
 
     for r in res:
-        recs.append(
-            {'category_id': str(r[0]), 'category_name': str(r[1]), 'catalog_id': str(r[2]), 'gender_id': str(r[3])})
+        recs.append({'category_id': str(r[0]), 'category_name': str(r[1]), 'catalog_id': str(r[2]), 'gender_id': str(r[3])})
 
     return jsonify({'status': 'ok', 'entries': recs, 'count': len(recs)})
 

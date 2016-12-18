@@ -294,3 +294,109 @@ function getcatalogs() {
 
     });
 }
+
+function getcategory(category_id, category_name, catalog_id, gender_id) {
+    return '<div class="box">' +
+    '<div class="box-body">' +
+              '<table id="example2" class="table table-bordered table-hover">' +
+                '<thead>' +
+                '<tr>' +
+                  '<th>  Category Name  </th>' +
+                  '<th>  Catalog Id  </th>' +
+                  '<th>  Gender Id  </th>' +
+                '</tr>' +
+                '</thead>' +
+                '<tbody>' +
+                '<tr> ' +
+                  '<td>' + category_name+ '</td>' +
+                  '<td>' + catalog_id+ '</td>' +
+                  '<td>' + gender_id+ '</td>' +
+                '</tr>'+
+                '</tbody>'+
+                '<tfoot>'+
+                '<tr>'+
+                  '<th> Category Name </th>'+
+                  '<th> Catalog Id </th>'+
+                  '<th> Gender Id </th>'+
+                '</tr>'+
+                '</tfoot>'+
+              '</table>'+
+            '</div>'+
+          '</div>'
+
+}
+
+function getcategories(){
+    $.ajax({
+        url: 'http://127.0.0.1:5000/get_category',
+        type: 'GET',
+        dataType: 'json',
+        success: function(res){
+            $("#categoriess").html("");
+            if(res.status=='ok'){
+                for(i=0; i<res.count; i++){
+                    category_id = res.entries[i].category_id;
+                    category_name = res.entries[i].category_name;
+                    catalog_id = res.entries[i].catalog_id;
+                    gender_id = res.entries[i].entries_id;
+                    $("#categoriess").append(getcategory(category_id, category_name, catalog_id, gender_id))
+                }
+            } else {
+                $("#categoriess").html("");
+                alert("Error")
+            }
+        }
+
+    });
+}
+
+function getsubcategory(subcategory_id, subcategory_name, category_id) {
+    return '<div class="box">' +
+    '<div class="box-body">' +
+              '<table id="example2" class="table table-bordered table-hover">' +
+                '<thead>' +
+                '<tr>' +
+                  '<th>  Subcategory Name  </th>' +
+                  '<th>  Gender Id  </th>' +
+                '</tr>' +
+                '</thead>' +
+                '<tbody>' +
+                '<tr> ' +
+                  '<td>' + subcategory_name+ '</td>' +
+                  '<td>' + category_id+ '</td>' +
+                '</tr>'+
+                '</tbody>'+
+                '<tfoot>'+
+                '<tr>'+
+                  '<th> Subcategory Name</th>'+
+                  '<th> Gender Name</th>'+
+                '</tr>'+
+                '</tfoot>'+
+              '</table>'+
+            '</div>'+
+          '</div>'
+
+}
+
+function getsubcategories() {
+    $.ajax({
+        url: 'http://127.0.0.1:5000/get_subcategory',
+        type: 'GET',
+        dataType: 'json',
+        success: function(res){
+            $("#subcategories").html("");
+            if(res.status=='ok'){
+                for(i=0; i<res.count; i++){
+                    subcategory_id = res.entries[i].subcategory_id;
+                    subcategory_name = res.entries[i].subcategory_name;
+                    category_id = res.entries[i].category_id;
+                    $("#subcategories").append(getsubcategory(subcategory_id, subcategory_name, category_id))
+                }
+            } else {
+                $("#subcategories").html("");
+                alert("Error")
+            }
+        }
+
+    });
+}
