@@ -114,9 +114,23 @@ def new_admin():
 
     return jsonify({'status': 'ok', 'message': res[0][0]})
 
+# Get admins
+@app.route('/get_admins', methods=['GET'])
+def get_admins():
+    res = spcall("get_admins", ())
 
-@app.route("/new_establishment", methods=['POST'])
-def new_establishment():
+    if 'Error' in str(res[0][0]):
+        return jsonify({'status': 'error', 'message': res[0][0]})
+
+    recs = []
+    for r in res:
+        recs.append({'user_id': str(r[0]), 'email_address': str(r[1]), 'is_admin': str(r[2]), 'is_active':str(r[3])})
+
+    return jsonify({'status': 'ok', 'entries': recs, 'count': len(recs)})
+
+# Create new establishment personnels
+@app.route("/new_establishment_personnel", methods=['POST'])
+def new_establishment_personnel():
     jsn = json.loads(request.data)
 
     if invalid(jsn['email_address']):
@@ -131,6 +145,18 @@ def new_establishment():
 
     return jsonify({'status': 'ok', 'message': res[0][0]})
 
+@app.route('/get_establishment_personnels', methods=['GET'])
+def get_establishment_personnels():
+    res = spcall("get_establishment_personnels", ())
+
+    if 'Error' in str(res[0][0]):
+        return jsonify({'status': 'error', 'message': res[0][0]})
+
+    recs = []
+    for r in res:
+        recs.append({'user_id': str(r[0]), 'email_address': str(r[1]), 'is_establishment': str(r[2]), 'is_active':str(r[3])})
+
+    return jsonify({'status': 'ok', 'entries': recs, 'count': len(recs)})
 
 @app.route("/new_customer", methods=['POST'])
 def new_customer():
@@ -158,6 +184,34 @@ def new_customer():
 
     return jsonify({'status': 'ok', 'message': "Ok"}), status_code
 
+@app.route('/get_customers', methods=['GET'])
+def get_customers():
+    res = spcall("get_customers", ())
+
+    if 'Error' in str(res[0][0]):
+        return jsonify({'status': 'error', 'message': res[0][0]})
+
+    recs = []
+    for r in res:
+        recs.append({'user_id': str(r[0]), 'email_address': str(r[1]), 'is_customer': str(r[2]), 'is_active':str(r[3])})
+
+    return jsonify({'status': 'ok', 'entries': recs, 'count': len(recs)})
+
+
+@app.route('/get_establishment', methods=['GET'])
+def get_establishment():
+    res = spcall("get_establishment", ())
+
+    if 'Error' in str(res[0][0]):
+        return jsonify({'status': 'error', 'message': res[0][0]})
+
+    recs = []
+
+    for r in res:
+        recs.append({'establishment_id': str(r[0]), 'establishment_name': str(r[1]),
+                     'user_id': str(r[3]), 'establishment_is_active': str(r[2])})
+
+    return jsonify({'status': 'ok', 'entries': recs, 'count': len(recs)})
 
 @app.route('/new_gender/<string:gender_n>', methods=['POST'])
 def add_gender(gender_n):
@@ -210,7 +264,7 @@ def get_catalog():
     recs = []
 
     for r in res:
-        recs.append({'category_id': str(r[0]), 'category_name': str(r[1])})
+        recs.append({'catalog_id': str(r[0]), 'catalog_name': str(r[1])})
 
     return jsonify({'status': 'ok', 'entries': recs, 'count': len(recs)})
 

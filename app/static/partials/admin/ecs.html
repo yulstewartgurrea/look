@@ -1,74 +1,15 @@
 <section class="content-header">
       <h1>
-        Add Different Users
+        Add Establishments, Catalogs and Sex'
       </h1>
 
     </section>
 
-    <!-- Main content -->
-    <section class="content">
-      <div class="row">
-        <!-- left column -->
-        <div class="col-md-4">
+<section class="content">
+
+    <!--left-->
+<div class="col-md-4">
           <!-- general form elements -->
-          <div class="box box-primary">
-            <div class="box-header with-border">
-              <h3 class="box-title">Add Admin</h3>
-            </div>
-            <!-- /.box-header -->
-            <!-- form start -->
-            <form role="form">
-              <div class="box-body">
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Email address</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-                </div>
-                <div class="form-group">
-                  <label for="exampleInputPassword1">Password</label>
-                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                </div>
-
-                <button type="submit" class="btn btn-primary">Submit</button>
-
-              </div>
-              <!-- /.box-body -->
-            </form>
-          </div>
-          <div class="box">
-            <div class="box-header">
-              <h3 class="box-title">Admins</h3>
-            </div>
-            <!-- /.box-header -->
-            <div class="box-body">
-              <table id="example2" class="table table-bordered table-hover">
-                <thead>
-                <tr>
-                  <th>Admin Email</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                  <td>Trident</td>
-                </tr>
-                <tr>
-                  <td>Trident</td>
-                </tr>
-                </tbody>
-                <tfoot>
-                <tr>
-                  <th>Admin Email</th>
-                </tr>
-                </tfoot>
-              </table>
-            </div>
-            <!-- /.box-body -->
-          </div>
-        </div>
-        <!--/.col (left) -->
-
-        <!-- middle column -->
-        <div class="col-md-4">
-          <!-- Horizontal Form -->
           <div class="box box-primary">
             <div class="box-header with-border">
               <h3 class="box-title">Add Establishment</h3>
@@ -78,21 +19,23 @@
             <form role="form">
               <div class="box-body">
                 <div class="form-group">
-                  <label for="exampleInputEmail1">Email address</label>
+                  <label for="exampleInputEmail1">Establishment Name</label>
                   <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
                 </div>
                 <div class="form-group">
-                  <label for="exampleInputPassword1">Password</label>
-                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                  <label for="exampleInputEmail1">User Id</label>
+                  <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
 
               </div>
               <!-- /.box-body -->
             </form>
-          </div>          
-          <!-- /.box -->
-          <div class="box">
+          </div>
+        <button type="button" class="btn btn-primary" onclick="getestablishments()">Get Establishments</button>
+        <div id="establishments"></div>
+
+        <div class="box">
             <div class="box-header">
               <h3 class="box-title">Establishments</h3>
             </div>
@@ -101,66 +44,135 @@
               <table id="example2" class="table table-bordered table-hover">
                 <thead>
                 <tr>
-                  <th>Establishment Email</th>
+                  <th>Establishment Name</th>
+                  <th>User Id</th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr>
                   <td>Trident</td>
+                  <td>Internet
+                    Explorer 4.0
+                  </td>
+
                 </tr>
                 <tr>
                   <td>Trident</td>
+                  <td>Internet
+                    Explorer 5.0
+                  </td>
                 </tr>
                </td>
                 </tr>
                 </tbody>
                 <tfoot>
                 <tr>
-                  <th>Etablishment Email</th>
+                  <th>Product Image</th>
+                  <th>Product Name</th>
                 </tr>
                 </tfoot>
               </table>
             </div>
             <!-- /.box-body -->
           </div>
-        </div>
-        <!--/.col (middle) -->
+          <!--&lt;!&ndash;-->
+      </div>
+    <!--left-->
 
-        <!-- right column -->
-        <div class="col-md-4">
+        <!--middle-->
+      <div class="col-md-4">
           <!-- general form elements -->
           <div class="box box-primary">
             <div class="box-header with-border">
-              <h3 class="box-title">Add Customer</h3>
+              <h3 class="box-title">Add Catalog</h3>
             </div>
             <!-- /.box-header -->
             <!-- form start -->
             <form role="form">
               <div class="box-body">
                 <div class="form-group">
-                  <label for="exampleInputEmail1">Email address</label>
+                  <label for="exampleInputEmail1">Catalog Name</label>
                   <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
                 </div>
-                <div class="form-group">
-                  <label for="exampleInputPassword1">Password</label>
-                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                </div>
+
                 <button type="submit" class="btn btn-primary">Submit</button>
 
               </div>
               <!-- /.box-body -->
             </form>
           </div>
+          <button type="button" onclick="getcatalogs()" class="btn btn-primary"> Get Catalog</button>
+          <div id="catalogs"></div>
+
+
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Customers</h3>
+              <h3 class="box-title">Catalogs</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
               <table id="example2" class="table table-bordered table-hover">
                 <thead>
                 <tr>
-                  <th>Category Name</th>
+                  <th>Catalog Name</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                  <td>Trident</td>
+                </tr>
+                <tr>
+                  <td>Trident</td>
+                </tr>
+                </tbody>
+                <tfoot>
+                <tr>
+                  <th>Catalog Name</th>
+                </tr>
+                </tfoot>
+              </table>
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!--&lt;!&ndash;-->
+        </div>
+        <!--/.col (middle) -->
+
+    <!-- middle right -->
+        <div class="col-md-4">
+          <!-- Horizontal Form -->
+          <div class="box box-primary">
+            <div class="box-header with-border">
+              <h3 class="box-title">Add Sex</h3>
+            </div>
+            <!-- /.box-header -->
+            <!-- form start -->
+            <form role="form">
+              <div class="box-body">
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Sex</label>
+                  <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+
+              </div>
+              <!-- /.box-body -->
+            </form>
+
+          </div>
+            <button type="button" onclick="getgenders()" class="btn btn-primary"> Get Sex</button>
+          <div id="gender"></div>
+          <!-- /.box -->
+        <div class="box">
+            <div class="box-header">
+              <h3 class="box-title">Products</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+              <table id="example2" class="table table-bordered table-hover">
+                <thead>
+                <tr>
+                  <th>Sex Name</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -175,14 +187,16 @@
                 </tbody>
                 <tfoot>
                 <tr>
-                  <th>Category Name</th>
+                  <th>Sex Name</th>
                 </tr>
                 </tfoot>
               </table>
             </div>
             <!-- /.box-body -->
           </div>
-      </div>
-      <!-- end right column -->
-      <!-- /.row -->
-    </section>
+          <!--&lt;!&ndash;-->
+        </div>
+        <!--/.col right -->
+
+
+</section>

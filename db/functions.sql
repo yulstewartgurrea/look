@@ -67,6 +67,13 @@ end;
 $$
 	language 'plpgsql';
 
+-- Get admins
+create or replace function get_admins(out user_id int, out email_address text, In is_admin boolean, In is_active boolean) returns setof record as
+$$
+  select user_id, email_address from UserAccount where is_admin = TRUE and is_active = TRUE;
+$$
+  language 'sql';
+
 create or replace function new_establishment_personnel(p_email text, p_password text) returns text as
 $$
 declare
@@ -91,6 +98,13 @@ begin
 end;
 $$
 	language 'plpgsql';
+
+-- Get establishment_personnel
+create or replace function get_establishment_personnels(out user_id int, out email_address text, out is_establishment, out is_active) returns setof record as
+$$
+  select user_id, email_address, is_establishment, is_active from UserAccount where is_establishment = TRUE and is_active = TRUE;
+$$
+  language 'sql';
 
 
 create or replace function new_customer(p_email text, p_password text) returns text as
@@ -118,6 +132,12 @@ end;
 $$
 	language 'plpgsql';
 
+-- Get customer
+create or replace function get_customers(out user_id int, out email_address text, out is_customer boolean, out is_active boolean) returns setof record as
+$$
+  select user_id, email_address, is_customer, is_active from UserAccount where is_customer = TRUE and is_active = TRUE;
+$$
+  language 'sql';
 
 --Add UserAccount
 --select new_admin('email', 'password');
@@ -177,7 +197,7 @@ $$
 create or replace function update_establishment(par_establishment_id int, par_establishment_name text, par_establishment_is_active boolean) returns void as
 $$
 	update Establishment
-	set 
+	set
 		establishment_name = par_establishment_name,
 		establishment_is_active = par_establishment_is_active
 

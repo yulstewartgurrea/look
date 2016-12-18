@@ -1,6 +1,6 @@
 $(document).ready(function(){
 	$("#users").click(function(){
-		$("#addusersbody").load("../ partials/admin/addusers.html");
+		$("#addusersbody").load("addusers.html");
 	});
 
 

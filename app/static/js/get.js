@@ -37,15 +37,14 @@ $.ajax({
 	});
 }
 
-function rowtask(gender_name)
+function getgender(gender_name)
 {
    return '<div class="col-lg-12">' +
           '<h4>' + gender_name + "&nbsp;&nbsp;"+ '</h4>'
 
 }
 
-function getgenders()
-{
+function getgenders() {
 
 $.ajax({
     		url: 'http://127.0.0.1:5000/get_gender',
@@ -53,18 +52,14 @@ $.ajax({
     		type:"GET",
     		dataType: "json",
     		success: function(resp) {
-				$("gender").html("");
+				$("#gender").html("");
 				if (resp.status  == 'ok') {
-				   for (i = 0; i < resp.count; i++)
-                                  {
-                                       gender_name = resp.entries[i].gender_name;
-
-                                       $("#gender").append(rowtask(gender_name));
-
-	                          }
-				} else
-				{
-                                       $("#gender").html("");
+				   for (i = 0; i < resp.count; i++) {
+					   gender_name = resp.entries[i].gender_name;
+                       $("#gender").append(getgender(gender_name));
+				   }
+				} else {
+					$("#gender").html("");
 					alert(resp.message);
 				}
     		},

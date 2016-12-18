@@ -8,6 +8,10 @@ $(document).ready(function(){
 		$("#addproducts").load("addproducts.html");
 	});
 
+	$("#catalog").click(function(){
+		$("#addcatalogs").load("ecs.html");
+	});
+
 	$("#categories").click(function(){
 		$("#addcategories").load("addcategories.html");
 	})
