@@ -95,14 +95,14 @@ function addsubcategory() {
     var data = JSON.stringify({"subcategory_name": subcategory_name ,"category_id": category_id });
 
     $.ajax({
-        url: 'http://127.0.0.1:5000/api/add/category',
+        url: 'http://127.0.0.1:5000/api/add/subcategory',
         type: 'POST',
         contentType:"application/json; charset=utf-8",
         data: data,
         dataType:'json',
         success: function(res){
             if(res.status=='Ok') {
-                alert("Category Added!")
+                alert("SubCategory Added!")
             } else {
                 alert("error")
             }

@@ -280,7 +280,7 @@ def new_subcategory():
     if 'Error' in res[0][0]:
         return jsonify({'status': 'Error', 'message': res[0][0]})
 
-    return jsonify({'status': 'ok', 'message': res[0][0]})
+    return jsonify({'status': 'Ok', 'message': res[0][0]})
 
 
 @app.route("/api/get/subcategory", methods=['GET'])
