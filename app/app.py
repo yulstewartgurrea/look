@@ -3,15 +3,7 @@ import json, os, sys
 import flask
 from config import *
 
-
-
 app = Flask(__name__)
-
-GENERIC_DOMAINS = "aero", "asia", "biz", "cat", "com", "coop", \
-                  "edu", "gov", "info", "int", "jobs", "mil", "mobi", "museum", \
-                  "name", "net", "org", "pro", "tel", "travel"
-
-
 
 
 @app.route('/')
@@ -214,9 +206,9 @@ def new_catalog():
         jsn['catalog_name'],), True)
 
     if 'Error' in res[0][0]:
-        return jsonify({'status': 'ok', 'message': res[0][0]})
+        return jsonify({'status': 'Error', 'message': res[0][0]})
 
-    return jsonify({'status': 'ok', 'message': res[0][0]})
+    return jsonify({'status': 'Ok', 'message': res[0][0]})
 
 
 @app.route("/api/get/catalog", methods=['GET'])
@@ -326,17 +318,17 @@ def new_product():
 
 # @app.route('/api/new_product/users/update/', methods=['PUT'])
 # def update_new_product():
-# 	jsn = json.loads(request.data)
+#   jsn = json.loads(request.data)
 #
-# 	new_product = jsn.get('new_product','')
-# 	product_name = jsn.get('product_name','')
-# 	product_description = jsn.get('product_description','')
-# 	product_gender = jsn.get('product_gender','')
-# 	product_catalog = jsn.get('product_catalog','')
-# 	product_category = jsn.get('product_category','')
-# 	product_subcategory = jsn.get ('product_subcategory','')
+#   new_product = jsn.get('new_product','')
+#   product_name = jsn.get('product_name','')
+#   product_description = jsn.get('product_description','')
+#   product_gender = jsn.get('product_gender','')
+#   product_catalog = jsn.get('product_catalog','')
+#   product_category = jsn.get('product_category','')
+#   product_subcategory = jsn.get ('product_subcategory','')
 #
-# 	spcall('update_new_product', (
+#   spcall('update_new_product', (
 #         new_product,
 #         product_name,
 #         product_description,
@@ -423,4 +415,4 @@ def add_cors(resp):
 
 if __name__ == '__main__':
     app.secret_key = 'B1Zr98j/3yX R~XHH!jmN]LWX/,?RT'
-    app.run(debug=True)
+    app.run(debug=False)

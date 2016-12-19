@@ -1,0 +1,54 @@
+<html>
+  <head>
+      <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="Sample Page">
+    <meta name="author" content="Sample B. Author">
+      <link rel="stylesheet" href="../../assets/bootstrap/css/bootstrap.min.css">
+    <title>Incorporating Boostrap for UI</title>
+          <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+  </head>
+  <body>
+     <div class="container">
+         <div class="header clearfix">
+             <nav></nav>
+             <h3 class="text-muted">Tasks Project</h3>
+         </div>
+         <form >
+         <div class="form-group">
+        <input type="text" placeholder="id" name="id" id="id" class="form-control">
+        <input type="text" placeholder="title" name="title" id="title" class="form-control">
+         <input type="text" placeholder="description" name="desc" id="desc" class="form-control">
+         <input type="text" placeholder="done" name="done" id="done" class="form-control">
+         <input type="submit" onclick="addtasks();" value="Add" class="btn btn-primary">
+        </div>
+
+         </form>
+        <div id="result-message">
+
+         </div>
+
+         <div class="jumbotron">
+             <h1>Integrating UI in the Tasks Project</h1>
+             <p>
+                 Tasks software allows you to add, edit, view, and delete tasks. <br />
+                 <button class="btn btn-primary" onclick="getgenders()">Load Tasks</button>
+             </p>
+           </div>
+
+             <div id="gender" class="row marketing">
+
+             </div>
+     </div>
+     <script src="../../js/jQuery-2.1.4.min.js"></script>
+     <script src="../../assets/bootstrap/js/bootstrap/js/bootstrap.min.js"></script>
+     <script src="get.js"></script>
+  </body>
+</html>
