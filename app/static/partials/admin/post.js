@@ -41,3 +41,27 @@ function addgender() {
     });
 
 }
+
+function addestablishment() {
+    var establishment_name =$(' #establishment_name').val();
+    var user_id =$(' #user_id').val();
+
+    var data = JSON.stringify({"user_id": user_id ,"establishment_name": establishment_name });
+
+    $.ajax({
+        url: 'http://127.0.0.1:5000/api/add/establishment',
+        type: 'POST',
+        contentType:"application/json; charset=utf-8",
+        data: data,
+        dataType:'json',
+        success: function(res){
+            if(res.status=='Ok') {
+                alert("Establishment Added!")
+            } else {
+                alert("error")
+            }
+        }
+    });
+
+
+}

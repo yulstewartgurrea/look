@@ -155,6 +155,20 @@ def get_customers():
     return jsonify({'status': 'ok', 'entries': recs, 'count': len(recs)})
 
 
+@app.route('/api/add/establishment', methods=['POST'])
+def add_establishment():
+    jsn = json.loads(request.data)
+
+    res = spcall("new_establishment_name", (
+        jsn['establishment_name'],
+        jsn['user_id'], ), True)
+
+    if 'Error' in res[0][0]:
+        return jsonify({'status': 'Ok', 'message': res[0][0]})
+
+    return jsonify({'status': 'Ok', 'message': res[0][0]})
+
+
 @app.route('/api/get/establishment', methods=['GET'])
 def get_establishment():
     res = spcall("get_establishment", ())
