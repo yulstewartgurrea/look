@@ -241,15 +241,17 @@ def get_catalog():
 
 @app.route("/api/add/category", methods=['POST'])
 def new_category():
-    # jsn = json.loads(request.data)
+    jsn = json.loads(request.data)
 
-    res = spcall('new_category',(request.form.get('category_name'),), True)
-    # res = spcall('new_category', (jsn['category_name'],), True)
+    res = spcall('new_category', (
+        jsn['category_name'],
+        jsn['catalog_id'],
+        jsn['gender_id'], ), True)
 
     if 'Error' in res[0][0]:
-        return jsonify({'status': 'ok', 'message': res[0][0]})
+        return jsonify({'status': 'Error', 'message': res[0][0]})
 
-    return jsonify({'status': 'ok', 'message': res[0][0]})
+    return jsonify({'status': 'Ok', 'message': res[0][0]})
 
 
 @app.route("/api/get/category", methods=['GET'])
@@ -276,7 +278,7 @@ def new_subcategory():
         jsn['category_id']), True)
 
     if 'Error' in res[0][0]:
-        return jsonify({'status': 'ok', 'message': res[0][0]})
+        return jsonify({'status': 'Error', 'message': res[0][0]})
 
     return jsonify({'status': 'ok', 'message': res[0][0]})
 
@@ -286,7 +288,7 @@ def get_subcategory():
     res = spcall("get_subcategory", ())
 
     if 'Error' in str(res[0][0]):
-        return jsonify({'status': 'ok', 'message': res[0][0]})
+        return jsonify({'status': 'error', 'message': res[0][0]})
 
     recs = []
 
