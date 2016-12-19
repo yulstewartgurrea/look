@@ -1,6 +1,9 @@
 yum -y install httpd
 yum install postgresql
-pip install Flask
+sudo yum install python-pip
+sudo pip install Flask
+sudo pip install sqlalchemy
+sudo pip install psycopg2
 if ! [ -L /var/www ]; then
   rm -rf /var/www
   ln -fs /vagrant /var/www

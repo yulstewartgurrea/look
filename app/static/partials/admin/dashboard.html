@@ -402,7 +402,23 @@
           </div>
 
           <button type="button" class="btn btn-primary" onclick="getadmins()">Get Admins</button>
-          <div id="admins"></div>
+          <div class="box">
+    <div class="box-body">
+              <table id="example2" class="table table-bordered table-hover">
+                <thead>
+                <tr>
+                  <th>  Email Address  </th>
+                  <th>  is_admin  </th>
+                  <th>  is_active  </th>
+                </tr>
+                </thead>
+                <tbody id="admins">
+
+                </tbody>
+
+              </table>
+            </div>
+          </div>
         </div>
         <!--/.col (left) -->
 
@@ -433,7 +449,21 @@
           </div>
 
           <button type="button" class="btn btn-primary" onclick="getestablishmentpersonnels()">Get Establishment Personnels</button>
-            <div id="establishments_personnels"></div>
+            <div class="box">
+            <div class="box-body">
+              <table id="example2" class="table table-bordered table-hover">
+                <thead>
+                <tr>
+                  <th>  Email Address  </th>
+                  <th>  is_establishment  </th>
+                  <th>  is_active  </th>
+                </tr>
+                </thead>
+                <tbody id="establishments_personnels">
+                </tbody>
+              </table>
+            </div>
+          </div>
           <!-- /.box -->
         </div>
         <!--/.col (middle) -->
@@ -465,7 +495,21 @@
           </div>
 
           <button type="button" class="btn btn-primary" onclick="getcustomers()">Get Customers</button>
-            <div id="customers"></div>
+            <div class="box">
+    <div class="box-body">
+              <table id="example2" class="table table-bordered table-hover">
+                <thead>
+                <tr>
+                  <th>  Email Address  </th>
+                  <th>  is_customer  </th>
+                  <th>  is_active  </th>
+                </tr>
+                </thead>
+                <tbody id="customers">
+                </tbody>
+              </table>
+            </div>
+          </div>
 
       </div>
       <!-- end right column -->
@@ -509,7 +553,20 @@
             </form>
           </div>
         <button type="button" class="btn btn-primary" onclick="getestablishments()">Get Establishments</button>
-        <div id="establishments"></div>
+        <div class="box">
+    <div class="box-body">
+              <table id="example2" class="table table-bordered table-hover">
+                <thead>
+                <tr>
+                  <th>  Establishment Name  </th>
+                  <th>  User  </th>
+                </tr>
+                </thead>
+                <tbody id="establishments">
+                </tbody>
+              </table>
+            </div>
+          </div>
           <!--&lt;!&ndash;-->
       </div>
     <!--left-->
@@ -523,21 +580,33 @@
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form id="catalogform">
+            <form method="post">
               <div class="box-body">
                 <div class="form-group">
                   <label for="exampleInputEmail1">Catalog Name</label>
-                  <input type="text" class="form-control" id="catalog_name" placeholder="Enter catalog">
+                  <input type="text" class="form-control" id="catalog_name" name="catalog_name" placeholder="Enter catalog">
                 </div>
 
-                <button id="catalogbutton" type="submit" class="btn btn-primary">Submit</button>
+                <input type="button" onclick="addcatalog()" class="btn btn-primary" value="Add Catalog">
 
               </div>
               <!-- /.box-body -->
             </form>
           </div>
           <button type="button" onclick="getcatalogs()" class="btn btn-primary"> Get Catalog</button>
-          <div id="catalogs"></div>
+          <div class="box">
+          <div class="box-body">
+              <table id="example2" class="table table-bordered table-hover">
+                <thead>
+                <tr>
+                  <th>  Catalog Name  </th>
+                </tr>
+                </thead>
+                <tbody id="catalogs">
+                </tbody>
+              </table>
+            </div>
+          </div>
 
           <!--&lt;!&ndash;-->
         </div>
@@ -566,7 +635,20 @@
 
           </div>
             <button type="button" onclick="getgenders()" class="btn btn-primary"> Get Sex</button>
-          <div id="gender"></div>
+          <div class="box">
+    <div class="box-body">
+              <table id="example2" class="table table-bordered table-hover">
+                <thead>
+                <tr>
+                  <th>  Gender Name  </th>
+                </tr>
+                </thead>
+                <tbody id="gender">
+
+                </tbody>
+              </table>
+            </div>
+          </div>
           <!-- /.box -->
           <!--&lt;!&ndash;-->
         </div>
@@ -622,7 +704,22 @@
           </div>
 
             <button type="button" class="btn btn-primary" onclick="getcategories()">Get Categories</button>
-            <div id="categoriess"></div>
+            <div class="box">
+            <div class="box-body">
+              <table id="example2" class="table table-bordered table-hover">
+                <thead>
+                <tr>
+                  <th>  Category Name  </th>
+                  <th>  Catalog Id  </th>
+                  <th>  Gender Id  </th>
+                </tr>
+                </thead>
+                <tbody id="categoriess">
+
+                </tbody>
+              </table>
+            </div>
+          </div>
 
           <!--&lt;!&ndash;-->
       </div>
@@ -652,7 +749,21 @@
             </form>
           </div>
         <button type="button" class="btn btn-primary" onclick="getsubcategories()">Get Subcategories</button>
-        <div id="subcategories"></div>
+        <!--<div id="subcategories"></div>-->
+        <div class="box">
+    <div class="box-body">
+              <table id="example2" class="table table-bordered table-hover">
+                <thead>
+                <tr>
+                  <th>  Subcategory Name  </th>
+                  <th>  Gender Id  </th>
+                </tr>
+                </thead>
+                <tbody id="subcategories">
+                <tbody>
+              </table>
+            </div>
+          </div>'
 
           <!--&lt;!&ndash;-->
       </div>
@@ -714,52 +825,13 @@
           </div>
           <!-- /. box -->
 
-          <!-- /.box -->
+        <!-- /.box -->
+        <button type="button" class="btn btn-primary" onclick="getproducts()">Get Products</button>
+          <div id="products"></div>
         </div>
-        <!-- /.col -->
-        <div class="col-md-7">
-          <div class="box">
-            <div class="box-header">
-              <h3 class="box-title">Products</h3>
-            </div>
-            <!-- /.box-header -->
-            <div class="box-body">
-              <table id="example2" class="table table-bordered table-hover">
-                <thead>
-                <tr>
-                  <th>Product Image</th>
-                  <th>Product Name</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                  <td>Trident</td>
-                  <td>Internet
-                    Explorer 4.0
-                  </td>
 
-                </tr>
-                <tr>
-                  <td>Trident</td>
-                  <td>Internet
-                    Explorer 5.0
-                  </td>
-                </tr>
-               </td>
-                </tr>
-                </tbody>
-                <tfoot>
-                <tr>
-                  <th>Product Image</th>
-                  <th>Product Name</th>
-                </tr>
-                </tfoot>
-              </table>
-            </div>
-            <!-- /.box-body -->
-          </div>
-          <!-- /. box -->
-        </div>
+        <!-- /.col -->
+
         <!-- /.col -->
       </div>
       <!-- /.row -->
@@ -801,6 +873,7 @@
 <!--<script type="text/javascript" src="../../js/routes.js"></script>-->
 <script type="text/javascript" src="routes.js"></script>
 <script type="text/javascript" src="get.js"></script>
+<script type="text/javascript" src="post.js"></script>
 <script type="tect/javascript" src="../../js/jsFiddle.js"></script>
 </body>
 </html>

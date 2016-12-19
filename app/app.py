@@ -170,13 +170,12 @@ def get_establishment():
 
     return jsonify({'status': 'ok', 'entries': recs, 'count': len(recs)})
 
-@app.route('/api/add/gender/', methods=['POST'])
+@app.route('/api/add/gender', methods=['POST'])
 def add_gender():
-    # jsn = json.loads(request.data)
+    jsn = json.loads(request.data)
 
-    # res = spcall("new_gender",
-                 # (jsn['gender_name'],), True)
-    res = spcall('new_gender', (), True)
+    res = spcall("new_gender", (
+        jsn['gender_name'],), True)
 
     if 'Error' in res[0][0]:
         return jsonify({'status': 'ok', 'message': res[0][0]})
@@ -259,7 +258,8 @@ def new_subcategory():
     jsn = json.loads(request.data)
 
     res = spcall('new_subcategory', (
-        jsn['subcategory_name'],), True)
+        jsn['subcategory_name'],
+        jsn['category_id']), True)
 
     if 'Error' in res[0][0]:
         return jsonify({'status': 'ok', 'message': res[0][0]})

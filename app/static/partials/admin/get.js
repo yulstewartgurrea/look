@@ -1,31 +1,9 @@
 function getadmin(email_address, is_admin, is_active) {
-    return '<div class="box">' +
-    '<div class="box-body">' +
-              '<table id="example2" class="table table-bordered table-hover">' +
-                '<thead>' +
-                '<tr>' +
-                  '<th>  Email Address  </th>' +
-                  '<th>  is_admin  </th>' +
-                  '<th>  is_active  </th>' +
-                '</tr>' +
-                '</thead>' +
-                '<tbody>' +
-                '<tr> ' +
+    return '<tr>' +
                   '<td>' + email_address + '</td>' +
                   '<td>' + is_admin + '</td>' +
                   '<td>' + is_active + '</td>' +
-                '</tr>'+
-                '</tbody>'+
-                '<tfoot>'+
-                '<tr>'+
-                  '<th>Email Address</th>'+
-                  '<th>is_admin</th>'+
-                  '<th>is_active</th>'+
-                '</tr>'+
-                '</tfoot>'+
-              '</table>'+
-            '</div>'+
-          '</div>'
+                '</tr>'
 }
 
 function getadmins() {
@@ -41,7 +19,7 @@ function getadmins() {
                     is_admin = res.entries[i].is_admin;
                     is_active = res.entries[i].is_active;
                     user_id = res.entries[i].user_id;
-                    $("#admins").append(getestablishment(email_address, is_admin, is_active));
+                    $("#admins").append(getadmin(email_address, is_admin, is_active));
                 }
             } else {
                 $("#admins").html("");
@@ -56,33 +34,11 @@ function getadmins() {
 }
 
 function getcustomer(email_address, is_customer, is_active) {
-    return '<div class="box">' +
-    '<div class="box-body">' +
-              '<table id="example2" class="table table-bordered table-hover">' +
-                '<thead>' +
-                '<tr>' +
-                  '<th>  Email Address  </th>' +
-                  '<th>  is_customer  </th>' +
-                  '<th>  is_active  </th>' +
-                '</tr>' +
-                '</thead>' +
-                '<tbody>' +
-                '<tr> ' +
-                  '<td>' + email_address + '</td>' +
-                  '<td>' + is_customer + '</td>' +
-                  '<td>' + is_active + '</td>' +
-                '</tr>'+
-                '</tbody>'+
-                '<tfoot>'+
-                '<tr>'+
-                  '<th> Email Address </th>'+
-                  '<th> is_customer </th>'+
-                  '<th> is_active </th>'+
-                '</tr>'+
-                '</tfoot>'+
-              '</table>'+
-            '</div>'+
-          '</div>'
+    return '<tr> ' +
+            '<td>' + email_address + '</td>' +
+            '<td>' + is_customer + '</td>' +
+            '<td>' + is_active + '</td>' +
+            '</tr>'
 }
 
 function getcustomers() {
@@ -97,7 +53,7 @@ function getcustomers() {
                     email_address = res.entries[i].email_address;
                     is_customer= res.entries[i].is_customer;
                     is_active = res.entries[i].is_active;
-                    $("#customers").append(getestablishment(email_address, is_customer, is_active));
+                    $("#customers").append(getcustomer(email_address, is_customer, is_active));
                 }
             } else {
                 $("#customers").html("");
@@ -112,33 +68,11 @@ function getcustomers() {
 }
 
 function getestablishmentpersonnel(email_address, is_establishment, is_active) {
-    return '<div class="box">' +
-    '<div class="box-body">' +
-              '<table id="example2" class="table table-bordered table-hover">' +
-                '<thead>' +
-                '<tr>' +
-                  '<th>  Email Address  </th>' +
-                  '<th>  is_establishment  </th>' +
-                  '<th>  is_active  </th>' +
-                '</tr>' +
-                '</thead>' +
-                '<tbody>' +
-                '<tr> ' +
-                  '<td>' + email_address+ '</td>' +
-                  '<td>' + is_establishment+ '</td>' +
-                  '<td>' + is_active+ '</td>' +
-                '</tr>'+
-                '</tbody>'+
-                '<tfoot>'+
-                '<tr>'+
-                  '<th>  Email Address  </th>' +
-                  '<th>  is_establishment  </th>' +
-                  '<th>  is_active  </th>' +
-                '</tr>'+
-                '</tfoot>'+
-              '</table>'+
-            '</div>'+
-          '</div>'
+    return '<tr> '+
+                '<td>' + email_address+ '</td>' +
+                '<td>' + is_establishment+ '</td>' +
+                '<td>' + is_active+ '</td>' +
+            '</tr>'
 
 }
 
@@ -154,7 +88,7 @@ function getestablishmentpersonnels() {
                     email_address = res.entries[i].email_address;
                     is_establishment = res.entries[i].is_establishment;
                     is_active = res.entries[i].is_active;
-                    $("#establishments_personnels").append(getestablishment(email_address, is_establishment, is_active));
+                    $("#establishments_personnels").append(getestablishmentpersonnel(email_address, is_establishment, is_active));
                 }
             } else {
                 $("#establishments_personnels").html("");
@@ -170,27 +104,9 @@ function getestablishmentpersonnels() {
 
 function getgender(gender_name)
 {
-   return '<div class="box">' +
-    '<div class="box-body">' +
-              '<table id="example2" class="table table-bordered table-hover">' +
-                '<thead>' +
-                '<tr>' +
-                  '<th>  Gender Name  </th>' +
-                '</tr>' +
-                '</thead>' +
-                '<tbody>' +
-                '<tr> ' +
-                  '<td>' + gender_name+ '</td>' +
-                '</tr>'+
-                '</tbody>'+
-                '<tfoot>'+
-                '<tr>'+
-                  '<th>Gender Name</th>'+
-                '</tr>'+
-                '</tfoot>'+
-              '</table>'+
-            '</div>'+
-          '</div>'
+   return '<tr> ' +
+            '<td>' + gender_name+ '</td>' +
+           '</tr>'
 
 }
 
@@ -222,35 +138,16 @@ $.ajax({
 
 function getestablishment(establishment_name, user_id) {
 
-    return '<div class="box">' +
-    '<div class="box-body">' +
-              '<table id="example2" class="table table-bordered table-hover">' +
-                '<thead>' +
-                '<tr>' +
-                  '<th>  Establishment Name  </th>' +
-                  '<th>  User  </th>' +
-                '</tr>' +
-                '</thead>' +
-                '<tbody>' +
-                '<tr> ' +
-                  '<td>' + establishment_name+ '</td>' +
-                  '<td>' + user_id+ '</td>' +
-                '</tr>'+
-                '</tbody>'+
-                '<tfoot>'+
-                '<tr>'+
-                  '<th>Establishment Name</th>'+
-                  '<th>User id</th>'+
-                '</tr>'+
-                '</tfoot>'+
-              '</table>'+
-            '</div>'+
-          '</div>'
+    return '<tr> ' +
+            '<td>' + establishment_name+ '</td>' +
+            '<td>' + user_id+ '</td>' +
+           '</tr>'
 }
 
 function getestablishments() {
     $.ajax({
         url: 'http://127.0.0.1:5000/api/get/establishment',
+        contentType:"application/json; charset=utf-8",
         type: 'GET',
         dataType: 'json',
         success: function(res) {
@@ -273,27 +170,9 @@ function getestablishments() {
 }
 
 function get_catalog(catalog_name){
-    return '<div class="box">' +
-    '<div class="box-body">' +
-              '<table id="example2" class="table table-bordered table-hover">' +
-                '<thead>' +
-                '<tr>' +
-                  '<th>  Catalog Name  </th>' +
-                '</tr>' +
-                '</thead>' +
-                '<tbody>' +
-                '<tr> ' +
-                  '<td>' + catalog_name+ '</td>' +
-                '</tr>'+
-                '</tbody>'+
-                '<tfoot>'+
-                '<tr>'+
-                  '<th>Catalog Name</th>'+
-                '</tr>'+
-                '</tfoot>'+
-              '</table>'+
-            '</div>'+
-          '</div>'
+    return '<tr> ' +
+            '<td>' + catalog_name+ '</td>' +
+            '</tr>'
 }
 
 function getcatalogs() {
@@ -318,33 +197,11 @@ function getcatalogs() {
 }
 
 function getcategory(category_id, category_name, catalog_id, gender_id) {
-    return '<div class="box">' +
-    '<div class="box-body">' +
-              '<table id="example2" class="table table-bordered table-hover">' +
-                '<thead>' +
-                '<tr>' +
-                  '<th>  Category Name  </th>' +
-                  '<th>  Catalog Id  </th>' +
-                  '<th>  Gender Id  </th>' +
-                '</tr>' +
-                '</thead>' +
-                '<tbody>' +
-                '<tr> ' +
-                  '<td>' + category_name+ '</td>' +
-                  '<td>' + catalog_id+ '</td>' +
-                  '<td>' + gender_id+ '</td>' +
-                '</tr>'+
-                '</tbody>'+
-                '<tfoot>'+
-                '<tr>'+
-                  '<th> Category Name </th>'+
-                  '<th> Catalog Id </th>'+
-                  '<th> Gender Id </th>'+
-                '</tr>'+
-                '</tfoot>'+
-              '</table>'+
-            '</div>'+
-          '</div>'
+    return '<tr> ' +
+                '<td>' + category_name+ '</td>' +
+                '<td>' + catalog_id+ '</td>' +
+                '<td>' + gender_id+ '</td>' +
+            '</tr>'
 
 }
 
@@ -375,30 +232,10 @@ function getcategories(){
 }
 
 function getsubcategory(subcategory_id, subcategory_name, category_id) {
-    return '<div class="box">' +
-    '<div class="box-body">' +
-              '<table id="example2" class="table table-bordered table-hover">' +
-                '<thead>' +
-                '<tr>' +
-                  '<th>  Subcategory Name  </th>' +
-                  '<th>  Gender Id  </th>' +
-                '</tr>' +
-                '</thead>' +
-                '<tbody>' +
-                '<tr> ' +
+    return      '<tr> ' +
                   '<td>' + subcategory_name+ '</td>' +
                   '<td>' + category_id+ '</td>' +
-                '</tr>'+
-                '</tbody>'+
-                '<tfoot>'+
-                '<tr>'+
-                  '<th> Subcategory Name</th>'+
-                  '<th> Gender Name</th>'+
-                '</tr>'+
-                '</tfoot>'+
-              '</table>'+
-            '</div>'+
-          '</div>'
+                '</tr>'
 
 }
 
@@ -423,4 +260,66 @@ function getsubcategories() {
         }
 
     });
+
 }
+
+function getproduct(product_id, product_name, price, image) {
+     return '<div class="box-body">' +
+              '<table id="example2" class="table table-bordered table-hover">' +
+                '<thead>' +
+                '<tr>' +
+                  '<th>  Product Id  </th>' +
+                  '<th>  Product Name  </th>' +
+                  '<th>  Price  </th>' +
+                  '<th>  Image  </th>' +
+                '</tr>' +
+                '</thead>' +
+                '<tbody>' +
+                '<tr> ' +
+                  '<td>' + product_id+ '</td>' +
+                  '<td>' + product_name+ '</td>' +
+                  '<td>' + price+ '</td>' +
+                  '<td>' + image+ '</td>' +
+                '</tr>'+
+                '</tbody>'+
+                '<tfoot>'+
+                '<tr>'+
+                  '<th>Product Id</th>'+
+                  '<th>Product Name</th>'+
+                  '<th>Price</th>'+
+                  '<th>Image</th>'+
+                '</tr>'+
+                '</tfoot>'+
+              '</table>'+
+            '</div>'+
+          '</div>'
+
+
+}
+
+
+function getproducts() {
+    $.ajax({
+        url: 'http://127.0.0.1:5000/api/get/product',
+        type: 'GET',
+        dataType: 'json',
+        success: function(res){
+            $("#products").html("");
+            if(res.status=='ok'){
+                for(i=0; i<res.count; i++){
+                    product_id = res.entries[i].product_id;
+                    product_name = res.entries[i].product_name;
+                    price = res.entries[i].price;
+                    image = res.entries[i].image;
+                    $("#products").append(getproduct(product_id, product_name,price,image))
+                }
+            } else {
+                $("#products").html("");
+                alert("Error")
+            }
+        }
+
+    });
+
+}
+
