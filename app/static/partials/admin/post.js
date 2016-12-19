@@ -23,5 +23,5 @@ function addcatalog() {
 function addgender() {
     var gender_name =$('#gender_name').val();
 
-    var data = JSON.stringify({"gender_name": gender_})
+    var data = JSON.stringify({"gender_name": gender_name})
 }
