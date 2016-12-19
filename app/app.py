@@ -49,22 +49,23 @@ def helloworld():
 @app.route('/login', methods=['POST'])
 def login():
     jsn = json.loads(request.data)
-    res = spcall('login', (jsn['email_address'], jsn['password']))
+    # res = spcall("login", (request.form.get("email_address"), request.form.get("password")))[0][0]
+    res = spcall("login", (jsn["email_address"], jsn["password"]))
+
+    if len(res) == 0:
+        return jsonify({'status': 'Invalid email or password'})
 
     if 'Invalid email or password' in str(res):
-        status = False
-        return jsonify({'status': status, 'message': res[0][0]})
+        return jsonify({'status': 'Invalid email or password', 'message': res[0][0]})
 
     if 'Login successful' in str(res):
-        # if str(res) == 'Login successful':
-        status = True
-        role = get_loginrole(jsn['email_address'])
+        role = get_loginrole(request.form.get('email_address'))
         # session['email_address'] = role[0][0]
         session['is_admin'] = role[0][0]
         session['is_establishment'] = role[0][1]
         session['is_customer'] = role[0][2]
         session['is_active'] = role[0][3]
-        return jsonify({'status': status, 'message': res[0][0], 'admin': session['is_admin'],
+        return jsonify({'status': 'Login successful', 'message': res[0][0], 'admin': session['is_admin'],
                         'establishment': session['is_establishment'], 'customer': session['is_customer'],
                         'active': session['is_active']})
 

@@ -295,40 +295,38 @@ function getcatalogs() {
     });
 }
 
-// function getcategory(category_id, category_name, catalog_id, gender_id) {
-//     return '<div class="box">' +
-//     '<div class="box-body">' +
-//               '<table id="example2" class="table table-bordered table-hover">' +
-//                 '<thead>' +
-//                 '<tr>' +
-//                   '<th>  Category Name  </th>' +
-//                   '<th>  Catalog Id  </th>' +
-//                   '<th>  Gender Id  </th>' +
-//                 '</tr>' +
-//                 '</thead>' +
-//                 '<tbody>' +
-//                 '<tr> ' +
-//                   '<td>' + category_name+ '</td>' +
-//                   '<td>' + catalog_id+ '</td>' +
-//                   '<td>' + gender_id+ '</td>' +
-//                 '</tr>'+
-//                 '</tbody>'+
-//                 '<tfoot>'+
-//                 '<tr>'+
-//                   '<th> Category Name </th>'+
-//                   '<th> Catalog Id </th>'+
-//                   '<th> Gender Id </th>'+
-//                 '</tr>'+
-//                 '</tfoot>'+
-//               '</table>'+
-//             '</div>'+
-//           '</div>'
-//
-// }
+function getcategory(category_id, category_name, catalog_id, gender_id) {
+    return '<div class="box">' +
+    '<div class="box-body">' +
+              '<table id="example2" class="table table-bordered table-hover">' +
+                '<thead>' +
+                '<tr>' +
+                  '<th>  Category Name  </th>' +
+                  '<th>  Catalog Id  </th>' +
+                  '<th>  Gender Id  </th>' +
+                '</tr>' +
+                '</thead>' +
+                '<tbody>' +
+                '<tr> ' +
+                  '<td>' + category_name+ '</td>' +
+                  '<td>' + catalog_id+ '</td>' +
+                  '<td>' + gender_id+ '</td>' +
+                '</tr>'+
+                '</tbody>'+
+                '<tfoot>'+
+                '<tr>'+
+                  '<th> Category Name </th>'+
+                  '<th> Catalog Id </th>'+
+                  '<th> Gender Id </th>'+
+                '</tr>'+
+                '</tfoot>'+
+              '</table>'+
+            '</div>'+
+          '</div>'
 
-function getcategory(category_id, category_name, catalog_id, gender_id){
-    return category_name
 }
+
+
 
 function getcategories(){
     $.ajax({
