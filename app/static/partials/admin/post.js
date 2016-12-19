@@ -1,7 +1,7 @@
 function addcatalog() {
     var catalog_name = $('#catalog_name').val();
 
-    var data = JSON.stringify({"catalog_name": catalog_name})
+    var data = JSON.stringify({"catalog_name": catalog_name});
 
     $.ajax({
         url: 'http://127.0.0.1:5000/api/add/catalog',
@@ -23,5 +23,21 @@ function addcatalog() {
 function addgender() {
     var gender_name =$('#gender_name').val();
 
-    var data = JSON.stringify({"gender_name": gender_name})
+    var data = JSON.stringify({"gender_name": gender_name});
+
+    $.ajax({
+        url: 'http://127.0.0.1:5000/api/add/gender',
+        type: 'POST',
+        contentType:"application/json; charset=utf-8",
+        data: data,
+        dataType:'json',
+        success: function(res){
+            if(res.status=='ok') {
+                alert("Gender Added!")
+            } else {
+                alert("error")
+            }
+        }
+    });
+
 }
