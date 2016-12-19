@@ -49,7 +49,7 @@ def helloworld():
 @app.route('/login', methods=['POST'])
 def login():
     jsn = json.loads(request.data)
-    # res = spcall("login", (request.form.get("email_address"), request.form.get("password")))[0][0]
+    # res = spcall("login", (request.form.get("email_address"), request.form.get("password")))
     res = spcall("login", (jsn["email_address"], jsn["password"]))
 
     if len(res) == 0:
@@ -59,7 +59,8 @@ def login():
         return jsonify({'status': 'Invalid email or password', 'message': res[0][0]})
 
     if 'Login successful' in str(res):
-        role = get_loginrole(request.form.get('email_address'))
+        # role = get_loginrole(request.form.get('email_address'))
+        role = get_loginrole(jsn['email_address'])
         # session['email_address'] = role[0][0]
         session['is_admin'] = role[0][0]
         session['is_establishment'] = role[0][1]
@@ -82,7 +83,7 @@ def get_loginrole(email_address):
 
 
 # test if db is connected
-@app.route('/get_users', methods=['GET'])
+@app.route('/api/get/users', methods=['GET'])
 def get_users():
     res = spcall('get_users', ())
 
@@ -98,7 +99,7 @@ def get_users():
 
 
 # create user
-@app.route("/new_admin", methods=['POST'])
+@app.route("/api/add/admin", methods=['POST'])
 def new_admin():
     jsn = json.loads(request.data)
 
@@ -116,7 +117,7 @@ def new_admin():
     return jsonify({'status': 'ok', 'message': res[0][0]})
 
 # Get admins
-@app.route('/get_admins', methods=['GET'])
+@app.route('/api/get/admins', methods=['GET'])
 def get_admins():
     res = spcall("get_admins", ())
 
@@ -130,7 +131,7 @@ def get_admins():
     return jsonify({'status': 'ok', 'entries': recs, 'count': len(recs)})
 
 # Create new establishment personnels
-@app.route("/new_establishment_personnel", methods=['POST'])
+@app.route("/api/add/establishment_personnel", methods=['POST'])
 def new_establishment_personnel():
     jsn = json.loads(request.data)
 
@@ -146,7 +147,7 @@ def new_establishment_personnel():
 
     return jsonify({'status': 'ok', 'message': res[0][0]})
 
-@app.route('/get_establishment_personnels', methods=['GET'])
+@app.route('/api/get/establishment_personnels', methods=['GET'])
 def get_establishment_personnels():
     res = spcall("get_establishment_personnels", ())
 
@@ -159,7 +160,7 @@ def get_establishment_personnels():
 
     return jsonify({'status': 'ok', 'entries': recs, 'count': len(recs)})
 
-@app.route("/new_customer", methods=['POST'])
+@app.route("/api/add/customer", methods=['POST'])
 def new_customer():
     jsn = json.loads(request.data)
 
@@ -185,7 +186,7 @@ def new_customer():
 
     return jsonify({'status': 'ok', 'message': "Ok"}), status_code
 
-@app.route('/get_customers', methods=['GET'])
+@app.route('/api/get/customers', methods=['GET'])
 def get_customers():
     res = spcall("get_customers", ())
 
@@ -199,7 +200,7 @@ def get_customers():
     return jsonify({'status': 'ok', 'entries': recs, 'count': len(recs)})
 
 
-@app.route('/get_establishment', methods=['GET'])
+@app.route('/api/get/establishment', methods=['GET'])
 def get_establishment():
     res = spcall("get_establishment", ())
 
@@ -214,13 +215,13 @@ def get_establishment():
 
     return jsonify({'status': 'ok', 'entries': recs, 'count': len(recs)})
 
-@app.route('/new_gender/<string:gender_n>', methods=['POST'])
-def add_gender(gender_n):
+@app.route('/api/add/gender/', methods=['POST'])
+def add_gender():
     # jsn = json.loads(request.data)
 
     # res = spcall("new_gender",
                  # (jsn['gender_name'],), True)
-    res = spcall('new_gender', (gender_n,), True)
+    res = spcall('new_gender', (), True)
 
     if 'Error' in res[0][0]:
         return jsonify({'status': 'ok', 'message': res[0][0]})
@@ -228,7 +229,7 @@ def add_gender(gender_n):
     return jsonify({'status': 'ok', 'message': res[0][0]})
 
 
-@app.route('/get_gender', methods=['GET'])
+@app.route('/api/get/gender', methods=['GET'])
 def get_gender():
     res = spcall("get_gender", ())
 
@@ -242,7 +243,7 @@ def get_gender():
     return jsonify({'status': 'ok', 'entries': recs, 'count': len(recs)})
 
 
-@app.route("/new_catalog", methods=['POST'])
+@app.route("/api/add/catalog", methods=['POST'])
 def new_catalog():
     jsn = json.loads(request.data)
 
@@ -255,7 +256,7 @@ def new_catalog():
     return jsonify({'status': 'ok', 'message': res[0][0]})
 
 
-@app.route("/get_catalog", methods=['GET'])
+@app.route("/api/get/catalog", methods=['GET'])
 def get_catalog():
     res = spcall("get_catalog", ())
 
@@ -270,12 +271,12 @@ def get_catalog():
     return jsonify({'status': 'ok', 'entries': recs, 'count': len(recs)})
 
 
-@app.route("/new_category", methods=['POST'])
+@app.route("/api/add/category", methods=['POST'])
 def new_category():
-    jsn = json.loads(request.data)
+    # jsn = json.loads(request.data)
 
-    res = spcall('new_category', (
-        jsn['category_name'],), True)
+    res = spcall('new_category',(request.form.get('category_name'),), True)
+    # res = spcall('new_category', (jsn['category_name'],), True)
 
     if 'Error' in res[0][0]:
         return jsonify({'status': 'ok', 'message': res[0][0]})
@@ -283,7 +284,7 @@ def new_category():
     return jsonify({'status': 'ok', 'message': res[0][0]})
 
 
-@app.route("/get_category", methods=['GET'])
+@app.route("/api/get/category", methods=['GET'])
 def get_category():
     res = spcall("get_category", ())
 
@@ -298,7 +299,7 @@ def get_category():
     return jsonify({'status': 'ok', 'entries': recs, 'count': len(recs)})
 
 
-@app.route("/new_subcategory", methods=['POST'])
+@app.route("/api/add/subcategory", methods=['POST'])
 def new_subcategory():
     jsn = json.loads(request.data)
 
@@ -311,7 +312,7 @@ def new_subcategory():
     return jsonify({'status': 'ok', 'message': res[0][0]})
 
 
-@app.route("/get_subcategory", methods=['GET'])
+@app.route("/api/get/subcategory", methods=['GET'])
 def get_subcategory():
     res = spcall("get_subcategory", ())
 
@@ -326,7 +327,7 @@ def get_subcategory():
     return jsonify({'status': 'ok', 'entries': recs, 'count': len(recs)})
 
 
-@app.route("/new_size", methods=['POST'])
+@app.route("/api/add/size", methods=['POST'])
 def new_size():
     jsn = json.loads(request.data)
 
@@ -339,7 +340,7 @@ def new_size():
     return jsonify({'status': 'ok', 'message': res[0][0]})
 
 
-@app.route("/new_product", methods=['POST'])
+@app.route("/api/add/product", methods=['POST'])
 def new_product():
     jsn = json.loads(request.data)
 
@@ -383,7 +384,7 @@ def new_product():
 #
 #     return jsonify({'status': 'OK'})
 
-@app.route("/get_product", methods=['GET'])
+@app.route("/api/get/product", methods=['GET'])
 def get_product():
     res = spcall('get_product', ())
 
@@ -397,7 +398,7 @@ def get_product():
 
     return jsonify({'status': 'ok', 'entries': recs, 'count': len(recs)})
 
-@app.route("/getproductbycatalog", methods=['GET'])
+@app.route("/api/get/productbycatalog", methods=['GET'])
 def get_productbycatalog():
     res = spcall('get_productby_catalog', ())
 
@@ -411,7 +412,7 @@ def get_productbycatalog():
 
     return jsonify({'status': 'ok', 'entries': recs, 'count': len(recs)})
 
-@app.route("/getproductbycatalogandgender", methods=['GET'])
+@app.route("/api/get/productbycatalogandgender", methods=['GET'])
 def get_productbycatalogandgender():
     res = spcall('get_productby_catalog_gender', ())
 
@@ -425,7 +426,7 @@ def get_productbycatalogandgender():
 
     return jsonify({'status': 'ok', 'entires': recs, 'count': len(recs)})
 
-@app.route("/getproductbycatalogandgenderandcategory")
+@app.route("/api/get/productbycatalogandgenderandcategory")
 def get_productbycatalogandgenderandcategory():
     res = spcall('get_productby_catalog_gender_category', ())
 
@@ -459,4 +460,4 @@ def add_cors(resp):
 
 if __name__ == '__main__':
     app.secret_key = 'B1Zr98j/3yX R~XHH!jmN]LWX/,?RT'
-    app.run(debug=True, threaded=True)
+    app.run(debug=True)
