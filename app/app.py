@@ -99,8 +99,8 @@ def new_establishment_personnel():
     jsn = json.loads(request.data)
 
     res = spcall("new_establishment_personnel", (
-        jsn['email_address'],
-        jsn['password']), True)
+        jsn['email_address1'],
+        jsn['password1']), True)
 
     if 'Error' in res[0][0]:
         return jsonify({'status': 'Error', 'message': res[0][0]})
@@ -133,8 +133,7 @@ def new_customer():
 
     entries = []
     for r in res:
-        entries.append({'user_id': str(r[0]), 'email_address': str(r[1]), 'password': str(r[2]), 'is_admin': str(r[3]),
-                        'is_establishment': str(r[4]), 'is_customer': str(r[5]), 'is_active': str(r[6])})
+        entries.append({'user_id': str(r[0]), 'email_address': str(r[1]), 'is_customer': str(r[2]), 'is_active': str(r[3])})
 
     status_code = 200
 
