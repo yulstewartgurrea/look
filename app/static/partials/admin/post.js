@@ -1,3 +1,72 @@
+function addadmin() {
+    var email_address = $('#email_address').val();
+    var password = $('#password').val();
+
+    var data = JSON.stringify({"email_address": email_address, "password": password});
+
+    $.ajax({
+        url: 'http://127.0.0.1:5000/api/add/admin',
+        type: 'POST',
+        contentType:"application/json; charset=utf-8",
+        data: data,
+        dataType: 'json',
+        success: function(res){
+            if(res.status=='ok') {
+                alert("Admin Added")
+            } else {
+                alert("Error")
+            }
+        }
+
+    });
+}
+
+function addestablishment_personnel() {
+    var email_address = $('#email_address').val();
+    var password = $('#password').val();
+
+    var data = JSON.stringify({"email_address": email_address, "password": password});
+
+    $.ajax({
+        url: 'http://127.0.0.1:5000/api/add/establishment_personnel',
+        type: 'POST',
+        contentType:"application/json; charset=utf-8",
+        data: data,
+        dataType: 'json',
+        success: function(res){
+            if(res.status=='Ok') {
+                alert("Establishment Personnel Added")
+            } else {
+                alert("Error")
+            }
+        }
+
+    });
+}
+
+function addcustomer() {
+    var email_address = $('#email_address').val();
+    var password = $('#password').val();
+
+    var data = JSON.stringify({"email_address": email_address, "password": password});
+
+    $.ajax({
+        url: 'http://127.0.0.1:5000/api/add/customer',
+        type: 'POST',
+        contentType:"application/json; charset=utf-8",
+        data: data,
+        dataType: 'json',
+        success: function(res){
+            if(res.status=='Ok') {
+                alert("Customer Added")
+            } else {
+                alert("Error")
+            }
+        }
+
+    });
+}
+
 function addcatalog() {
     var catalog_name = $('#catalog_name').val();
 
@@ -103,6 +172,39 @@ function addsubcategory() {
         success: function(res){
             if(res.status=='Ok') {
                 alert("SubCategory Added!")
+            } else {
+                alert("error")
+            }
+        }
+    });
+}
+
+function addproduct() {
+    var establishment_id =$(' #establishment_id').val();
+    var product_name =$(' #product_name').val();
+    var product_description =$(' #product_description').val();
+    var catalog_id =$(' #catalog_id').val();
+    var gender_id =$(' #gender_id').val();
+    var category_id =$(' #category_id').val();
+    var subcategory_id =$(' #subcategory_id').val();
+    var image =$(' #image').val();
+    var price =$(' #price').val();
+
+
+    var data = JSON.stringify({"establishment_id": establishment_id ,"product_name": product_name,
+                "product_description": product_description, "catalog_id": catalog_id,
+            "product_gender": gender_id, "product_category": category_id,
+        "product_subcategory": subcategory_id, "price": price, "image": image });
+
+    $.ajax({
+        url: 'http://127.0.0.1:5000/api/add/product',
+        type: 'POST',
+        contentType:"application/json; charset=utf-8",
+        data: data,
+        dataType:'json',
+        success: function(res){
+            if(res.status=='Ok') {
+                alert("Product Added!")
             } else {
                 alert("error")
             }

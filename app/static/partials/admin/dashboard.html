@@ -352,7 +352,11 @@
             </span>
           </a>
         </li>
-        
+        <li class="treeview" id="#">
+          <a href="#">
+            <span>Logout</span>
+          </a>
+        </li>
         
       </ul>
     </section>
@@ -386,16 +390,15 @@
             <form role="form">
               <div class="box-body">
                 <div class="form-group">
-                  <label for="exampleInputEmail1">Email address</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                  <label for="email_address">Email address</label>
+                  <input type="email" class="form-control" id="email_address" placeholder="Enter email">
                 </div>
                 <div class="form-group">
-                  <label for="exampleInputPassword1">Password</label>
-                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                  <label for="password">Password</label>
+                  <input type="password" class="form-control" id="password" placeholder="Password">
+
+                <input type="button" class="btn btn-primary" onclick="addadmin()" value="Add Admin">
                 </div>
-
-                <button type="submit" class="btn btn-primary">Submit</button>
-
               </div>
               <!-- /.box-body -->
             </form>
@@ -756,7 +759,7 @@
                 <thead>
                 <tr>
                   <th>  Subcategory Name  </th>
-                  <th>  Gender Id  </th>
+                  <th>  Category Id  </th>
                 </tr>
                 </thead>
                 <tbody id="subcategories">
@@ -786,38 +789,46 @@
             <form role="form">
               <div class="box-body">
                 <div class="form-group">
-                  <label for="exampleInputPassword1">Product Establishment</label>
-                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                  <label for="establishment_id">Product Establishment</label>
+                  <input type="text" class="form-control" id="establishment_id" placeholder="Enter Establishment">
                 </div>
                 <div class="form-group">
-                  <label for="exampleInputEmail1">Product Name</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                  <label for="product_name">Product Name</label>
+                  <input type="text" class="form-control" id="product_name" placeholder="Enter Product">
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Product Description</label>
-                    <textarea class="form-control" style="height: 300px">
+                    <label for="product_description">Product Description</label>
+                    <textarea class="form-control" id="product_description" style="height: 300px">
 
                     </textarea>
                 </div>
                 <div class="form-group">
-                  <label for="exampleInputEmail1">Product Catalog</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                  <label for="catalog_id">Product Catalog</label>
+                  <input type="text" class="form-control" id="catalog_id" placeholder="Enter Catalog">
                 </div>
                 <div class="form-group">
-                  <label for="exampleInputEmail1">Product Gender</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                  <label for="gender_id">Product Gender</label>
+                  <input type="text" class="form-control" id="gender_id" placeholder="Enter Gender">
                 </div>
                 <div class="form-group">
-                  <label for="exampleInputEmail1">Product Category</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                  <label for="category_id">Product Category</label>
+                  <input type="text" class="form-control" id="category_id" placeholder="Enter Category">
                 </div>
                 <div class="form-group">
-                  <label for="exampleInputEmail1">Product Subcategory</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                  <label for="subcategory_id">Product Subcategory</label>
+                  <input type="text" class="form-control" id="subcategory_id" placeholder="Enter SubCategory">
+                </div>
+                <div class="form-group">
+                  <label for="price">Price</label>
+                  <input type="text" class="form-control" id="price" placeholder="Enter SubCategory">
+                </div>
+                <div class="form-group">
+                  <label for="image">Image</label>
+                  <input type="text" class="form-control" id="image" placeholder="Enter SubCategory">
                 </div>
 
 
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <input type="button" class="btn btn-primary" onclick="addproduct()" value="Add Product">
 
               </div>
               <!-- /.box-body -->

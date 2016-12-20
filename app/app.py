@@ -14,8 +14,10 @@ def helloworld():
 @app.route('/login', methods=['POST'])
 def login():
     jsn = json.loads(request.data)
-    # res = spcall("login", (request.form.get("email_address"), request.form.get("password")))
-    res = spcall("login", (jsn["email_address"], jsn["password"]))
+
+    res = spcall("login", (
+        jsn["email_address"],
+        jsn["password"],), True)
 
     if len(res) == 0:
         return jsonify({'status': 'Invalid email or password'})
@@ -73,7 +75,7 @@ def new_admin():
         jsn['password']), True)
 
     if 'Error' in res[0][0]:
-        return jsonify({'status': 'ok', 'message': res[0][0]})
+        return jsonify({'status': 'Error', 'message': res[0][0]})
 
     return jsonify({'status': 'ok', 'message': res[0][0]})
 
@@ -101,7 +103,7 @@ def new_establishment_personnel():
         jsn['password']), True)
 
     if 'Error' in res[0][0]:
-        return jsonify({'status': 'ok', 'message': res[0][0]})
+        return jsonify({'status': 'Error', 'message': res[0][0]})
 
     return jsonify({'status': 'ok', 'message': res[0][0]})
 
@@ -125,12 +127,9 @@ def new_customer():
     res = spcall("new_customer", (
         jsn['email_address'],
         jsn['password'],), True)
-    #
-    # if invalid(jsn['email_address']):
-    #     return jsonify({'status': 'error', 'message': 'Error'})
 
     if 'Error' in str(res[0][0]):
-        return jsonify({'status': 'ok', 'message': res[0][0]})
+        return jsonify({'status': 'Error', 'message': res[0][0]})
 
     entries = []
     for r in res:
@@ -318,18 +317,17 @@ def new_product():
     res = spcall('new_product', (
         jsn['product_name'],
         jsn['product_description'],
-        jsn['gender_id'],
         jsn['catalog_id'],
         jsn['category_id'],
         jsn['subcategory_id'],
-        jsn['establishment_id'],-
+        jsn['establishment_id'],
         jsn['image'],
         jsn['price'],), True)
 
     if 'Error' in res[0][0]:
-        return jsonify({'status': 'ok', 'message': res[0][0]})
+        return jsonify({'status': 'error', 'message': res[0][0]})
 
-    return jsonify({'status': 'ok', 'message': res[0][0]})
+    return jsonify({'status': 'Ok', 'message': res[0][0]})
 
 
 # @app.route('/api/new_product/users/update/', methods=['PUT'])
@@ -360,7 +358,7 @@ def get_product():
     res = spcall('get_product', ())
 
     if 'Error' in str(res[0][0]):
-        return jsonify({'status': 'ok', 'message': res[0][0]})
+        return jsonify({'status': 'error', 'message': res[0][0]})
 
     recs = []
 
