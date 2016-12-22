@@ -428,4 +428,4 @@ def add_cors(resp):
 
 if __name__ == '__main__':
     app.secret_key = 'B1Zr98j/3yX R~XHH!jmN]LWX/,?RT'
-    app.run(debug=False)
+    app.run(host='0.0.0.0', debug=True)

@@ -34,10 +34,10 @@ $$
 
 -- get info of user logged in
 
-create or replace function get_loginrole(in p_email, out p_is_admin boolean, out p_is_establishment boolean,
-										out p_is_cutomer boolean, out p_is_active boolean) returns record as
+create or replace function get_loginrole(in p_email text, out p_is_admin boolean, out p_is_establishment boolean,
+										out p_is_cutomer boolean, out p_is_active boolean) returns setof record as
 $$
-	select email_address, is_admin, is_establishment, is_customer,_is_active from UserAccount where email_address = p_email;
+	select is_admin, is_establishment, is_customer, is_active from UserAccount where email_address = p_email;
 $$
 	language 'sql';
 

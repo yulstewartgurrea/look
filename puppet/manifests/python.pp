@@ -94,4 +94,40 @@ class python {
       }
     }
   }
+
+  # Install PostgreSQL 9.4 server from the PGDG repository
+ class {'postgresql::globals':
+  encoding => 'UTF8',
+  locale  => 'it_IT.utf8',
+  manage_package_repo => true,
+  version => '9.4',
+}->
+
+
+class { 'postgresql::server':
+  listen_addresses => '*',
+  ip_mask_allow_all_users    => '0.0.0.0/0',
+  postgres_password => 'temporary',
+}
+
+# Install contrib modules
+class { 'postgresql::server::contrib':}
+
+class { 'postgresql::lib::devel':}
+
+class { 'postgresql::server::plpython':}
+
+postgresql::server::role{'postgres':
+  password_hash => 'password',
+  username => 'postgres',
+  createdb => true,
+  superuser => true,
+}
+
+postgresql::server::database { 'shop':
+  dbname => 'shop',
+  template => 'template1',
+}
+
+
 }
