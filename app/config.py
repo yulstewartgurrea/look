@@ -5,8 +5,8 @@ import sys
 class DBconn:
     def __init__(self):
         #engine = create_engine("postgresql://$OPENSHIFT_POSTGRESQL_DB_HOST:$OPENSHIFT_POSTGRESQL_DB_PORT", echo=False)
-        engine = create_engine("postgresql://postgres:template1@localhost:5432/shop2", echo=False)
-        # engine = create_engine("postgresql://postgres:helloworld05@localhost:5432/shop", echo=False)
+        # engine = create_engine("postgresql://postgres:template1@localhost:5432/shop2", echo=False)
+        engine = create_engine("postgresql://postgres:helloworld05@localhost:5432/shop", echo=False)
         self.conn = engine.connect()
         self.trans = self.conn.begin()
 

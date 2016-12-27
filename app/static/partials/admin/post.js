@@ -22,10 +22,10 @@ function addadmin() {
 }
 
 function addestablishment_personnel() {
-    var email_address = $('#email_address').val();
-    var password = $('#password').val();
+    var email_address = $('#email_address2').val();
+    var password = $('#password2').val();
 
-    var data = JSON.stringify({"email_address": email_address, "password": password});
+    var data = JSON.stringify({"email_address": email_address2, "password": password2});
 
     $.ajax({
         url: 'http://127.0.0.1:5000/api/add/establishment_personnel',
@@ -34,7 +34,7 @@ function addestablishment_personnel() {
         data: data,
         dataType: 'json',
         success: function(res){
-            if(res.status=='Ok') {
+            if(res.status=='ok') {
                 alert("Establishment Personnel Added")
             } else {
                 alert("Error")

@@ -68,9 +68,9 @@ $$
 	language 'plpgsql';
 
 -- Get admins
-create or replace function get_admins(out user_id int, out email_address text, In is_admin boolean, In is_active boolean) returns setof record as
+create or replace function get_admins(out user_id int, out email_address text, out is_admin boolean, out is_active boolean) returns setof record as
 $$
-  select user_id, email_address from UserAccount where is_admin = TRUE and is_active = TRUE;
+  select user_id, email_address, is_admin, is_active from UserAccount where is_admin = TRUE and is_active = TRUE;
 $$
   language 'sql';
 
@@ -100,7 +100,7 @@ $$
 	language 'plpgsql';
 
 -- Get establishment_personnel
-create or replace function get_establishment_personnels(out user_id int, out email_address text, out is_establishment, out is_active) returns setof record as
+create or replace function get_establishment_personnels(out user_id int, out email_address text, out is_establishment boolean, out is_active boolean) returns setof record as
 $$
   select user_id, email_address, is_establishment, is_active from UserAccount where is_establishment = TRUE and is_active = TRUE;
 $$
@@ -449,11 +449,10 @@ end;
 $$
 	language 'plpgsql';
 
--- select new_product(9.00, 'prod', 'prod', 'prod', 2 , 2, 1, 1, 1)
--- select new_product(9.00, 'prod1', 'prod1', 'prod', 2 , 2, 1, 1, 1)
--- select new_product(9.00, 'prod2', 'prod2', 'prod', 2 , 2, 1, 1, 1)
--- select new_product(9.00, 'prod3', 'prod3', 'prod', 2 , 2, 1, 1, 1)
--- select new_product(9.00, 'prod4', 'prod4', 'prod', 2 , 2, 1, 1, 1)
+-- select new_product(9.00, 'prod', 'prod', 'prod', 1 , 2, 4, 4, 1);
+-- select new_product(9.00, 'prod1', 'prod', 'prod', 1 , 2, 4, 4, 1);
+-- select new_product(9.00, 'prod2', 'prod', 'prod', 1 , 2, 4, 4, 1);
+-- select new_product(9.00, 'prod3', 'prod', 'prod', 1 , 2, 4, 4, 1);
 
 
 create or replace function update_product(p_product_id int, p_product_name text, p_product_description text, p_price numeric,

@@ -219,7 +219,7 @@ function getcategories(){
                     category_id = res.entries[i].category_id;
                     category_name = res.entries[i].category_name;
                     catalog_id = res.entries[i].catalog_id;
-                    gender_id = res.entries[i].entries_id;
+                    gender_id = res.entries[i].gender_id;
                     $("#categoriess").append(getcategory(category_id, category_name, catalog_id, gender_id))
                 }
             } else {
@@ -264,35 +264,13 @@ function getsubcategories() {
 }
 
 function getproduct(product_id, product_name, price, image) {
-     return '<div class="box-body">' +
-              '<table id="example2" class="table table-bordered table-hover">' +
-                '<thead>' +
-                '<tr>' +
-                  '<th>  Product Id  </th>' +
-                  '<th>  Product Name  </th>' +
-                  '<th>  Price  </th>' +
-                  '<th>  Image  </th>' +
-                '</tr>' +
-                '</thead>' +
-                '<tbody>' +
+     return
                 '<tr> ' +
                   '<td>' + product_id+ '</td>' +
                   '<td>' + product_name+ '</td>' +
                   '<td>' + price+ '</td>' +
                   '<td>' + image+ '</td>' +
-                '</tr>'+
-                '</tbody>'+
-                '<tfoot>'+
-                '<tr>'+
-                  '<th>Product Id</th>'+
-                  '<th>Product Name</th>'+
-                  '<th>Price</th>'+
-                  '<th>Image</th>'+
-                '</tr>'+
-                '</tfoot>'+
-              '</table>'+
-            '</div>'+
-          '</div>'
+                '</tr>'
 
 
 }

@@ -13,11 +13,16 @@ function login() {
         data: data,
         dataType: 'json',
         success: function(res) {
-            if(res.status == 'Login successful' && res.admin==true && res.active==true){
+            if(res.status === 'Login successful' && res.admin===true && res.active===true){
                 alert('Login Successful');
                 window.location.href="../partials/admin/dashboard.html";
+            }
+            elif(res.status === 'Login successful' && res.establishment===true && res.active===true){
+                alert('Login Successful');
+                window.location.href="../partials/establishment/e_dashboard.html";
+            }
 
-            } if(res.status=='Invalid email or password') {
+            else(res.status=='Invalid email or password') {
                    alert('Invalid email or password');
             } 
             }
@@ -27,6 +32,13 @@ function login() {
 
 function logout() {
     $.ajax({
-        url: 'http://http:127.0.0.1/logout'
-    })
+        url: 'http://127.0.0.1:5000/logout',
+        type: 'POST',
+        success: function(res){
+            alert(res.message);
+            window.location.href="../partials/login.html"
+        }
+
+
+    });
 }

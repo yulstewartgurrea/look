@@ -38,7 +38,7 @@ def login():
                         'active': session['is_active']})
 
 
-@app.route('/logout')
+@app.route('/logout', methods=['POST'])
 def logout():
     session.pop('logged_in', None)
     session.clear()
@@ -99,8 +99,8 @@ def new_establishment_personnel():
     jsn = json.loads(request.data)
 
     res = spcall("new_establishment_personnel", (
-        jsn['email_address1'],
-        jsn['password1']), True)
+        jsn['email_address'],
+        jsn['password']), True)
 
     if 'Error' in res[0][0]:
         return jsonify({'status': 'Error', 'message': res[0][0]})
@@ -428,4 +428,5 @@ def add_cors(resp):
 
 if __name__ == '__main__':
     app.secret_key = 'B1Zr98j/3yX R~XHH!jmN]LWX/,?RT'
+    # app.run(host='localhost', debug=True)
     app.run(host='0.0.0.0', debug=True)

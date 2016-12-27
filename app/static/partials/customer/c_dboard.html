@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>AdminLTE 2 | General Form Elements</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <!-- Bootstrap 3.3.6 -->
+  <link rel="stylesheet" href="../../assets/bootstrap/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="../../assets/dist/css/AdminLTE.min.css">
+  <!-- AdminLTE Skins. Choose a skin from the css/skins
+       folder instead of downloading all of them to reduce the load. -->
+  <link rel="stylesheet" href="../../assets/dist/css/skins/_all-skins.min.css">
+  <!--JS Fiddle-->
+  <link rel="stylesheet", href="../../css/jsFiddle.css">
+  <link rel="stylesheet", href="style.css">
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+
+  <header class="main-header">
+    <!-- Logo -->
+    <a href="../../index2.html" class="logo">
+      <!-- mini logo for sidebar mini 50x50 pixels -->
+      <span class="logo-mini"><b>A</b>LT</span>
+      <!-- logo for regular state and mobile devices -->
+      <span class="logo-lg"><b>Customer</b></span>
+    </a>
+    <!-- Header Navbar: style can be found in header.less -->
+    <nav class="navbar navbar-static-top">
+      <!-- Sidebar toggle button-->
+      <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+
+      <div class="navbar-custom-menu">
+        <ul class="nav navbar-nav">
+          <!-- Messages: style can be found in dropdown.less-->
+          <li class="dropdown messages-menu">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <i class="fa fa-envelope-o"></i>
+              <span class="label label-success">4</span>
+            </a>
+            <ul class="dropdown-menu">
+              <li class="header">You have 4 messages</li>
+              <li>
+                <!-- inner menu: contains the actual data -->
+                <ul class="menu">
+                  <li><!-- start message -->
+                    <a href="#">
+                      <div class="pull-left">
+                        <img src="../../assets/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                      </div>
+                      <h4>
+                        Support Team
+                        <small><i class="fa fa-clock-o"></i> 5 mins</small>
+                      </h4>
+                      <p>Why not buy a new awesome theme?</p>
+                    </a>
+                  </li>
+                  <!-- end message -->
+                  <li>
+                    <a href="#">
+                      <div class="pull-left">
+                        <img src="../../assets/dist/img/user3-128x128.jpg" class="img-circle" alt="User Image">
+                      </div>
+                      <h4>
+                        AdminLTE Design Team
+                        <small><i class="fa fa-clock-o"></i> 2 hours</small>
+                      </h4>
+                      <p>Why not buy a new awesome theme?</p>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <div class="pull-left">
+                        <img src="../../assets/dist/img/user4-128x128.jpg" class="img-circle" alt="User Image">
+                      </div>
+                      <h4>
+                        Developers
+                        <small><i class="fa fa-clock-o"></i> Today</small>
+                      </h4>
+                      <p>Why not buy a new awesome theme?</p>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <div class="pull-left">
+                        <img src="../../assets/dist/img/user3-128x128.jpg" class="img-circle" alt="User Image">
+                      </div>
+                      <h4>
+                        Sales Department
+                        <small><i class="fa fa-clock-o"></i> Yesterday</small>
+                      </h4>
+                      <p>Why not buy a new awesome theme?</p>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <div class="pull-left">
+                        <img src="../../assets/dist/img/user4-128x128.jpg" class="img-circle" alt="User Image">
+                      </div>
+                      <h4>
+                        Reviewers
+                        <small><i class="fa fa-clock-o"></i> 2 days</small>
+                      </h4>
+                      <p>Why not buy a new awesome theme?</p>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class="footer"><a href="#">See All Messages</a></li>
+            </ul>
+          </li>
+          <!-- Notifications: style can be found in dropdown.less -->
+          <li class="dropdown notifications-menu">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <i class="fa fa-bell-o"></i>
+              <span class="label label-warning">10</span>
+            </a>
+            <ul class="dropdown-menu">
+              <li class="header">You have 10 notifications</li>
+              <li>
+                <!-- inner menu: contains the actual data -->
+                <ul class="menu">
+                  <li>
+                    <a href="#">
+                      <i class="fa fa-users text-aqua"></i> 5 new members joined today
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <i class="fa fa-warning text-yellow"></i> Very long description here that may not fit into the
+                      page and may cause design problems
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <i class="fa fa-users text-red"></i> 5 new members joined
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="#">
+                      <i class="fa fa-shopping-cart text-green"></i> 25 sales made
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <i class="fa fa-user text-red"></i> You changed your username
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class="footer"><a href="#">View all</a></li>
+            </ul>
+          </li>
+          <!-- Tasks: style can be found in dropdown.less -->
+          <li class="dropdown tasks-menu">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <i class="fa fa-flag-o"></i>
+              <span class="label label-danger">9</span>
+            </a>
+            <ul class="dropdown-menu">
+              <li class="header">You have 9 tasks</li>
+              <li>
+                <!-- inner menu: contains the actual data -->
+                <ul class="menu">
+                  <li><!-- Task item -->
+                    <a href="#">
+                      <h3>
+                        Design some buttons
+                        <small class="pull-right">20%</small>
+                      </h3>
+                      <div class="progress xs">
+                        <div class="progress-bar progress-bar-aqua" style="width: 20%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                          <span class="sr-only">20% Complete</span>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                  <!-- end task item -->
+                  <li><!-- Task item -->
+                    <a href="#">
+                      <h3>
+                        Create a nice theme
+                        <small class="pull-right">40%</small>
+                      </h3>
+                      <div class="progress xs">
+                        <div class="progress-bar progress-bar-green" style="width: 40%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                          <span class="sr-only">40% Complete</span>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                  <!-- end task item -->
+                  <li><!-- Task item -->
+                    <a href="#">
+                      <h3>
+                        Some task I need to do
+                        <small class="pull-right">60%</small>
+                      </h3>
+                      <div class="progress xs">
+                        <div class="progress-bar progress-bar-red" style="width: 60%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                          <span class="sr-only">60% Complete</span>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                  <!-- end task item -->
+                  <li><!-- Task item -->
+                    <a href="#">
+                      <h3>
+                        Make beautiful transitions
+                        <small class="pull-right">80%</small>
+                      </h3>
+                      <div class="progress xs">
+                        <div class="progress-bar progress-bar-yellow" style="width: 80%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                          <span class="sr-only">80% Complete</span>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                  <!-- end task item -->
+                </ul>
+              </li>
+              <li class="footer">
+                <a href="#">View all tasks</a>
+              </li>
+            </ul>
+          </li>
+          <!-- User Account: style can be found in dropdown.less -->
+          <li class="dropdown user user-menu">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <img src="../../assets/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+              <span class="hidden-xs">Alexander Pierce</span>
+            </a>
+            <ul class="dropdown-menu">
+              <!-- User image -->
+              <li class="user-header">
+                <img src="../../assets/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+
+                <p>
+                  Alexander Pierce - Web Developer
+                  <small>Member since Nov. 2012</small>
+                </p>
+              </li>
+              <!-- Menu Body -->
+              <li class="user-body">
+                <div class="row">
+                  <div class="col-xs-4 text-center">
+                    <a href="#">Followers</a>
+                  </div>
+                  <div class="col-xs-4 text-center">
+                    <a href="#">Sales</a>
+                  </div>
+                  <div class="col-xs-4 text-center">
+                    <a href="#">Friends</a>
+                  </div>
+                </div>
+                <!-- /.row -->
+              </li>
+              <!-- Menu Footer-->
+              <li class="user-footer">
+                <div class="pull-left">
+                  <a href="#" class="btn btn-default btn-flat">Profile</a>
+                </div>
+                <div class="pull-right">
+                  <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                </div>
+              </li>
+            </ul>
+          </li>
+          <!-- Control Sidebar Toggle Button -->
+          <li>
+            <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <!-- Left side column. contains the logo and sidebar -->
+  <aside class="main-sidebar">
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+      <!-- Sidebar user panel -->
+      <div class="user-panel">
+        <div class="pull-left image">
+          <img src="../../assets/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+        </div>
+        <div class="pull-left info">
+          <p>Alexander Pierce</p>
+          <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+        </div>
+      </div>
+      <!-- search form -->
+      <form action="#" method="get" class="sidebar-form">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Search...">
+              <span class="input-group-btn">
+                <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
+                </button>
+              </span>
+        </div>
+      </form>
+      <!-- /.search form -->
+      <!-- sidebar menu: : style can be found in sidebar.less -->
+      <ul class="sidebar-menu">
+        <li class="header">MAIN NAVIGATION</li>
+
+        <li class="treeview" id="add">
+          <a href="#" >
+            <i class="fa fa-dashboard"></i> <span >Users</span>
+          </a>
+        </li>
+        <li class="treeview"id="ecs">
+          <a href="#" >
+            <span >Establishment Catalog Sex</span>
+          </a>
+        </li>
+        <li class="treeview" id="cs">
+          <a href="#">
+            <span>Categories Subcategories</span>
+          </a>
+        </li>
+        <li class="treeview" id="prod">
+          <a href="#">
+            <span>Products</span>
+          </a>
+        </li>
+        <li>
+          <a href="../widgets.html">
+            <i class="fa fa-th"></i> <span>Cart</span>
+            <span class="pull-right-container">
+              <small class="label pull-right bg-green">new</small>
+            </span>
+          </a>
+        </li>
+        <li class="treeview" id="#">
+          <a href="#">
+            <span>Logout</span>
+          </a>
+        </li>
+
+      </ul>
+    </section>
+    <!-- /.sidebar -->
+  </aside>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+
+      <div id="au">
+        <section class="content-header">
+      <h1>
+        Add Different Users
+      </h1>
+
+</section>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="row">
+        <!-- left column -->
+        <div class="col-md-4">
+          <!-- general form elements -->
+          <div class="box box-primary">
+            <div class="box-header with-border">
+              <h3 class="box-title">Add Admin</h3>
+            </div>
+            <!-- /.box-header -->
+            <!-- form start -->
+            <form role="form">
+              <div class="box-body">
+                <div class="form-group">
+                  <label for="email_address">Email address</label>
+                  <input type="email" class="form-control" id="email_address" placeholder="Enter email">
+                </div>
+                <div class="form-group">
+                  <label for="password">Password</label>
+                  <input type="password" class="form-control" id="password" placeholder="Password">
+
+                <input type="button" class="btn btn-primary" onclick="addadmin()" value="Add Admin">
+                </div>
+              </div>
+              <!-- /.box-body -->
+            </form>
+          </div>
+
+          <button type="button" class="btn btn-primary" onclick="getadmins()">Get Admins</button>
+          <div class="box">
+    <div class="box-body">
+              <table id="example2" class="table table-bordered table-hover">
+                <thead>
+                <tr>
+                  <th>  Email Address  </th>
+                  <th>  is_admin  </th>
+                  <th>  is_active  </th>
+                </tr>
+                </thead>
+                <tbody id="admins">
+
+                </tbody>
+
+              </table>
+            </div>
+          </div>
+        </div>
+        <!--/.col (left) -->
+
+        <!-- middle column -->
+        <div class="col-md-4">
+          <!-- Horizontal Form -->
+          <div class="box box-primary">
+            <div class="box-header with-border">
+              <h3 class="box-title">Add Establishment Personnel</h3>
+            </div>
+            <!-- /.box-header -->
+            <!-- form start -->
+            <form role="form">
+              <div class="box-body">
+                <div class="form-group">
+                  <label for="email_address">Email address</label>
+                  <input type="text" class="form-control" id="email_address" placeholder="Enter Establishment">
+                </div>
+                <div class="form-group">
+                  <label for="password">Password</label>
+                  <input type="password" class="form-control" id="password" placeholder="Enter Password">
+                </div>
+                <input type="button" class="btn btn-primary" onclick="addestablishment()" value="Add Establishment">
+
+              </div>
+              <!-- /.box-body -->
+            </form>
+          </div>
+
+          <button type="button" class="btn btn-primary" onclick="getestablishmentpersonnels()">Get Establishment Personnels</button>
+            <div class="box">
+            <div class="box-body">
+              <table id="example2" class="table table-bordered table-hover">
+                <thead>
+                <tr>
+                  <th>  Email Address  </th>
+                  <th>  is_establishment  </th>
+                  <th>  is_active  </th>
+                </tr>
+                </thead>
+                <tbody id="establishments_personnels">
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <!-- /.box -->
+        </div>
+        <!--/.col (middle) -->
+
+        <!-- right column -->
+        <div class="col-md-4">
+          <!-- general form elements -->
+          <div class="box box-primary">
+            <div class="box-header with-border">
+              <h3 class="box-title">Add Customer</h3>
+            </div>
+            <!-- /.box-header -->
+            <!-- form start -->
+            <form role="form">
+              <div class="box-body">
+                <div class="form-group">
+                  <label for="email_address">Email address</label>
+                  <input type="email" class="form-control" id="email_address" placeholder="Enter email">
+                </div>
+                <div class="form-group">
+                  <label for="password">Password</label>
+                  <input type="password" class="form-control" id="password" placeholder="Password">
+                </div>
+                <input type="button" class="btn btn-primary" onclick="addcustomer()" value="Add Customer">
+
+              </div>
+              <!-- /.box-body -->
+            </form>
+          </div>
+
+          <button type="button" class="btn btn-primary" onclick="getcustomers()">Get Customers</button>
+            <div class="box">
+    <div class="box-body">
+              <table id="example2" class="table table-bordered table-hover">
+                <thead>
+                <tr>
+                  <th>  Email Address  </th>
+                  <th>  is_customer  </th>
+                  <th>  is_active  </th>
+                </tr>
+                </thead>
+                <tbody id="customers">
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+      </div>
+      <!-- end right column -->
+      <!-- /.row -->
+    </section>
+    </div>
+
+    <div id="ecss">
+        <section class="content-header">
+      <h1>
+        Add Establishments, Catalogs and Sex'
+      </h1>
+
+    </section>
+
+<section class="content">
+
+    <!--left-->
+<div class="col-md-4">
+          <!-- general form elements -->
+          <div class="box box-primary">
+            <div class="box-header with-border">
+              <h3 class="box-title">Add Establishment</h3>
+            </div>
+            <!-- /.box-header -->
+            <!-- form start -->
+            <form role="form">
+              <div class="box-body">
+                <div class="form-group">
+                  <label for="establishment_name">Establishment Name</label>
+                  <input type="text" class="form-control" id="establishment_name" placeholder="Enter email">
+                </div>
+                <div class="form-group">
+                  <label for="user_id">User Id</label>
+                  <input type="text" class="form-control" id="user_id" placeholder="Enter email">
+                </div>
+                <input type="button" class="btn btn-primary" onclick="addestablishment()" value="Add Establishment">
+
+              </div>
+              <!-- /.box-body -->
+            </form>
+          </div>
+        <button type="button" class="btn btn-primary" onclick="getestablishments()">Get Establishments</button>
+        <div class="box">
+    <div class="box-body">
+              <table id="example2" class="table table-bordered table-hover">
+                <thead>
+                <tr>
+                  <th>  Establishment Name  </th>
+                  <th>  User  </th>
+                </tr>
+                </thead>
+                <tbody id="establishments">
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <!--&lt;!&ndash;-->
+      </div>
+    <!--left-->
+
+        <!--middle-->
+      <div class="col-md-4">
+          <!-- general form elements -->
+          <div class="box box-primary">
+            <div class="box-header with-border">
+              <h3 class="box-title">Add Catalog</h3>
+            </div>
+            <!-- /.box-header -->
+            <!-- form start -->
+            <form method="post">
+              <div class="box-body">
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Catalog Name</label>
+                  <input type="text" class="form-control" id="catalog_name" name="catalog_name" placeholder="Enter catalog">
+                </div>
+
+                <input type="button" onclick="addcatalog()" class="btn btn-primary" value="Add Catalog">
+
+              </div>
+              <!-- /.box-body -->
+            </form>
+          </div>
+          <button type="button" onclick="getcatalogs()" class="btn btn-primary"> Get Catalog</button>
+          <div class="box">
+          <div class="box-body">
+              <table id="example2" class="table table-bordered table-hover">
+                <thead>
+                <tr>
+                  <th>  Catalog Name  </th>
+                </tr>
+                </thead>
+                <tbody id="catalogs">
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!--&lt;!&ndash;-->
+        </div>
+        <!--/.col (middle) -->
+
+    <!-- middle right -->
+        <div class="col-md-4">
+          <!-- Horizontal Form -->
+          <div class="box box-primary">
+            <div class="box-header with-border">
+              <h3 class="box-title">Add Sex</h3>
+            </div>
+            <!-- /.box-header -->
+            <!-- form start -->
+            <form role="form">
+              <div class="box-body">
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Sex</label>
+                  <input type="email" class="form-control" id="gender_name" placeholder="Enter email">
+                </div>
+                <input type="button" class="btn btn-primary" onclick="addgender()" value="Add Gender">
+
+              </div>
+              <!-- /.box-body -->
+            </form>
+
+          </div>
+            <button type="button" onclick="getgenders()" class="btn btn-primary"> Get Sex</button>
+          <div class="box">
+    <div class="box-body">
+              <table id="example2" class="table table-bordered table-hover">
+                <thead>
+                <tr>
+                  <th>  Gender Name  </th>
+                </tr>
+                </thead>
+                <tbody id="gender">
+
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <!-- /.box -->
+          <!--&lt;!&ndash;-->
+        </div>
+        <!--/.col right -->
+
+
+</section>
+    </div>
+     <div id="cs2">
+        <section class="content-header">
+      <h1>
+        Add Categories and SubCategories
+      </h1>
+
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="row">
+        <!-- left column -->
+
+
+
+
+        <!-- right column -->
+        <div class="col-md-6">
+          <!-- general form elements -->
+          <div class="box box-primary">
+            <div class="box-header with-border">
+              <h3 class="box-title">Add Category</h3>
+            </div>
+            <!-- /.box-header -->
+            <!-- form start -->
+            <form role="form">
+              <div class="box-body">
+                <div class="form-group">
+                  <label for="category_name">Category Name</label>
+                  <input type="text" class="form-control" id="category_name" placeholder="Enter Catalog Name">
+                </div>
+                <div class="form-group">
+                  <label for="catalog_id">Catalog Id</label>
+                  <input type="text" class="form-control" id="catalog_id" placeholder="Enter Catalog Id">
+                </div>
+                <div class="form-group">
+                  <label for="gender_id">Gender Id</label>
+                  <input type="text" class="form-control" id="gender_id" placeholder="Enter Gender Id">
+                </div>
+                <input type="button" class="btn btn-primary" onclick="addcategory()" value="Add Category">
+
+              </div>
+              <!-- /.box-body -->
+            </form>
+          </div>
+
+            <button type="button" class="btn btn-primary" onclick="getcategories()">Get Categories</button>
+            <div class="box">
+            <div class="box-body">
+              <table id="example2" class="table table-bordered table-hover">
+                <thead>
+                <tr>
+                  <th>  Category Name  </th>
+                  <th>  Catalog Id  </th>
+                  <th>  Gender Id  </th>
+                </tr>
+                </thead>
+                <tbody id="categoriess">
+
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!--&lt;!&ndash;-->
+      </div>
+
+      <div class="col-md-6">
+          <!-- general form elements -->
+          <div class="box box-primary">
+            <div class="box-header with-border">
+              <h3 class="box-title">Add SubCategory</h3>
+            </div>
+            <!-- /.box-header -->
+            <!-- form start -->
+            <form role="form">
+              <div class="box-body">
+                <div class="form-group">
+                  <label for="subcategory_name">SubCategory Name</label>
+                  <input type="text" class="form-control" id="subcategory_name" placeholder="Enter Sub Category">
+                </div>
+                <div class="form-group">
+                  <label for="category_id">Category Id</label>
+                  <input type="text" class="form-control" id="category_id" placeholder="Enter CategoryId">
+                </div>
+                <input type="button" class="btn btn-primary" onclick="addsubcategory()" value="Add SubCategory">
+
+              </div>
+              <!-- /.box-body -->
+            </form>
+          </div>
+        <button type="button" class="btn btn-primary" onclick="getsubcategories()">Get Subcategories</button>
+        <!--<div id="subcategories"></div>-->
+        <div class="box">
+    <div class="box-body">
+              <table id="example2" class="table table-bordered table-hover">
+                <thead>
+                <tr>
+                  <th>  Subcategory Name  </th>
+                  <th>  Category Id  </th>
+                </tr>
+                </thead>
+                <tbody id="subcategories">
+                <tbody>
+              </table>
+            </div>
+          </div>'
+
+          <!--&lt;!&ndash;-->
+      </div>
+
+
+      <!-- end right column -->
+      <!-- /.row -->
+    </section>
+     </div>
+     <div id="prod2">
+        <section class="content">
+      <div class="row">
+        <div class="col-md-5">
+          <div class="box box-solid">
+            <div class="box-header with-border">
+              <h3 class="box-title">Add Product</h3>
+            </div>
+            <!-- /.box-header -->
+            <!-- form start -->
+            <form role="form">
+              <div class="box-body">
+                <div class="form-group">
+                  <label for="establishment_id">Product Establishment</label>
+                  <input type="text" class="form-control" id="establishment_id" placeholder="Enter Establishment">
+                </div>
+                <div class="form-group">
+                  <label for="product_name">Product Name</label>
+                  <input type="text" class="form-control" id="product_name" placeholder="Enter Product">
+                </div>
+                <div class="form-group">
+                    <label for="product_description">Product Description</label>
+                    <textarea class="form-control" id="product_description" style="height: 300px">
+
+                    </textarea>
+                </div>
+                <div class="form-group">
+                  <label for="catalog_id">Product Catalog</label>
+                  <input type="text" class="form-control" id="catalog_id" placeholder="Enter Catalog">
+                </div>
+                <div class="form-group">
+                  <label for="gender_id">Product Gender</label>
+                  <input type="text" class="form-control" id="gender_id" placeholder="Enter Gender">
+                </div>
+                <div class="form-group">
+                  <label for="category_id">Product Category</label>
+                  <input type="text" class="form-control" id="category_id" placeholder="Enter Category">
+                </div>
+                <div class="form-group">
+                  <label for="subcategory_id">Product Subcategory</label>
+                  <input type="text" class="form-control" id="subcategory_id" placeholder="Enter SubCategory">
+                </div>
+                <div class="form-group">
+                  <label for="price">Price</label>
+                  <input type="text" class="form-control" id="price" placeholder="Enter SubCategory">
+                </div>
+                <div class="form-group">
+                  <label for="image">Image</label>
+                  <input type="text" class="form-control" id="image" placeholder="Enter SubCategory">
+                </div>
+
+
+                <input type="button" class="btn btn-primary" onclick="addproduct()" value="Add Product">
+
+              </div>
+              <!-- /.box-body -->
+            </form>
+          </div>
+          <!-- /. box -->
+
+        <!-- /.box -->
+        <button type="button" class="btn btn-primary" onclick="getproducts()">Get Products</button>
+          <div id="products"></div>
+        </div>
+
+        <!-- /.col -->
+
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+
+</section>
+     </div>
+
+
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+  <footer class="main-footer">
+    <div class="pull-right hidden-xs">
+      <b>Version</b> 2.3.7
+    </div>
+    <strong>Copyright &copy; 2014-2016 <a href="http://almsaeedstudio.com">Almsaeed Studio</a>.</strong> All rights
+    reserved.
+  </footer>
+
+  <!-- Control Sidebar -->
+
+  <!-- /.control-sidebar -->
+  <!-- Add the sidebar's background. This div must be placed
+       immediately after the control sidebar -->
+  <div class="control-sidebar-bg"></div>
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery 2.2.3 -->
+<script src="../../assets/plugins/jQuery/jquery-2.2.3.min.js"></script>
+<!-- Bootstrap 3.3.6 -->
+<script src="../../assets/bootstrap/js/bootstrap.min.js"></script>
+<!-- FastClick -->
+<script src="../../assets/plugins/fastclick/fastclick.js"></script>
+<!-- AdminLTE App -->
+<script src="../../assets/dist/js/app.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="../../assets/dist/js/demo.js"></script>
+<!--<script type="text/javascript" src="../../js/c_routes.js"></script>-->
+<script type="text/javascript" src="c_routes.js"></script>
+<script type="text/javascript" src="c_get.js"></script>
+<script type="text/javascript" src="c_post.js"></script>
+</body>
+</html>

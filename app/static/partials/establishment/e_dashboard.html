@@ -37,7 +37,7 @@
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>A</b>LT</span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>Admin</b></span>
+      <span class="logo-lg"><b>Establishment</b></span>
     </a>
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top">
@@ -277,12 +277,12 @@
                 <!-- /.row -->
               </li>
               <!-- Menu Footer-->
-              <li class="user-footer" onclick="logout()">
+              <li class="user-footer">
                 <div class="pull-left">
                   <a href="#" class="btn btn-default btn-flat">Profile</a>
                 </div>
                 <div class="pull-right">
-                  <a href="../signout.html" class="btn btn-default btn-flat">Logout</a>
+                  <a href="#" class="btn btn-default btn-flat">Sign out</a>
                 </div>
               </li>
             </ul>
@@ -352,7 +352,12 @@
             </span>
           </a>
         </li>
-        
+        <li class="treeview" id="#">
+          <a href="#">
+            <span>Logout</span>
+          </a>
+        </li>
+
       </ul>
     </section>
     <!-- /.sidebar -->
@@ -432,14 +437,14 @@
             <form role="form">
               <div class="box-body">
                 <div class="form-group">
-                  <label for="email_address2">Email address</label>
-                  <input type="text" class="form-control" id="email_address2" placeholder="Enter Establishment">
+                  <label for="email_address">Email address</label>
+                  <input type="text" class="form-control" id="email_address" placeholder="Enter Establishment">
                 </div>
                 <div class="form-group">
-                  <label for="password2">Password</label>
-                  <input type="password" class="form-control" id="password2" placeholder="Enter Password">
+                  <label for="password">Password</label>
+                  <input type="password" class="form-control" id="password" placeholder="Enter Password">
                 </div>
-                <input type="button" class="btn btn-primary" onclick="addestablishment_personnel()" value="Add Establishment">
+                <input type="button" class="btn btn-primary" onclick="addestablishment()" value="Add Establishment">
 
               </div>
               <!-- /.box-body -->
@@ -542,7 +547,7 @@
                 </div>
                 <div class="form-group">
                   <label for="user_id">User Id</label>
-                  <input type="text" class="form-control" id="user_id" placeholder="User">
+                  <input type="text" class="form-control" id="user_id" placeholder="Enter email">
                 </div>
                 <input type="button" class="btn btn-primary" onclick="addestablishment()" value="Add Establishment">
 
@@ -557,7 +562,7 @@
                 <thead>
                 <tr>
                   <th>  Establishment Name  </th>
-                  <th>  User ID  </th>
+                  <th>  User  </th>
                 </tr>
                 </thead>
                 <tbody id="establishments">
@@ -832,34 +837,14 @@
           <!-- /. box -->
 
         <!-- /.box -->
+        <button type="button" class="btn btn-primary" onclick="getproducts()">Get Products</button>
+          <div id="products"></div>
         </div>
 
         <!-- /.col -->
 
         <!-- /.col -->
-          <div class="col-md-6">
-                <button type="button" class="btn btn-primary" onclick="getproducts()">Get Products</button>
-            <div class="box">
-    <div class="box-body">
-              <table id="example2" class="table table-bordered table-hover">
-                <thead>
-                <tr>
-                  <th> Product ID </th>
-                  <th>  Product Image  </th>
-                  <th>  Product Name </th>
-                  <th>  Product Price </th>
-                </tr>
-                </thead>
-                <tbody id="products">
-                <tbody>
-              </table>
-            </div>
-          </div>'
-                </div>
       </div>
-
-
-
       <!-- /.row -->
 
 </section>
@@ -878,7 +863,7 @@
   </footer>
 
   <!-- Control Sidebar -->
-  
+
   <!-- /.control-sidebar -->
   <!-- Add the sidebar's background. This div must be placed
        immediately after the control sidebar -->
@@ -897,9 +882,8 @@
 <!-- AdminLTE for demo purposes -->
 <script src="../../assets/dist/js/demo.js"></script>
 <!--<script type="text/javascript" src="../../js/c_routes.js"></script>-->
-<script type="text/javascript" src="routes.js"></script>
-<script type="text/javascript" src="get.js"></script>
-<script type="text/javascript" src="post.js"></script>
-<script type="text/javascript" src="../../js/login_register.js"></script>
+<script type="text/javascript" src="c_routes.js"></script>
+<script type="text/javascript" src="c_get.js"></script>
+<script type="text/javascript" src="c_post.js"></script>
 </body>
 </html>
