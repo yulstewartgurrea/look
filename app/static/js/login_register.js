@@ -21,11 +21,14 @@ function login() {
                 alert('Login Successful');
                 window.location.href="../partials/establishment/e_dashboard.html";
             }
-
+            elif(res.status === 'Login successful' && res.customer===true && res.active===true){
+                alert('Login Successful');
+                window.location.href="../partials/customer/shop.html"
+            }
             else(res.status=='Invalid email or password') {
                    alert('Invalid email or password');
             } 
-            }
+        }
 
     });
 }
