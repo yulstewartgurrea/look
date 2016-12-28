@@ -25,7 +25,7 @@ function addestablishment_personnel() {
     var email_address = $('#email_address2').val();
     var password = $('#password2').val();
 
-    var data = JSON.stringify({"email_address": email_address2, "password": password2});
+    var data = JSON.stringify({"email_address": email_address, "password": password});
 
     $.ajax({
         url: 'http://127.0.0.1:5000/api/add/establishment_personnel',
