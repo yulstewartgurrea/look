@@ -13,21 +13,18 @@ function login() {
         data: data,
         dataType: 'json',
         success: function(res) {
-            if(res.status === 'Login successful' && res.admin===true && res.active===true){
+            if(res.status === 'Login successful' && res.admin===true && res.active===true) {
                 alert('Login Successful');
                 window.location.href="../partials/admin/dashboard.html";
-            }
-            elif(res.status === 'Login successful' && res.establishment===true && res.active===true){
+            } else if(res.status === 'Login successful' && res.establishment===true && res.active===true) {
                 alert('Login Successful');
                 window.location.href="../partials/establishment/e_dashboard.html";
-            }
-            elif(res.status === 'Login successful' && res.customer===true && res.active===true){
+            } else if(res.status === 'Login successful' && res.customer===true && res.active===true) {
                 alert('Login Successful');
-                window.location.href="../partials/customer/shop.html"
-            }
-            else(res.status=='Invalid email or password') {
+                window.location.href="../partials/customer/shop.html";
+            } else {
                    alert('Invalid email or password');
-            } 
+            }
         }
 
     });
@@ -39,7 +36,7 @@ function logout() {
         type: 'POST',
         success: function(res){
             alert(res.message);
-            window.location.href="../partials/login.html"
+            window.location.href="../login.html"
         }
 
 
