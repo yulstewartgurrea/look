@@ -11,10 +11,10 @@ function addadmin() {
         data: data,
         dataType: 'json',
         success: function(res){
-            if(res.status=='ok') {
+            if(res.message=='Ok') {
                 alert("Admin Added")
             } else {
-                alert("Error")
+                alert(res.message)
             }
         }
 
@@ -34,10 +34,10 @@ function addestablishment_personnel() {
         data: data,
         dataType: 'json',
         success: function(res){
-            if(res.status=='ok') {
+            if(res.message=='Ok') {
                 alert("Establishment Personnel Added")
             } else {
-                alert("Error")
+                alert(res.message)
             }
         }
 
@@ -57,10 +57,10 @@ function addcustomer() {
         data: data,
         dataType: 'json',
         success: function(res){
-            if(res.status=='ok') {
+            if(res.message=='Ok') {
                 alert("Customer Added")
             } else {
-                alert("Error")
+                alert(res.message)
             }
         }
 
@@ -79,10 +79,10 @@ function addcatalog() {
         data: data,
         dataType: 'json',
         success: function(res){
-            if(res.status=='Ok') {
+            if(res.message=='Ok') {
                 alert("Catalog Added")
             } else {
-                alert("Error")
+                alert(res.message)
             }
         }
 
@@ -101,10 +101,10 @@ function addgender() {
         data: data,
         dataType:'json',
         success: function(res){
-            if(res.status=='ok') {
+            if(res.message=='Ok') {
                 alert("Gender Added!")
             } else {
-                alert("error")
+                alert(res.message)
             }
         }
     });
@@ -112,8 +112,8 @@ function addgender() {
 }
 
 function addestablishment() {
-    var establishment_name =$(' #establishment_name').val();
-    var user_id =$(' #user_id').val();
+    var establishment_name =$('#establishment_name').val();
+    var user_id =$('#user_id').val();
 
     var data = JSON.stringify({"user_id": user_id ,"establishment_name": establishment_name });
 
@@ -124,19 +124,19 @@ function addestablishment() {
         data: data,
         dataType:'json',
         success: function(res){
-            if(res.status=='Ok') {
+            if(res.message=='Ok') {
                 alert("Establishment Added!")
             } else {
-                alert("error")
+                alert(res.message)
             }
         }
     });
 }
 
 function addcategory() {
-    var category_name =$(' #category_name').val();
-    var catalog_id =$(' #catalog_id').val();
-    var gender_id =$(' #gender_id').val();
+    var category_name =$('#category_name').val();
+    var catalog_id =$('#catalog_id').val();
+    var gender_id =$('#gender_id').val();
 
     var data = JSON.stringify({"category_name": category_name ,"catalog_id": catalog_id, "gender_id": gender_id });
 
@@ -147,21 +147,21 @@ function addcategory() {
         data: data,
         dataType:'json',
         success: function(res){
-            if(res.status=='Ok') {
+            if(res.message=='Ok') {
                 alert("Category Added!")
             } else {
-                alert("error")
+                alert(res.message)
             }
         }
     });
 }
 
 function addsubcategory() {
-    var category_name =$(' #subcategory_name').val();
-    var category_id =$(' #category_id').val();
+    var subcategory_name =$('#subcategory_name').val();
+    var category_id =$('#category_id').val();
 
 
-    var data = JSON.stringify({"subcategory_name": subcategory_name ,"category_id": category_id });
+    var data = JSON.stringify({"subcategory_name": subcategory_name , "category_id": category_id });
 
     $.ajax({
         url: 'http://127.0.0.1:5000/api/add/subcategory',
@@ -170,10 +170,10 @@ function addsubcategory() {
         data: data,
         dataType:'json',
         success: function(res){
-            if(res.status=='Ok') {
+            if(res.message=='Ok') {
                 alert("SubCategory Added!")
             } else {
-                alert("error")
+                alert(res.message)
             }
         }
     });

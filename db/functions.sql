@@ -125,7 +125,7 @@ begin
 					v_res = 'Ok';
 			end if;
 		else
-			v_res = 'Error';
+			v_res = 'Email Already exists';
 		end if;
 		return v_res;
 end;
