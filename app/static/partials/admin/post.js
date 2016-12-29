@@ -45,8 +45,8 @@ function addestablishment_personnel() {
 }
 
 function addcustomer() {
-    var email_address = $('#email_address').val();
-    var password = $('#password').val();
+    var email_address = $('#email_address3').val();
+    var password = $('#password3').val();
 
     var data = JSON.stringify({"email_address": email_address, "password": password});
 

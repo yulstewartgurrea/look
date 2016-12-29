@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="30b9607b-c823-445c-838b-671b34af6de3" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/static/partials/admin/dashboard.html" afterPath="$PROJECT_DIR$/app/static/partials/admin/dashboard.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/static/partials/admin/post.js" afterPath="$PROJECT_DIR$/app/static/partials/admin/post.js" />
     </list>

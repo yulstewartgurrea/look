@@ -131,13 +131,7 @@ def new_customer():
     if 'Error' in str(res[0][0]):
         return jsonify({'status': 'Error', 'message': res[0][0]})
 
-    entries = []
-    for r in res:
-        entries.append({'user_id': str(r[0]), 'email_address': str(r[1]), 'is_customer': str(r[2]), 'is_active': str(r[3])})
-
-    status_code = 200
-
-    return jsonify({'status': 'ok', 'message': "Ok"}), status_code
+    return jsonify({'status': 'ok', 'message': res[0][0]})
 
 @app.route('/api/get/customers', methods=['GET'])
 def get_customers():
