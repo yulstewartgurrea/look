@@ -57,7 +57,7 @@ function addcustomer() {
         data: data,
         dataType: 'json',
         success: function(res){
-            if(res.status=='Ok') {
+            if(res.status=='ok') {
                 alert("Customer Added")
             } else {
                 alert("Error")
