@@ -264,8 +264,7 @@ function getsubcategories() {
 }
 
 function getproduct(product_id, product_name, price, image) {
-     return
-                '<tr> ' +
+     return    '<tr> ' +
                   '<td>' + product_id+ '</td>' +
                   '<td>' + product_name+ '</td>' +
                   '<td>' + price+ '</td>' +

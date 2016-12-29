@@ -180,15 +180,15 @@ function addsubcategory() {
 }
 
 function addproduct() {
-    var establishment_id =$(' #establishment_id').val();
-    var product_name =$(' #product_name').val();
-    var product_description =$(' #product_description').val();
-    var catalog_id =$(' #catalog_id').val();
-    var gender_id =$(' #gender_id').val();
-    var category_id =$(' #category_id').val();
-    var subcategory_id =$(' #subcategory_id').val();
-    var image =$(' #image').val();
-    var price =$(' #price').val();
+    var establishment_id =$('#establishment_id').val();
+    var product_name =$('#product_name').val();
+    var product_description =$('#product_description').val();
+    var catalog_id =$('#catalog_id2').val();
+    var gender_id =$('#gender_id2').val();
+    var category_id =$('#category_id2').val();
+    var subcategory_id =$('#subcategory_id').val();
+    var image =$('#image').val();
+    var price =$('#price').val();
 
 
     var data = JSON.stringify({"establishment_id": establishment_id ,"product_name": product_name,

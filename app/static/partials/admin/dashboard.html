@@ -402,7 +402,7 @@
           <button type="button" class="btn btn-primary" onclick="getadmins()">Get Admins</button>
           <div class="box">
            <div class="box-body">
-              <table id="example2" class="table table-bordered table-hover">
+              <table class="table table-bordered table-hover">
                 <thead>
                 <tr>
                   <th>  Email Address  </th>
@@ -449,7 +449,7 @@
           <button type="button" class="btn btn-primary" onclick="getestablishmentpersonnels()">Get Establishment Personnels</button>
             <div class="box">
             <div class="box-body">
-              <table id="example2" class="table table-bordered table-hover">
+              <table class="table table-bordered table-hover">
                 <thead>
                 <tr>
                   <th>  Email Address  </th>
@@ -495,7 +495,7 @@
           <button type="button" class="btn btn-primary" onclick="getcustomers()">Get Customers</button>
             <div class="box">
     <div class="box-body">
-              <table id="example2" class="table table-bordered table-hover">
+              <table class="table table-bordered table-hover">
                 <thead>
                 <tr>
                   <th>  Email Address  </th>
@@ -511,6 +511,7 @@
 
       </div>
       <!-- end right column -->
+          </div>
       <!-- /.row -->
     </section>
     </div>
@@ -553,7 +554,7 @@
         <button type="button" class="btn btn-primary" onclick="getestablishments()">Get Establishments</button>
         <div class="box">
     <div class="box-body">
-              <table id="example2" class="table table-bordered table-hover">
+              <table class="table table-bordered table-hover">
                 <thead>
                 <tr>
                   <th>  Establishment Name  </th>
@@ -581,7 +582,7 @@
             <form method="post">
               <div class="box-body">
                 <div class="form-group">
-                  <label for="exampleInputEmail1">Catalog Name</label>
+                  <label for="catalog_name">Catalog Name</label>
                   <input type="text" class="form-control" id="catalog_name" name="catalog_name" placeholder="Enter catalog">
                 </div>
 
@@ -594,7 +595,7 @@
           <button type="button" onclick="getcatalogs()" class="btn btn-primary"> Get Catalog</button>
           <div class="box">
           <div class="box-body">
-              <table id="example2" class="table table-bordered table-hover">
+              <table class="table table-bordered table-hover">
                 <thead>
                 <tr>
                   <th>  Catalog Name  </th>
@@ -622,7 +623,7 @@
             <form role="form">
               <div class="box-body">
                 <div class="form-group">
-                  <label for="exampleInputEmail1">Sex</label>
+                  <label for="gender_name">Sex</label>
                   <input type="email" class="form-control" id="gender_name" placeholder="Enter email">
                 </div>
                 <input type="button" class="btn btn-primary" onclick="addgender()" value="Add Gender">
@@ -668,9 +669,6 @@
       <div class="row">
         <!-- left column -->
 
-
-
-
         <!-- right column -->
         <div class="col-md-6">
           <!-- general form elements -->
@@ -704,7 +702,7 @@
             <button type="button" class="btn btn-primary" onclick="getcategories()">Get Categories</button>
             <div class="box">
             <div class="box-body">
-              <table id="example2" class="table table-bordered table-hover">
+              <table id="#" class="table table-bordered table-hover">
                 <thead>
                 <tr>
                   <th>  Category Name  </th>
@@ -750,7 +748,7 @@
         <!--<div id="subcategories"></div>-->
         <div class="box">
     <div class="box-body">
-              <table id="example2" class="table table-bordered table-hover">
+              <table class="table table-bordered table-hover">
                 <thead>
                 <tr>
                   <th>  Subcategory Name  </th>
@@ -758,7 +756,7 @@
                 </tr>
                 </thead>
                 <tbody id="subcategories">
-                <tbody>
+                </tbody>
               </table>
             </div>
           </div>
@@ -766,7 +764,7 @@
           <!--&lt;!&ndash;-->
       </div>
 
-
+</div>
       <!-- end right column -->
       <!-- /.row -->
     </section>
@@ -799,15 +797,15 @@
                 </div>
                 <div class="form-group">
                   <label for="catalog_id">Product Catalog</label>
-                  <input type="text" class="form-control" id="catalog_id" placeholder="Enter Catalog">
+                  <input type="text" class="form-control" id="catalog_id2" placeholder="Enter Catalog">
                 </div>
                 <div class="form-group">
                   <label for="gender_id">Product Gender</label>
-                  <input type="text" class="form-control" id="gender_id" placeholder="Enter Gender">
+                  <input type="text" class="form-control" id="gender_id2" placeholder="Enter Gender">
                 </div>
                 <div class="form-group">
                   <label for="category_id">Product Category</label>
-                  <input type="text" class="form-control" id="category_id" placeholder="Enter Category">
+                  <input type="text" class="form-control" id="category_id2" placeholder="Enter Category">
                 </div>
                 <div class="form-group">
                   <label for="subcategory_id">Product Subcategory</label>
@@ -815,11 +813,11 @@
                 </div>
                 <div class="form-group">
                   <label for="price">Price</label>
-                  <input type="text" class="form-control" id="price" placeholder="Enter SubCategory">
+                  <input type="text" class="form-control" id="price" placeholder="Enter Price">
                 </div>
                 <div class="form-group">
                   <label for="image">Image</label>
-                  <input type="text" class="form-control" id="image" placeholder="Enter SubCategory">
+                  <input type="text" class="form-control" id="image" placeholder="Upload Image">
                 </div>
 
 
@@ -841,7 +839,7 @@
                 <button type="button" class="btn btn-primary" onclick="getproducts()">Get Products</button>
             <div class="box">
     <div class="box-body">
-              <table id="#" class="table table-bordered table-hover">
+              <table class="table table-bordered table-hover">
                 <thead>
                 <tr>
                   <th> Product ID </th>
@@ -854,7 +852,7 @@
                 <tbody>
               </table>
             </div>
-          </div>'
+          </div>
                 </div>
       </div>
 
