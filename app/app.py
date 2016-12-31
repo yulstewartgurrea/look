@@ -308,17 +308,18 @@ def new_product():
     jsn = json.loads(request.data)
 
     res = spcall('new_product', (
-        jsn['product_name'],
-        jsn['product_description'],
-        jsn['catalog_id'],
-        jsn['category_id'],
-        jsn['subcategory_id'],
-        jsn['establishment_id'],
-        jsn['image'],
-        jsn['price'],), True)
+            jsn['price'], 
+            jsn['image'],
+            jsn['product_name'],
+            jsn['product_description'],
+            jsn['catalog_id'],
+            jsn['gender_id'],
+            jsn['category_id'],
+            jsn['subcategory_id'],
+            jsn['establishment_id'],), True)
 
     if 'Error' in res[0][0]:
-        return jsonify({'status': 'error', 'message': res[0][0]})
+        return jsonify({'status': 'Ok', 'message': res[0][0]})
 
     return jsonify({'status': 'Ok', 'message': res[0][0]})
 
@@ -356,7 +357,7 @@ def get_product():
     recs = []
 
     for r in res:
-        recs.append({'product_id': str(r[0]), 'product_name': str(r[1]), 'price': str(r[2]), 'image': str(r[3])})
+        recs.append({'product_id': str(r[0]), 'product_name': str(r[3]), 'price': str(r[2]), 'image': str(r[1])})
 
     return jsonify({'status': 'ok', 'entries': recs, 'count': len(recs)})
 

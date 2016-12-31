@@ -420,8 +420,8 @@ $$
 	language 'sql';
 
 -- Add product
-create or replace function new_product(p_price numeric, p_image text, p_product_name text, p_product_description text, p_product_catalog int, p_product_gender int, p_product_category int,
-									   p_product_subcategory int, p_establishment_id int) returns text as
+create or replace function new_product(p_price numeric, p_image text, p_product_name text, p_product_description text, p_product_catalog int, p_product_gender int,
+										p_product_category int, p_product_subcategory int, p_establishment_id int) returns text as
 $$
 declare 
 	v_product_name text;

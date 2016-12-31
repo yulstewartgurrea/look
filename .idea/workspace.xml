@@ -3,9 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="30b9607b-c823-445c-838b-671b34af6de3" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.py" afterPath="$PROJECT_DIR$/app/app.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/static/partials/admin/dashboard.html" afterPath="$PROJECT_DIR$/app/static/partials/admin/dashboard.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/static/partials/admin/get.js" afterPath="$PROJECT_DIR$/app/static/partials/admin/get.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/static/partials/admin/post.js" afterPath="$PROJECT_DIR$/app/static/partials/admin/post.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/functions.sql" afterPath="$PROJECT_DIR$/db/functions.sql" />
     </list>
     <ignored path="look.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -33,7 +35,7 @@
       <file leaf-file-name="login_register.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/static/js/login_register.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="880">
+            <state relative-caret-position="267">
               <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
               <folding />
             </state>
@@ -43,9 +45,55 @@
       <file leaf-file-name="dashboard.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/static/partials/admin/dashboard.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="364">
-              <caret line="839" column="29" selection-start-line="839" selection-start-column="29" selection-end-line="839" selection-end-column="29" />
+            <state relative-caret-position="191">
+              <caret line="803" column="22" selection-start-line="803" selection-start-column="22" selection-end-line="803" selection-end-column="22" />
+              <folding>
+                <element signature="n#style#0;n#textarea#0;n#div#3;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#3;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../app.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#87#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="post.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/static/partials/admin/post.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="22">
+              <caret line="141" column="0" selection-start-line="141" selection-start-column="0" selection-end-line="141" selection-end-column="0" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="functions.sql" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/db/functions.sql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="9966">
+              <caret line="453" column="0" selection-start-line="452" selection-start-column="0" selection-end-line="452" selection-end-column="69" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/app.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="6798">
+              <caret line="312" column="25" selection-start-line="312" selection-start-column="25" selection-end-line="312" selection-end-column="25" />
+              <folding>
+                <marker date="1483182963245" expanded="true" signature="9047:9325" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -53,9 +101,73 @@
       <file leaf-file-name="get.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/static/partials/admin/get.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="67">
-              <caret line="281" column="25" selection-start-line="281" selection-start-column="25" selection-end-line="281" selection-end-column="25" />
-              <folding />
+            <state relative-caret-position="6182">
+              <caret line="282" column="25" selection-start-line="282" selection-start-column="25" selection-end-line="282" selection-end-column="25" />
+              <folding>
+                <marker date="1483175186486" expanded="true" signature="54:251" ph="{...}" />
+                <marker date="1483175186486" expanded="true" signature="274:1004" ph="{...}" />
+                <marker date="1483175186486" expanded="true" signature="287:999" ph="{&quot;url&quot;: 'http://127.0.0.1:5000/api/get/admins'...}" />
+                <marker date="1483175186486" expanded="true" signature="420:990" ph="{...}" />
+                <marker date="1483175186486" expanded="true" signature="489:889" ph="{...}" />
+                <marker date="1483175186486" expanded="true" signature="535:875" ph="{...}" />
+                <marker date="1483175186486" expanded="true" signature="895:980" ph="{...}" />
+                <marker date="1483175186486" expanded="true" signature="1066:1245" ph="{...}" />
+                <marker date="1483175186486" expanded="true" signature="1271:1970" ph="{...}" />
+                <marker date="1483175186486" expanded="true" signature="1284:1965" ph="{&quot;url&quot;: 'http://127.0.0.1:5000/api/get/customers'...}" />
+                <marker date="1483175186486" expanded="true" signature="1420:1956" ph="{...}" />
+                <marker date="1483175186486" expanded="true" signature="1492:1852" ph="{...}" />
+                <marker date="1483175186486" expanded="true" signature="1538:1838" ph="{...}" />
+                <marker date="1483175186486" expanded="true" signature="1858:1946" ph="{...}" />
+                <marker date="1483175186486" expanded="true" signature="2051:2244" ph="{...}" />
+                <marker date="1483175186486" expanded="true" signature="2284:3075" ph="{...}" />
+                <marker date="1483175186486" expanded="true" signature="2297:3070" ph="{&quot;url&quot;: 'http://127.0.0.1:5000/api/get/establishment_personnels'...}" />
+                <marker date="1483175186486" expanded="true" signature="2448:3061" ph="{...}" />
+                <marker date="1483175186486" expanded="true" signature="2535:2941" ph="{...}" />
+                <marker date="1483175186486" expanded="true" signature="2581:2927" ph="{...}" />
+                <marker date="1483175186486" expanded="true" signature="2947:3051" ph="{...}" />
+                <marker date="1483175186486" expanded="true" signature="3109:3196" ph="{...}" />
+                <marker date="1483175186486" expanded="true" signature="3220:3780" ph="{...}" />
+                <marker date="1483175186486" expanded="true" signature="3230:3776" ph="{&quot;url&quot;: 'http://127.0.0.1:5000/api/get/gender'...}" />
+                <marker date="1483175186486" expanded="true" signature="3400:3706" ph="{...}" />
+                <marker date="1483175186486" expanded="true" signature="3459:3636" ph="{...}" />
+                <marker date="1483175186486" expanded="true" signature="3501:3630" ph="{...}" />
+                <marker date="1483175186486" expanded="true" signature="3642:3698" ph="{...}" />
+                <marker date="1483175186486" expanded="true" signature="3734:3770" ph="{...}" />
+                <marker date="1483175186486" expanded="true" signature="3837:3972" ph="{...}" />
+                <marker date="1483175186486" expanded="true" signature="4003:4715" ph="{...}" />
+                <marker date="1483175186486" expanded="true" signature="4016:4711" ph="{&quot;url&quot;: 'http://127.0.0.1:5000/api/get/establishment'...}" />
+                <marker date="1483175186486" expanded="true" signature="4211:4702" ph="{...}" />
+                <marker date="1483175186486" expanded="true" signature="4288:4593" ph="{...}" />
+                <marker date="1483175186486" expanded="true" signature="4334:4579" ph="{...}" />
+                <marker date="1483175186486" expanded="true" signature="4599:4692" ph="{...}" />
+                <marker date="1483175186486" expanded="true" signature="4751:4840" ph="{...}" />
+                <marker date="1483175186486" expanded="true" signature="4865:5406" ph="{...}" />
+                <marker date="1483175186486" expanded="true" signature="4878:5402" ph="{&quot;url&quot;: 'http://127.0.0.1:5000/api/get/catalog'...}" />
+                <marker date="1483175186486" expanded="true" signature="5011:5395" ph="{...}" />
+                <marker date="1483175186486" expanded="true" signature="5082:5292" ph="{...}" />
+                <marker date="1483175186486" expanded="true" signature="5126:5278" ph="{...}" />
+                <marker date="1483175186486" expanded="true" signature="5298:5385" ph="{...}" />
+                <marker date="1483175186486" expanded="true" signature="5480:5668" ph="{...}" />
+                <marker date="1483175186486" expanded="true" signature="5696:6466" ph="{...}" />
+                <marker date="1483175186486" expanded="true" signature="5709:6462" ph="{&quot;url&quot;: 'http://127.0.0.1:5000/api/get/category'...}" />
+                <marker date="1483175186486" expanded="true" signature="5843:6455" ph="{...}" />
+                <marker date="1483175186486" expanded="true" signature="5917:6349" ph="{...}" />
+                <marker date="1483175186486" expanded="true" signature="5961:6335" ph="{...}" />
+                <marker date="1483175186486" expanded="true" signature="6355:6445" ph="{...}" />
+                <marker date="1483175186486" expanded="true" signature="6539:6698" ph="{...}" />
+                <marker date="1483175186486" expanded="true" signature="6728:7463" ph="{...}" />
+                <marker date="1483175186486" expanded="true" signature="6741:7458" ph="{&quot;url&quot;: 'http://127.0.0.1:5000/api/get/subcategory'...}" />
+                <marker date="1483175186486" expanded="true" signature="6878:7451" ph="{...}" />
+                <marker date="1483175186486" expanded="true" signature="6954:7343" ph="{...}" />
+                <marker date="1483175186486" expanded="true" signature="6998:7329" ph="{...}" />
+                <marker date="1483175186486" expanded="true" signature="7349:7441" ph="{...}" />
+                <marker date="1483175186486" expanded="true" signature="7526:7770" ph="{...}" />
+                <marker date="1483175186486" expanded="true" signature="7796:8523" ph="{...}" />
+                <marker date="1483175186486" expanded="true" signature="7942:8511" ph="{...}" />
+                <marker date="1483175186486" expanded="true" signature="8013:8408" ph="{...}" />
+                <marker date="1483175186486" expanded="true" signature="8057:8394" ph="{...}" />
+                <marker date="1483175186486" expanded="true" signature="8414:8501" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -119,13 +231,13 @@
         <option value="$PROJECT_DIR$/app/static/partials/customer/c_dboard.html" />
         <option value="$PROJECT_DIR$/app/static/partials/establishment/e_dashboard.html" />
         <option value="$PROJECT_DIR$/app/config.py" />
-        <option value="$PROJECT_DIR$/db/functions.sql" />
-        <option value="$PROJECT_DIR$/app/app.py" />
-        <option value="$PROJECT_DIR$/app/static/partials/admin/post.js" />
         <option value="$PROJECT_DIR$/app/static/partials/signout.html" />
         <option value="$PROJECT_DIR$/app/static/js/login_register.js" />
         <option value="$PROJECT_DIR$/app/static/partials/admin/get.js" />
+        <option value="$PROJECT_DIR$/app/app.py" />
+        <option value="$PROJECT_DIR$/db/functions.sql" />
         <option value="$PROJECT_DIR$/app/static/partials/admin/dashboard.html" />
+        <option value="$PROJECT_DIR$/app/static/partials/admin/post.js" />
       </list>
     </option>
   </component>
@@ -166,6 +278,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -280,8 +394,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -620,7 +732,7 @@
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14232008" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14661655" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.371134" sideWeight="0.50431037" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -628,7 +740,7 @@
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32760596" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2749141" sideWeight="0.49583334" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3295583" sideWeight="0.49568966" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.43601358" sideWeight="0.49568966" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -696,7 +808,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/static/partials/sample-home.html" />
     <entry file="file://$PROJECT_DIR$/app/static/partials/sample-list.html" />
     <entry file="file://$PROJECT_DIR$/app/static/login.html" />
     <entry file="file://$PROJECT_DIR$/app/static/register.html" />
@@ -875,13 +986,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/db/functions.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-380">
-          <caret line="454" column="69" selection-start-line="454" selection-start-column="69" selection-end-line="454" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/static/partials/admin/ecs.html" />
     <entry file="file://$PROJECT_DIR$/app/static/partials/signout.html">
       <provider selected="true" editor-type-id="text-editor">
@@ -897,21 +1001,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/static/partials/admin/post.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="770">
-          <caret line="35" column="31" selection-start-line="35" selection-start-column="31" selection-end-line="35" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/app.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2112">
-          <caret line="99" column="0" selection-start-line="99" selection-start-column="0" selection-end-line="99" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/static/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -919,19 +1008,75 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/static/js/login_register.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="880">
-          <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/static/partials/admin/get.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="67">
-          <caret line="281" column="25" selection-start-line="281" selection-start-column="25" selection-end-line="281" selection-end-column="25" />
-          <folding />
+        <state relative-caret-position="6182">
+          <caret line="282" column="25" selection-start-line="282" selection-start-column="25" selection-end-line="282" selection-end-column="25" />
+          <folding>
+            <marker date="1483175186486" expanded="true" signature="54:251" ph="{...}" />
+            <marker date="1483175186486" expanded="true" signature="274:1004" ph="{...}" />
+            <marker date="1483175186486" expanded="true" signature="287:999" ph="{&quot;url&quot;: 'http://127.0.0.1:5000/api/get/admins'...}" />
+            <marker date="1483175186486" expanded="true" signature="420:990" ph="{...}" />
+            <marker date="1483175186486" expanded="true" signature="489:889" ph="{...}" />
+            <marker date="1483175186486" expanded="true" signature="535:875" ph="{...}" />
+            <marker date="1483175186486" expanded="true" signature="895:980" ph="{...}" />
+            <marker date="1483175186486" expanded="true" signature="1066:1245" ph="{...}" />
+            <marker date="1483175186486" expanded="true" signature="1271:1970" ph="{...}" />
+            <marker date="1483175186486" expanded="true" signature="1284:1965" ph="{&quot;url&quot;: 'http://127.0.0.1:5000/api/get/customers'...}" />
+            <marker date="1483175186486" expanded="true" signature="1420:1956" ph="{...}" />
+            <marker date="1483175186486" expanded="true" signature="1492:1852" ph="{...}" />
+            <marker date="1483175186486" expanded="true" signature="1538:1838" ph="{...}" />
+            <marker date="1483175186486" expanded="true" signature="1858:1946" ph="{...}" />
+            <marker date="1483175186486" expanded="true" signature="2051:2244" ph="{...}" />
+            <marker date="1483175186486" expanded="true" signature="2284:3075" ph="{...}" />
+            <marker date="1483175186486" expanded="true" signature="2297:3070" ph="{&quot;url&quot;: 'http://127.0.0.1:5000/api/get/establishment_personnels'...}" />
+            <marker date="1483175186486" expanded="true" signature="2448:3061" ph="{...}" />
+            <marker date="1483175186486" expanded="true" signature="2535:2941" ph="{...}" />
+            <marker date="1483175186486" expanded="true" signature="2581:2927" ph="{...}" />
+            <marker date="1483175186486" expanded="true" signature="2947:3051" ph="{...}" />
+            <marker date="1483175186486" expanded="true" signature="3109:3196" ph="{...}" />
+            <marker date="1483175186486" expanded="true" signature="3220:3780" ph="{...}" />
+            <marker date="1483175186486" expanded="true" signature="3230:3776" ph="{&quot;url&quot;: 'http://127.0.0.1:5000/api/get/gender'...}" />
+            <marker date="1483175186486" expanded="true" signature="3400:3706" ph="{...}" />
+            <marker date="1483175186486" expanded="true" signature="3459:3636" ph="{...}" />
+            <marker date="1483175186486" expanded="true" signature="3501:3630" ph="{...}" />
+            <marker date="1483175186486" expanded="true" signature="3642:3698" ph="{...}" />
+            <marker date="1483175186486" expanded="true" signature="3734:3770" ph="{...}" />
+            <marker date="1483175186486" expanded="true" signature="3837:3972" ph="{...}" />
+            <marker date="1483175186486" expanded="true" signature="4003:4715" ph="{...}" />
+            <marker date="1483175186486" expanded="true" signature="4016:4711" ph="{&quot;url&quot;: 'http://127.0.0.1:5000/api/get/establishment'...}" />
+            <marker date="1483175186486" expanded="true" signature="4211:4702" ph="{...}" />
+            <marker date="1483175186486" expanded="true" signature="4288:4593" ph="{...}" />
+            <marker date="1483175186486" expanded="true" signature="4334:4579" ph="{...}" />
+            <marker date="1483175186486" expanded="true" signature="4599:4692" ph="{...}" />
+            <marker date="1483175186486" expanded="true" signature="4751:4840" ph="{...}" />
+            <marker date="1483175186486" expanded="true" signature="4865:5406" ph="{...}" />
+            <marker date="1483175186486" expanded="true" signature="4878:5402" ph="{&quot;url&quot;: 'http://127.0.0.1:5000/api/get/catalog'...}" />
+            <marker date="1483175186486" expanded="true" signature="5011:5395" ph="{...}" />
+            <marker date="1483175186486" expanded="true" signature="5082:5292" ph="{...}" />
+            <marker date="1483175186486" expanded="true" signature="5126:5278" ph="{...}" />
+            <marker date="1483175186486" expanded="true" signature="5298:5385" ph="{...}" />
+            <marker date="1483175186486" expanded="true" signature="5480:5668" ph="{...}" />
+            <marker date="1483175186486" expanded="true" signature="5696:6466" ph="{...}" />
+            <marker date="1483175186486" expanded="true" signature="5709:6462" ph="{&quot;url&quot;: 'http://127.0.0.1:5000/api/get/category'...}" />
+            <marker date="1483175186486" expanded="true" signature="5843:6455" ph="{...}" />
+            <marker date="1483175186486" expanded="true" signature="5917:6349" ph="{...}" />
+            <marker date="1483175186486" expanded="true" signature="5961:6335" ph="{...}" />
+            <marker date="1483175186486" expanded="true" signature="6355:6445" ph="{...}" />
+            <marker date="1483175186486" expanded="true" signature="6539:6698" ph="{...}" />
+            <marker date="1483175186486" expanded="true" signature="6728:7463" ph="{...}" />
+            <marker date="1483175186486" expanded="true" signature="6741:7458" ph="{&quot;url&quot;: 'http://127.0.0.1:5000/api/get/subcategory'...}" />
+            <marker date="1483175186486" expanded="true" signature="6878:7451" ph="{...}" />
+            <marker date="1483175186486" expanded="true" signature="6954:7343" ph="{...}" />
+            <marker date="1483175186486" expanded="true" signature="6998:7329" ph="{...}" />
+            <marker date="1483175186486" expanded="true" signature="7349:7441" ph="{...}" />
+            <marker date="1483175186486" expanded="true" signature="7526:7770" ph="{...}" />
+            <marker date="1483175186486" expanded="true" signature="7796:8523" ph="{...}" />
+            <marker date="1483175186486" expanded="true" signature="7942:8511" ph="{...}" />
+            <marker date="1483175186486" expanded="true" signature="8013:8408" ph="{...}" />
+            <marker date="1483175186486" expanded="true" signature="8057:8394" ph="{...}" />
+            <marker date="1483175186486" expanded="true" signature="8414:8501" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -939,15 +1084,60 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="22">
           <caret line="42" column="0" selection-start-line="42" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/app.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6798">
+          <caret line="312" column="25" selection-start-line="312" selection-start-column="25" selection-end-line="312" selection-end-column="25" />
+          <folding>
+            <marker date="1483182963245" expanded="true" signature="9047:9325" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/functions.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9966">
+          <caret line="453" column="0" selection-start-line="452" selection-start-column="0" selection-end-line="452" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/static/js/login_register.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="267">
+          <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../app.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#87#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/static/partials/admin/post.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="141" column="0" selection-start-line="141" selection-start-column="0" selection-end-line="141" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/static/partials/admin/dashboard.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="839" column="29" selection-start-line="839" selection-start-column="29" selection-end-line="839" selection-end-column="29" />
-          <folding />
+        <state relative-caret-position="191">
+          <caret line="803" column="22" selection-start-line="803" selection-start-column="22" selection-end-line="803" selection-end-column="22" />
+          <folding>
+            <element signature="n#style#0;n#textarea#0;n#div#3;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#3;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

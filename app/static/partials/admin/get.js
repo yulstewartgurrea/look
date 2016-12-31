@@ -263,12 +263,12 @@ function getsubcategories() {
 
 }
 
-function getproduct(product_id, product_name, price, image) {
+function getproduct(product_id, image, product_name, price ) {
      return    '<tr> ' +
                   '<td>' + product_id+ '</td>' +
-                  '<td>' + product_name+ '</td>' +
-                  '<td>' + price+ '</td>' +
                   '<td>' + image+ '</td>' +
+                  '<td>' + product_name + '</td>' +
+                  '<td>' + price + '</td>' +
                 '</tr>'
 
 
@@ -288,7 +288,7 @@ function getproducts() {
                     product_name = res.entries[i].product_name;
                     price = res.entries[i].price;
                     image = res.entries[i].image;
-                    $("#products").append(getproduct(product_id, product_name,price,image))
+                    $("#products").append(getproduct(product_id, image, product_name, price))
                 }
             } else {
                 $("#products").html("");
