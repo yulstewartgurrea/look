@@ -361,6 +361,21 @@ def get_product():
 
     return jsonify({'status': 'ok', 'entries': recs, 'count': len(recs)})
 
+@app.route("/api/get/product/<string:product_id>", methods=['GET'])
+def get_productby_id(product_id):
+    res = spcall('get_productby_id', (product_id),)
+
+    if 'Error' in str(res[0][0]):
+        return jsonify({'status': 'Error', 'message': res[0][0]})
+
+    recs = []
+
+    for r in res:
+        recs.append({'product_name': str(r[0]), 'product_description': str(r[1]), 'image': str(r[2]), 'price': str(r[3])})
+
+    return jsonify({'status': 'Ok', 'entries': recs})
+
+
 @app.route("/api/get/productbycatalog", methods=['GET'])
 def get_productbycatalog():
     res = spcall('get_productby_catalog', ())

@@ -485,9 +485,9 @@ $$
 	language 'sql'; 
 
 -- Get product by id 
-create or replace function get_productby_id(In par_id int, out text, out text) returns setof record as
+create or replace function get_productby_id(In par_id int, out text, out text, out text, out numeric) returns setof record as
 $$
-	select product_name, product_description, image from Product where product_id = par_id;
+	select product_name, product_description, image, price from Product where product_id = par_id;
 $$
 	language 'sql';
 
