@@ -357,7 +357,7 @@ def get_product():
     recs = []
 
     for r in res:
-        recs.append({'product_id': str(r[0]), 'product_name': str(r[3]), 'price': str(r[2]), 'image': str(r[1])})
+        recs.append({'product_id': str(r[0]), 'product_name': str(r[1]), 'price': str(r[2]), 'image': str(r[3])})
 
     return jsonify({'status': 'ok', 'entries': recs, 'count': len(recs)})
 
@@ -373,12 +373,12 @@ def get_productby_id(product_id):
     for r in res:
         recs.append({'product_name': str(r[0]), 'product_description': str(r[1]), 'image': str(r[2]), 'price': str(r[3])})
 
-    return jsonify({'status': 'Ok', 'entries': recs})
+    return jsonify({'status': 'Ok', 'entries': recs, 'count': len(recs)})
 
 
-@app.route("/api/get/productbycatalog", methods=['GET'])
-def get_productbycatalog():
-    res = spcall('get_productby_catalog', ())
+@app.route("/api/get/catalog/<string:catalog_id>", methods=['GET'])
+def get_productby_catalog(catalog_id):
+    res = spcall('get_productby_catalog', (catalog_id),)
 
     if 'Error' in str(res[0][0]):
         return jsonify({'status': 'ok', 'message': res[0][0]})
@@ -386,13 +386,13 @@ def get_productbycatalog():
     recs = []
 
     for r in res:
-        recs.append({'product_id': str(r[0]), 'product_name': str(r[1]), 'price': str([2]), 'image': str([3])})
+        recs.append({'product_id': str(r[0]), 'product_name': str(r[1]), 'price': str(r[2]), 'image': str(r[3])})
 
     return jsonify({'status': 'ok', 'entries': recs, 'count': len(recs)})
 
-@app.route("/api/get/productbycatalogandgender", methods=['GET'])
-def get_productbycatalogandgender():
-    res = spcall('get_productby_catalog_gender', ())
+@app.route("/api/get/catalog/<string:catalog_id>/gender/<string:gender_id>", methods=['GET'])
+def get_productby_catalog_gender(catalog_id, gender_id):
+    res = spcall('get_productby_catalog_gender', (catalog_id, gender_id),)
 
     if 'Error' in str(res[0][0]):
         return jsonify({'status': 'ok', 'message': res[0][0]})
@@ -400,13 +400,13 @@ def get_productbycatalogandgender():
     recs = []
 
     for r in res:
-        recs.append({'product_id': str(r[0]), 'product_name': str(r[1]), 'price': str([2]), 'image': str([3])})
+        recs.append({'product_id': str(r[0]), 'product_name': str(r[1]), 'price': str(r[2]), 'image': str(r[3])})
 
     return jsonify({'status': 'ok', 'entires': recs, 'count': len(recs)})
 
-@app.route("/api/get/productbycatalogandgenderandcategory")
-def get_productbycatalogandgenderandcategory():
-    res = spcall('get_productby_catalog_gender_category', ())
+@app.route("/api/get/catalog/<string:catalog_id>/gender/<string:gender_id>/category/<string:category_id>")
+def get_productby_catalog_gender_category(catalog_id, gender_id, category_id):
+    res = spcall('get_productby_catalog_gender_category', (catalog_id, gender_id, category_id),)
 
     if 'Error' in str(res[0][0]):
         return jsonify({'status': 'ok', 'message': res[0][0]})
@@ -414,11 +414,25 @@ def get_productbycatalogandgenderandcategory():
     recs = []
 
     for r in res:
-        recs.append({'product_id': str(r[0]), 'product_name': str(r[1]), 'price': str([2]), 'image': str([3])})
+        recs.append({'product_id': str(r[0]), 'product_name': str(r[1]), 'price': str(r[2]), 'image': str(r[3])})
 
     return jsonify({'status': 'ok', 'entires': recs, 'count': len(recs)})
 
-# @app.route()
+@app.route("/api/get/catalog/<string:catalog_id>/gender/<string:gender_id>/category/<string:category_id>/subcategory/<string:subcategory_id>")
+def get_productby_catalog_gender_category_subcategory(catalog_id, gender_id, category_id, subcategory_id):
+    res = spcall('get_productby_catalog_gender_category_subcategory', (catalog_id, gender_id, category_id, subcategory_id),)
+
+    if 'Error' in str(res[0][0]):
+        return jsonify({'status': 'ok', 'message': res[0][0]})
+
+    recs = []
+
+    for r in res:
+        recs.append({'product_id': str(r[0]), 'product_name': str(r[1]), 'price': str(r[2]), 'image': str(r[3])})
+
+    return jsonify({'status': 'ok', 'entires': recs, 'count': len(recs)})
+
+
 
 
 

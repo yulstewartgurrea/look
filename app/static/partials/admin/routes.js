@@ -4,6 +4,7 @@ $(document).ready(function(){
 		$("#ecss").hide();
 		$("#cs2").hide();
 		$("#prod2").hide();
+		$("#product_details").hide();
 
 	});
 
@@ -12,6 +13,7 @@ $(document).ready(function(){
 		$("#au").hide();
 		$("#prod2").hide();
 		$("#cs2").hide();
+		$("#product_details").hide();
 	});
 
 	$("#cs").click(function(){
@@ -19,6 +21,7 @@ $(document).ready(function(){
 		$("#ecss").hide();
 		$("#prod2").hide();
 		$("#au").hide();
+		$("#product_details").hide();
 	});
 
 	$("#prod").click(function(){
@@ -26,6 +29,9 @@ $(document).ready(function(){
 		$("#ecss").hide();
 		$("#au").hide();
 		$("#cs2").hide();
+		$("#product_details").hide();
 	});
+
+
 
 });
