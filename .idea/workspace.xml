@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="30b9607b-c823-445c-838b-671b34af6de3" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/partials/admin/sample.html" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.py" afterPath="$PROJECT_DIR$/app/app.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/static/partials/admin/dashboard.html" afterPath="$PROJECT_DIR$/app/static/partials/admin/dashboard.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/static/partials/admin/get.js" afterPath="$PROJECT_DIR$/app/static/partials/admin/get.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/static/partials/admin/style.css" afterPath="$PROJECT_DIR$/app/static/partials/admin/style.css" />
-    </list>
+    <list default="true" id="30b9607b-c823-445c-838b-671b34af6de3" name="Default" comment="" />
     <ignored path="look.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -45,8 +38,8 @@
       <file leaf-file-name="dashboard.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/static/partials/admin/dashboard.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="875" column="20" selection-start-line="875" selection-start-column="20" selection-end-line="875" selection-end-column="20" />
+            <state relative-caret-position="330">
+              <caret line="880" column="3" selection-start-line="880" selection-start-column="3" selection-end-line="880" selection-end-column="3" />
               <folding>
                 <element signature="n#style#0;n#textarea#0;n#div#3;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#3;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -1214,8 +1207,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/static/partials/admin/dashboard.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="875" column="20" selection-start-line="875" selection-start-column="20" selection-end-line="875" selection-end-column="20" />
+        <state relative-caret-position="330">
+          <caret line="880" column="3" selection-start-line="880" selection-start-column="3" selection-end-line="880" selection-end-column="3" />
           <folding>
             <element signature="n#style#0;n#textarea#0;n#div#3;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#3;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
