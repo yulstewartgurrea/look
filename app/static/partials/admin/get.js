@@ -265,9 +265,9 @@ function getsubcategories() {
 
 function getproduct(product_id, image, product_name, price ) {
      return    '<tr> ' +
-                  // '<td><a href="#" onlclick="getproductbyid()">' + product_id+ '<a></td>' +
+                  // '<td>' + product_id+ '</td>' +
                  // '<td>'+'<button onclick="viewFoodById('+ results.entries[i].food_id +'); $(\'#view-food\').show();$(\'#view-resto\').hide();$(\'#view-all-resto\').hide()" class="btn btn-info">Details</button>'+'</td>'+
-                  '<td>'+'<input type="button" value="'+product_id+'" onclick="getproductbyid('+ product_id+')">' +'<a></td>' +
+                  '<td>'+'<button type="button" onclick="getproductbyid('+product_id+');">' +product_id+'</button>'+'</td>' +
                   '<td>' + image+ '</td>' +
                   '<td>' + product_name + '</td>' +
                   '<td>' + price + '</td>' +
@@ -301,12 +301,13 @@ function getproducts() {
 
 }
 
-function getproductbyids(product_id, product_name, price, image, product_description) {
+function getproductbyids(product_name, price, image, product_description) {
     return  '<tr> ' +
-                '<a><td>' + product_id+ '</td></a>' +
+                // '<a><td>' + product_id+ '</td></a>' +
                 '<td>' + image+ '</td>' +
                 '<td>' + product_name + '</td>' +
                 '<td>' + price + '</td>' +
+                '<td>' + product_description + '</td>' +
             '</tr>'
 
 }
@@ -315,21 +316,21 @@ function getproductbyid(product_id) {
     $.ajax({
         url: 'http://127.0.0.1:5000/api/get/product/'+product_id,
         type: 'GET',
+        contentType:"application/json; charset=utf-8",
         dataType: 'json',
         success: function(res){
-            $("#product_details").html("");
+            console.log(res);
+            $("#prod_info").html("");
             if(res.status=='Ok'){
                 for(i=0; i<res.count; i++) {
-                    product_id = res.entries[i].product_id;
                     product_name = res.entries[i].product_name;
                     price = res.entries[i].price;
                     image = res.entries[i].image;
                     product_description = res.entries[i].product_description;
-                    $("#product_details").append(getproductbyids(product_id, product_name, price, image, product_description))
+                    $("#prod_info").append(getproductbyids(product_name, price, image, product_description))
                 }
-                $("#prod2").hide();
             } else {
-                $("#product_details").html("");
+                $("#prod_info").html("");
                 alert("Error")
             } 
         }

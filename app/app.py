@@ -323,29 +323,11 @@ def new_product():
 
     return jsonify({'status': 'Ok', 'message': res[0][0]})
 
+@app.route("/api/update/product/<string:product_id>", methods=['PUT'])
+def update_product(product_id):
 
-# @app.route('/api/new_product/users/update/', methods=['PUT'])
-# def update_new_product():
-#   jsn = json.loads(request.data)
-#
-#   new_product = jsn.get('new_product','')
-#   product_name = jsn.get('product_name','')
-#   product_description = jsn.get('product_description','')
-#   product_gender = jsn.get('product_gender','')
-#   product_catalog = jsn.get('product_catalog','')
-#   product_category = jsn.get('product_category','')
-#   product_subcategory = jsn.get ('product_subcategory','')
-#
-#   spcall('update_new_product', (
-#         new_product,
-#         product_name,
-#         product_description,
-#         product_gender,
-#         product_catalog,
-#         product_category,
-#         product_subcategory), True)
-#
-#     return jsonify({'status': 'OK'})
+    return jsonify({'status': 'Ok'})
+
 
 @app.route("/api/get/product", methods=['GET'])
 def get_product():
@@ -361,9 +343,9 @@ def get_product():
 
     return jsonify({'status': 'ok', 'entries': recs, 'count': len(recs)})
 
-@app.route("/api/get/product/<string:product_id>", methods=['GET'])
+@app.route("/api/get/product/<product_id>", methods=['GET'])
 def get_productby_id(product_id):
-    res = spcall('get_productby_id', (product_id),)
+    res = spcall('get_productby_id', (product_id,),)
 
     if 'Error' in str(res[0][0]):
         return jsonify({'status': 'Error', 'message': res[0][0]})

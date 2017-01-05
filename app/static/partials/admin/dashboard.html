@@ -859,8 +859,26 @@
               </table>
             </div>
           </div>
+          <button type="button" class="btn btn-primary" onclick="getproductbyid()">Get Products</button>
+          <div class="box">
+          <div class="box-body">
+              <table class="table table-bordered table-hover">
+                <thead>
+                <tr>
+                  <th>  Product Image  </th>
+                  <th>  Product Name </th>
+                  <th>  Product Price </th>
+                  <th>  Product Description </th>
+                </tr>
+                </thead>
+                <tbody id="prod_info">
+                </tbody>
+              </table>
+            </div>
+          </div>
                 </div>
       </div>
+   
 
 
 
@@ -869,158 +887,15 @@
 </section>
 
      </div>
+     
 
 
     <!-- /.content -->
   </div>
+  
 
-    <!-- Content Wrapper. Contains product details content -->
-  <div class="content-wrapper" id="product_details">
-      <section class="content" >
-      <!-- COLOR PALETTE -->
-      <div class="box box-default color-palette-box">
-        <div class="box-header with-border">
-          <h3 class="box-title"><i class="fa fa-tag"></i> Nike</h3>
-        </div>
-        <div class="box-body">
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
-
-    <section class="content">
-      <!-- COLOR PALETTE -->
-      <div class="box box-default color-palette-box">
-        <div class="box-body">
-      <div class="row">
-         <div class="col-md-3">
-            <img data-src="" alt="Nike black Nike Sportswear Futura Icon T-Shirt NI126AA70RQNPH_1" title="Nike Sportswear Futura Icon T-Shirt from Nike in black_1" width="236" height="345" class="b-catalogList__itm-img js-itm-img js-itm-hover-img-front" src="https://dynamic.zacdn.com/MuN21LJlMrmGQSHhgmyCTtcW5Xo=/fit-in/236x345/filters:quality(90):fill(ffffff)/http://static.ph.zalora.net/p/nike-1116-929195-1.jpg">
-         </div>
-          <div class="col-md-6">
-             <span class="info-box-text">Nike</span>
-             <em class="b-catalogList__itmTitle fss">Nike Sportswear Futura Icon T-Shirt</em>
-             <span class="info-box-number">PHP1800</span>
-             <br>
-              The Nike Futura Icon Men's T-Shirt sets you up with a soft cotton jersey feel and a bold Nike corporate logo screen printed across the chest.
-              <br style="font-size: 12px;">
-              <br style="font-size: 12px;">- Cotton
-              <br style="font-size: 12px;">- Round neckline
-              <br style="font-size: 12px;">- Short sleeves
-              <br style="font-size: 12px;">- Smooth, soft cotton jersey fabric for all-day comfort
-              <br style="font-size: 12px;">- Iconic Nike corporate logo is screen printed across the chest
-              <br style="font-size: 12px;">- Taping at the back of the neck helps reduce irritation<br style="font-size: 12px;">- Regular fit
-              <br style="font-size: 12px;">- Unlined
-
-              <br><br><li><a href="#deliveryInfo" id="cms-usp__freeshipping">
-              <span class="product__uspTxt">Delivery above P995*</span>
-              <span class="btn btn-primary button pull-right"> Free</span></a></li>
-              <br><li><a href="#" id="cms-freeReturn"><span class="product__uspTxt">30 Days Return </span>
-              <span class="btn btn-primary button pull-right"> Free</span></a></li>
-              <br><li><a href="#" id="cms-usp__cod">
-              <span class="product__uspTxt">Cash On Delivery</span>
-              <span class="btn btn-primary button pull-right"> Yes</span></a></li>  
-          </div>
-          <div class="col-md-3">
-            <div class="uc prdSizeTitle">Select Size</div>
-            <div>
-                <select id="SizeSystem" class="prdSizeOption__sizeSystem">
-                    <option selected="selected" value="International" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(0, 0, 0); ">International</option>
-                </select>                                   
-                    <select class="js-subSelect prdSizeOption__sizeDetail">
-                    <option>size</option>
-                      <option class="prd-option-item opt-Sitem-0" data-attribute="size" data-value-class="opt-Sitem-0" data-value-size="S" value="opt-Sitem-0">S</option>
-                      <option class="prd-option-item opt-Mitem-1" data-attribute="size" data-value-class="opt-Mitem-1" data-value-size="M" value="opt-Mitem-1">M</option>
-                      <option class="prd-option-item opt-Litem-2" data-attribute="size" data-value-class="opt-Litem-2" data-value-size="L" value="opt-Litem-2">L</option>
-                      <option class="prd-option-item opt-XLitem-3" data-attribute="size" data-value-class="opt-XLitem-3" data-value-size="XL" value="opt-XLitem-3" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(0, 0, 0); ">XL</option>
-                    </select><br>
-             </div>
-          </div>
-            <div>
-              <br><br><br><span class="btn btn-primary button fa fa-shopping-cart"> ADD TO BAG</span>
-              <br><br><span class="btn btn-primary button fa fa-heart"> ADD TO WISHLIST</span>
-            </div>
-      </div>
-            <!-- Main row -->
-      </div>
-    </div>
-    </section>
-      <div class="row">
-        <!-- Left col -->
-        <section class="col-lg-12 connectedSortable">
-        <div class="col-md-12">
-          <!-- Custom Tabs -->
-          <div class="nav-tabs-custom">
-            <ul class="nav nav-tabs">
-              <li class="active"><a href="#tab_1" data-toggle="tab">Details</a></li>
-              <li><a href="#tab_2" data-toggle="tab">Size Details</a></li>
-              <li><a href="#tab_3" data-toggle="tab">Delivery Info</a></li>
-              <li class="pull-right"><a href="#" class="text-muted"><i class="fa fa-gear"></i></a></li>
-            </ul>
-            <div class="tab-content">
-              <div class="tab-pane active" id="tab_1">
-                <table class="ui-grid ui-gridFull product__attr prd-attributes size1of2">
-                   <tbody>
-                      <tr>
-                        <td class="product__attr_name">SKU (simple)</td>
-                        <td itemprop="sku">NI126AA70RQNPH</td>
-                      </tr>
-                      <tr>
-                         <td class="product__attr_name">Colour</td>
-                         <td itemprop="color">BLACK</td>
-                      </tr>
-                      <tr>
-                         <td class="product__attr_name">Care label</td>
-                         <td>Machine wash cold<br style="font-size: 12px;">Do not bleach<br style="font-size: 12px;">Tumble dry low<br style="font-size: 12px;">Iron on medium<br style="font-size: 12px;">Do not dry clean</td>
-                      </tr>
-                      <tr>
-                         <td class="product__attr_name">Material</td>
-                         <td> 100% Cotton</td>
-                      </tr>
-                     </tbody>
-                </table>
-              </div>
-              <!-- /.tab-pane -->
-              <div class="tab-pane" id="tab_2">
-                <div class="">
-                   <span class="mbm">Model's body measurements</span>
-                     <p class="mtm">Height: 6'1"<br> Chest: 38" <br> Waistline 30" <br> Hips: 32"</p>
-                   <span class="mrm">Size of model's garment</span>
-                   <span>M</span>
-                 </div>
-               </div>
-              <!-- /.tab-pane -->
-              <div class="tab-pane" id="tab_3">
-                <div>Delivered in 1-3 days for Greater NCR, 2-4 days for Major Cities, 5-7 days for Provincial Areas. All in working days
-                <br><br>You can enjoy free shipping on items sold by ZALORA above PHP995. 
-                <br><br>Check when you can get your item by keying in your city and barangay in the drop-downs above.</div>
-              </div>
-              <!-- /.tab-pane -->
-            </div>
-            <!-- /.tab-content -->
-          </div>
-          <!-- nav-tabs-custom -->
-        </div>
-        </section>
-      </div>
-      <!-- /.row (main row) -->
-    </section> 
-    <div class="prd-bundle-price-row rfloat pull-right">
-                    <div class="clearfix">
-            <span class="prd-bundle-price-label">
-                Final price            </span>
-            <span class="prd-bundle-price">
-                PHP&nbsp;2,092.60            </span>
-            </div>
-            <button class="btn btn-primary" title="Add selection to bag" type="submit" data-type="addBundleToCart" style="opacity: 1; ">
-                <span class="i-addToCart cartTxt">Add selection to bag</span>
-            </button>
-</div>     
-</div>
-
-</div>
-    <!-- /.content -->
-
-  </div>
-
-  <!-- /.product details content-wrapper -->
+    
+  
   
   <!-- /.content-wrapper -->
   <footer class="main-footer">
