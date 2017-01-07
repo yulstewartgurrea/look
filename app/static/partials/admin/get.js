@@ -302,9 +302,8 @@ function getproducts() {
 }
 
 function getproductbyids(product_name, price, image, product_description) {
-    return  '<section class="content">'+
-      // <!-- COLOR PALETTE -->
-      '<div class="box box-default color-palette-box">'+
+    return '<section class="content">'+
+    '<div class="box box-default color-palette-box">'+
         '<div class="box-body">'+
     // <!-- Content Header (Page header) -->
     '<section class="content-header">'+
@@ -320,7 +319,7 @@ function getproductbyids(product_name, price, image, product_description) {
           '<div class="col-md-6">'+
              '<span class="info-box-text">'+product_name+'</span>'+
              '<em class="b-catalogList__itmTitle fss">Nike Sportswear Futura Icon T-Shirt</em>'+
-             '<span class="info-box-number">'Php+price+'</span>'+
+             '<span class="info-box-number">Php'+price+'</span>'+
              '<br>'+
               'The Nike Futura Icon Mens T-Shirt sets you up with a soft cotton jersey feel and a bold Nike corporate logo screen printed across the chest.'+
               '<br style="font-size: 12px;">'+
@@ -439,8 +438,8 @@ function getproductbyids(product_name, price, image, product_description) {
 '</div>'+
 
 '</div>'+
+'</section>'
     // <!-- /.content -->
-    '</section>'
 
 }
 
@@ -462,6 +461,7 @@ function getproductbyid(product_id) {
                     $("#prod_info").append(getproductbyids(product_name, price, image, product_description))
                 }
                 $("#prod_info").show();
+                // $("#prod2").hide();
             } else {
                 $("#prod_info").html("");
                 alert("Error")
