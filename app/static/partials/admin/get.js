@@ -342,23 +342,9 @@ function getproductbyids(product_name, price, image, product_description) {
           '</div>'+
           '<div class="col-md-3">'+
             '<div class="uc prdSizeTitle">Select Size</div>'+
-            '<div>'+
-                '<select id="SizeSystem" class="prdSizeOption__sizeSystem">'+
-                    '<option selected="selected" value="International" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(0, 0, 0); ">International</option>'+
-                '</select>'+                                   
-                    '<select class="js-subSelect prdSizeOption__sizeDetail">'+
-                    '<option>size</option>'+
-                      '<option class="prd-option-item opt-Sitem-0" data-attribute="size" data-value-class="opt-Sitem-0" data-value-size="S" value="opt-Sitem-0">S</option>'+
-                      '<option class="prd-option-item opt-Mitem-1" data-attribute="size" data-value-class="opt-Mitem-1" data-value-size="M" value="opt-Mitem-1">M</option>'+
-                      '<option class="prd-option-item opt-Litem-2" data-attribute="size" data-value-class="opt-Litem-2" data-value-size="L" value="opt-Litem-2">L</option>'+
-                      '<option class="prd-option-item opt-XLitem-3" data-attribute="size" data-value-class="opt-XLitem-3" data-value-size="XL" value="opt-XLitem-3" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(0, 0, 0); ">XL</option>'+
-                    '</select><br>'+
+            '<div>'+                                  
              '</div>'+
           '</div>'+
-            '<div>'+
-              '<br><br><br><span class="btn btn-primary button fa fa-shopping-cart"> ADD TO BAG</span>'+
-              '<br><br><span class="btn btn-primary button fa fa-heart"> ADD TO WISHLIST</span>'+
-            '</div>'+
       '</div>'+
             // <!-- Main row -->
       '</div>'+
@@ -424,16 +410,7 @@ function getproductbyids(product_name, price, image, product_description) {
       '</div>'+
       // <!-- /.row (main row) -->
     '</section> '+
-    '<div class="prd-bundle-price-row rfloat pull-right">'+
-                    '<div class="clearfix">'+
-            '<span class="prd-bundle-price-label">'+
-                'Final price            </span>'+
-            '<span class="prd-bundle-price">'+
-                'PHP&nbsp;2,092.60            </span>'+
-            '</div>'+
-            '<button class="btn btn-primary" title="Add selection to bag" type="submit" data-type="addBundleToCart" style="opacity: 1; ">'+
-                '<span class="i-addToCart cartTxt">Add selection to bag</span>'+
-            '</button>'+
+            
 '</div>'+     
 '</div>'+
 
