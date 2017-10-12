@@ -1,0 +1,137 @@
+<div class="page_users">
+
+  <!-- Content Header (Page header) -->
+  <section class="content-header">
+    <h1>
+      <b>Manager</b>Users
+
+      <button type="button" class="btn btn-success pull-right" data-toggle="modal" data-target="#modal-add-order">
+        <i class="fa fa-plus"> Add job order</i>
+      </button>
+    </h1>
+  </section>
+
+  <!-- Main content -->
+  <section class="content">
+
+    <div class="row">
+
+      <div class="col-xs-12">
+        <div class="box box-primary">
+          <div class="box-body">
+
+            <div class="row">
+              <div class="col-md-12">
+                <div class="nav-tabs-custom">
+                  <ul class="nav nav-tabs">
+                    <li onclick="getadmins();" class="active"><a href="#pending_orders" data-toggle="tab">Admins</a></li>
+                    <li li onclick="getestablishmentpersonnels();" class=""><a href="#offered_orders" data-toggle="tab">Establishment Personnels</a></li>
+                    <li onclick="getcustomers();" class=""><a href="#active_orders" data-toggle="tab">Customers</a></li>
+                    
+                  </ul>
+                  <div class="tab-content">
+                    <div class="active tab-pane" id="pending_orders">
+                      <div class="row">
+                        <div class="col-md-12">
+                          <table id="table_1" class="table table-bordered table-hover">
+                            <thead>
+                            <tr>
+                              <th>Email</th>
+                              <th>is_admin</th>
+                              <th>is_active</th>
+                            </tr>
+                            </thead>
+                            <tbody id="admins">
+                            </tbody>
+                            <tfoot>
+                            <tr>
+                              <th>Email</th>
+                              <th>is_admin</th>
+                              <th>is_active</th>
+                            </tr>
+                            </tfoot>
+                          </table>
+                          
+                        </div>
+                        
+                      </div>
+
+                    </div>
+                    <!-- /.tab-pane -->
+
+                    <div class="tab-pane" id="offered_orders">
+
+                      <div class="row">
+                        <div class="col-md-12">
+                          <table id="example2" class="table table-bordered table-hover">
+                            <thead>
+                            <tr>
+                              <th>Email</th>
+                              <th>is_admin</th>
+                              <th>is_active</th>
+                            </tr>
+                            </thead>
+                            <tbody id="establishments_personnels">
+                            </tbody>
+                            <tfoot>
+                            <tr>
+                              <th>Email</th>
+                              <th>is_admin</th>
+                              <th>is_active</th>
+                            </tr>
+                            </tfoot>
+                          </table>
+                          
+                        </div>
+                          
+                      </div>
+
+                    </div>
+                    <!-- /.tab-pane -->
+
+                    <div class="tab-pane" id="active_orders">
+
+                      <div class="row">
+                        <div class="col-md-12">
+                          <table id="example2" class="table table-bordered table-hover">
+                            <thead>
+                            <tr>
+                              <th>Email</th>
+                              <th>is_admin</th>
+                              <th>is_active</th>
+                            </tr>
+                            </thead>
+                            <tbody id="customers">
+                            </tbody>
+                            <tfoot>
+                            <tr>
+                              <th>Email</th>
+                              <th>is_admin</th>
+                              <th>is_active</th>
+                            </tr>
+                            </tfoot>
+                          </table>  
+                        </div>      
+                      </div>
+                    </div>
+                    <!-- /.tab-pane -->
+                  </div>
+                  <!-- /.tab-content -->
+                </div>
+                <!-- /.nav-tabs-custom -->
+              </div>
+              <!-- /.col -->  
+            </div>
+
+          </div>
+          <!-- /.box-body -->
+        </div>
+        <!-- /.box -->
+      </div>
+      <!-- /.col -->
+    </div>
+    <!-- /.row -->
+  </section>
+  <!-- /.content -->
+  
+</div>

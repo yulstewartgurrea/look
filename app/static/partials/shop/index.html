@@ -1,956 +1,1639 @@
-<!--A Design by W3layouts
-Author: W3layout
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
-<!DOCTYPE HTML>
-<html>
-<head>
-<title>Gretong a Ecommerce Category Flat Bootstarp Responsive Website Template | Home :: w3layouts</title>
-<link href="../../web/css/bootstrap.css" rel='stylesheet' type='text/css' />
-<!-- jQuery (necessary JavaScript plugins) -->
-<script type='text/javascript' src="../../web/js/jquery-1.11.1.min.js"></script>
-<!-- Custom Theme files -->
-<link href="../../web/css/style.css" rel='stylesheet' type='text/css' />
-<!-- Custom Theme files -->
-<!--//theme-style-->
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="Gretong Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
-Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
-<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-<link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900' rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/css?family=Playfair+Display:400,700,900' rel='stylesheet' type='text/css'>
-<!-- start menu -->
-<link href="../../web/css/megamenu.css" rel="stylesheet" type="text/css" media="all" />
-<script type="text/javascript" src="../../web/js/megamenu.js"></script>
-<script>$(document).ready(function(){$(".megamenu").megamenu();});</script>
-<script src="../../web/js/menu_jquery.js"></script>
-<script src="../../web/js/simpleCart.min.js"> </script>
-</head>
-<body>
-<!-- header_top -->
-<div class="top_bg">
-	<div class="container">
-		<div class="header_top">
-			<div class="top_right">
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+		<!-- Basic page needs
+		============================================ -->	
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Home | pure-shop</title>
+        <meta name="description" content="">
+		
+		<!-- Mobile specific metas
+		============================================ -->		
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<!-- fonts
+		============================================ -->		
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>	
+		<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+
+		<!-- Favicon
+		============================================ -->
+		<link rel="shortcut icon" type="image/x-icon" href="../../web/img/favicon.png">
+
+		<!-- CSS  -->
+		
+		<!-- Bootstrap CSS
+		============================================ -->
+        <link rel="stylesheet" href="../../web/css/bootstrap.min.css">
+		
+		<!-- font-awesome CSS
+		============================================ -->
+        <link rel="stylesheet" href="../../web/css/font-awesome.min.css">
+		
+		<!-- owl.carousel CSS
+		============================================ -->
+        <link rel="stylesheet" href="../../web/css/owl.carousel.css">
+		
+		<!-- owl.theme CSS
+		============================================ -->
+        <link rel="stylesheet" href="../../web/css/owl.theme.css">
+		
+		<!-- owl.transitions CSS
+		============================================ -->
+        <link rel="stylesheet" href="../../web/css/owl.transitions.css">
+		
+		<!-- fancybox CSS
+		============================================ -->	
+		<link rel="stylesheet" href="../../web/css/fancybox/jquery.fancybox.css">			
+		
+		<!-- animate CSS
+		============================================ -->
+        <link rel="stylesheet" href="../../web/css/animate.css">
+		
+		<!-- meanmenu CSS
+		============================================ -->		
+        <link rel="stylesheet" href="../../web/css/meanmenu.min.css" media="all" />
+		
+		<!-- normalize CSS
+		============================================ -->		
+        <link rel="stylesheet" href="../../web/css/normalize.css">
+		
+		<!-- RS-slider CSS
+		============================================ -->
+		<link rel="stylesheet" type="text/css" href="../../web/lib/rs-plugin/css/settings.css" media="screen" />			
+		
+		<!-- main CSS
+		============================================ -->		
+        <link rel="stylesheet" href="../../web/css/main.css">
+		
+		<!-- style CSS
+		============================================ -->			
+        <link rel="stylesheet" href="../../web/style.css">
+		
+		<!-- responsive CSS
+		============================================ -->			
+        <link rel="stylesheet" href="../../web/css/responsive.css">
+		
+		<!-- modernizr js
+		============================================ -->		
+        <script src="../../web/js/vendor/modernizr-2.8.3.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <!-- Add your site or application content here -->
+     
+	<!-- header start -->
+	<header class="header-home">
+		<!-- header-top-area start -->
+		<div class="header-top-area hidden-xs">
+			<div class="container">
+				<div class="row">
+					<!-- header-top-left start -->
+					<div class="col-lg-6 col-md-6 col-sm-7">
+						<div class="header-top-left">
+							<!-- <div class="top-message">Default welcome message</div> -->
+							<div id="fullname4"></div>
+						</div>
+					</div>
+					<!-- header-top-left end -->
+					<!-- header-top-right start -->
+					<div class="col-lg-6 col-md-6 col-sm-5">
+						<div class="header-top-right">
+							<div class="lang-select">
+								<ul>
+									<li><a href="#"><img src="../../web/img/en.png" alt="" /></a></li>
+								</ul>
+							</div>
+							<div class="top-menu">
+								<ul>
+									<li id="myaccount"></li>
+									<li><a href="wishlist.html">My Wishlist</a></li>
+									<li><a href="cart.html">Cart</a></li>
+									<li onclick="logout();"><a href="#">Logout</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<!-- header-top-right end -->
+				</div>
+			</div>
+		</div>
+		<!-- header-top-area end -->
+		<!-- header-mid-area start -->
+		<div class="header-mid-area">
+			<div class="container">
+				<div class="row">
+					<!-- logo start -->
+					<div class="col-lg-6 col-md-6 col-sm-4 col-xs-12">
+						<div class="logo">
+							<a href="index.html"><img src="../../web/img/logo/logo.png" alt="" /></a>
+						</div>
+					</div>
+					<!-- logo end -->
+					<div class="col-lg-6 col-md-6 col-sm-8 col-xs-12">
+						<!-- cart-total start -->
+						<div class="cart-total">
+							<ul>
+								<li><a href="cart.html"><span class="cart-icon"><i class="fa fa-shopping-cart"></i></span> <span class="cart-no">My cart: (2)</span></a>
+									<div class="mini-cart-content">
+										<div class="cart-img-details">											
+											<div class="cart-img-photo">
+												<a href="#"><img src="../../web/img/product/total-cart.jpg" alt="" /></a>
+												<span class="quantity">1</span>
+											</div>
+											<div class="cart-img-contaent">
+												<a href="#"><p>Vestibulum suscipit</p></a>
+												<span>£165.00</span>
+											</div>
+											<div class="pro-del"><a href="#"><i class="fa fa-times-circle"></i></a>
+											</div>
+										</div>
+										<div class="clear"></div>
+										<div class="cart-img-details">											
+											<div class="cart-img-photo">
+												<a href="#"><img src="../../web/img/product/total-cart2.jpg" alt="" /></a>
+												<span class="quantity">1</span>
+											</div>
+											<div class="cart-img-contaent">
+												<a href="#"><p>Donec sodales mauris in</p></a>
+												<span>£50.00</span>
+											</div>
+											<div class="pro-del"><a href="#"><i class="fa fa-times-circle"></i></a>
+											</div>
+										</div>
+										<div class="cart-inner-bottom">
+											<p class="total">Subtotal: <span class="amount">£215.00</span></p>
+											<div class="clear"></div>
+											<p class="cart-button-top"><a href="checkout.html">Checkout</a></p>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+						<!-- cart-total end -->
+						<!-- header-search start -->
+						<div class="header-search">
+							<form action="#">
+								<input type="text" placeholder="Search product..." />
+								<button type="submit"><i class="fa fa-search"></i></button>
+							</form>
+						</div>
+						<!-- header-search end -->
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- header-mid-area end -->
+		<!-- mainmenu-area start -->
+		<div class="mainmenu-area">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 col-sm-12">
+						<div class="mainmenu">
+							<nav>
+								<ul>
+									<li><a href="index.html">Home</a></li>
+									<li><a href="about-us.html">about</a></li>
+									<li><a href="blog.html">Blog</a></li>
+									<li><a href="shop.html">Shop</a>
+										<div class="mega-menu">											
+											<span>
+												<a href="#" class="mega-title">WOMEN CLOTH </a>
+												<a href="shop.html">casual shirt</a>
+												<a href="shop.html">rikke t-shirt</a>
+												<a href="shop.html">mia top </a>
+												<a href="shop.html">muscle tee </a>
+											</span>
+											<span>
+												<a href="#" class="mega-title">MEN CLOTH </a>
+												<a href="shop.html">casual shirt</a>
+												<a href="shop.html">rikke t-shirt</a>
+												<a href="shop.html">mia top </a>
+												<a href="shop.html">muscle tee </a>
+											</span>
+											<span>
+												<a href="#" class="mega-title">WOMEN JEWELRY </a>
+												<a href="shop.html">necklace </a>
+												<a href="shop.html">chunky short striped </a>
+												<a href="shop.html">samhar cuff</a>
+												<a href="shop.html">nail set </a>
+											</span>
+											<span class="mega-menu-img">
+												<a href="shop.html"><img alt="" src="../../web/img/4.jpg"></a>
+											</span>
+										</div>									
+									</li>
+									<li><a href="#">Pages</a>
+										<ul class="sub-menu">
+											<li><a href="about-us.html">about us</a></li>
+											<li><a href="contact.html">contact us</a></li>
+											<li><a href="shop.html">shop grid</a></li>
+											<li><a href="shop-list.html">shop list</a></li>
+											<li><a href="product-virtual.html">product Details</a></li>
+											<li><a href="blog.html">blog</a></li>
+											<li><a href="blog-post-img.html">blog details</a></li>
+											<li><a href="cart.html">shopping cart</a></li>
+											<li><a href="checkout.html">checkout</a></li>
+											<li><a href="wishlist.html">wishlist</a></li>
+											<li><a href="my-account.html">my-account</a></li>
+											<li><a href="404.html">404 page</a></li>
+										</ul>									
+									</li>
+									<li><a href="shop.html">Footwear  </a></li>
+									<li><a href="contact.html">Contact</a></li>
+								</ul>
+							</nav>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- mainmenu-area end -->
+		<!-- mobile-menu-area start -->
+		<div class="mobile-menu-area">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="mobile-menu">
+							<nav id="dropdown">
+								<ul>
+									<li><a href="index.html">Home</a></li>
+									<li><a href="blog.html">blog</a></li>
+									<li><a href="shop.html">Shop</a></li>
+									<li><a href="#">Pages</a>
+										<ul>
+											<li><a href="about-us.html">about us</a></li>
+											<li><a href="contact.html">contact us</a></li>
+											<li><a href="shop.html">shop grid</a></li>
+											<li><a href="shop-list.html">shop list</a></li>
+											<li><a href="product-virtual.html">product Details</a></li>
+											<li><a href="blog.html">blog</a></li>
+											<li><a href="blog-post-img.html">blog details</a></li>
+											<li><a href="cart.html">shopping cart</a></li>
+											<li><a href="checkout.html">checkout</a></li>
+											<li><a href="wishlist.html">wishlist</a></li>
+											<li><a href="my-account.html">my-account</a></li>
+											<li><a href="404.html">404 page</a></li>
+										</ul>
+									</li>
+									<li><a href="contact.html">Contact</a></li>
+								</ul>
+							</nav>
+						</div>					
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- mobile-menu-area end -->
+	</header>
+	<!-- header end -->
+	
+	<!-- HOME SLIDER -->
+	<div class="slider-wrap">
+		<div class="fullwidthbanner-container" >
+			<div class="fullwidthbanner">
 				<ul>
-					<li><a href="#">help</a></li>|
-					<li><a href="contact.html">Contact</a></li>|
-					<li><a href="#">Delivery information</a></li>
+					<li data-transition="random" data-slotamount="7" data-masterspeed="1000">
+						<img src="../../web/img/slider/slide-img1.jpg" alt="slide" >
+						<div class="tp-caption large_black sfr"
+						data-x="150"
+						data-y="350" 
+						data-speed="1100"
+						data-start="1100"
+						data-easing="easeInOutBack" 
+							style="font-size: 18px; font-weight: bold; text-transform: uppercase; color: #FFF;">
+							fashion men's
+						</div>
+						<div class="tp-caption large_black sfr"
+						data-x="150"
+						data-y="375"
+						data-speed="1100"
+						data-start="1100"
+						data-easing="easeInOutBack" 
+							style="border-width: 2px; background-color: #ffffff; min-height: 1px;min-width: 400px;">
+						</div>
+						<div class="tp-caption large_black sfr"
+						data-x="150"
+						data-y="400"
+						data-speed="1100"
+						data-start="1400"
+						data-easing="easeInOutBack"
+							style=" font-size: 100px; font-weight: 800; line-height:80px;text-transform: uppercase; color: #fff; text-shadow: 0 0 2px rgba(0,0,0,.05)">
+							collection
+						</div>
+						<div class="tp-caption large_black sfr"
+						data-x="150"
+						data-y="500"
+						data-speed="1100"
+						data-start="1400"
+						data-easing="easeInOutBack"
+							style=" font-size: 20px; font-weight: normal; color: #FFF;line-height:14px;text-transform: uppercase;">
+							Lorem ipsum dolor sit amet, consectetuer adipiscing elit
+						</div>
+						<div class="tp-caption lfb carousel-caption-inner"
+						data-x="150"
+						data-y="550" 
+						data-speed="1300"
+						data-start="1700"
+						data-easing="easeInOutBack" 
+							style=" font-size: 17px; font-weight: bold; text-transform: uppercase; color: #F3F3F3;">
+							<a href="#" class="s-btn" style="background: #EC4445;color: #ffffff;display: block;padding: 12px 28px;">shop now</a>
+						</div>
+					</li>
+
+					<li data-transition="random"
+					data-slotamount="7"
+					data-masterspeed="1000">
+						<img src="../../web/img/slider/slide-img2.jpg" alt="slide" >
+						<div class="tp-caption large_black sfr"
+						data-x="150"
+						data-y="350"
+						data-speed="1100"
+						data-start="1100"
+						data-easing="easeInOutBack" 
+							style="font-size: 18px; font-weight: bold; text-transform: uppercase; color: #FFF;">
+							fashion women’s
+						</div>
+						<div class="tp-caption large_black sfr"
+						data-x="150"
+						data-y="375"
+						data-speed="1100"
+						data-start="1100"
+						data-easing="easeInOutBack" 
+							style="border-width: 2px; background-color: #ffffff; min-height: 1px;min-width: 400px;">
+						</div>
+						<div class="tp-caption large_black sfr"
+						data-x="150"
+						data-y="400"
+						data-speed="1100"
+						data-start="1400"
+						data-easing="easeInOutBack"
+							style=" font-size: 100px; font-weight: 800; line-height:80px;text-transform: uppercase; color: #fff; text-shadow: 0 0 2px rgba(0,0,0,.05)">
+							Latest collection
+						</div>
+						<div class="tp-caption large_black sfr"
+						data-x="150"
+						data-y="500"
+						data-speed="1100"
+						data-start="1400"
+						data-easing="easeInOutBack"
+							style=" font-size: 20px; font-weight: normal; color: #FFF;line-height:14px;text-transform: uppercase;">
+							Lorem ipsum dolor sit amet, consectetuer adipiscing elit
+						</div>
+						<div class="tp-caption lfb carousel-caption-inner"
+						data-x="150"
+						data-y="550" 
+						data-speed="1300"
+						data-start="1700"
+						data-easing="easeInOutBack" 
+							style=" font-size: 17px; font-weight: bold; text-transform: uppercase; color: #F3F3F3;">
+							<a href="#" class="s-btn" style="background:#EC4445;color: #ffffff;display: block;padding: 12px 28px;">shop now</a>
+						</div>
+					</li>
 				</ul>
 			</div>
-			<div class="top_left">
-				<h2><span></span> Call us : 032 2352 782</h2>
-			</div>
-				<div class="clearfix"> </div>
 		</div>
 	</div>
-</div>
-<!-- header -->
-<div class="header_bg">
-<div class="container">
-	<div class="header">
-	<div class="head-t">
-		<div class="logo">
-			<a href="index.html"><img src="../../web/images/logo.png" class="img-responsive" alt=""/> </a>
-		</div>
-		<!-- start header_right -->
-		<div class="header_right">
-			<div class="rgt-bottom">
-				<div class="log">
-					<div class="login" >
-						<div id="loginContainer"><a href="#" id="loginButton"><span>Login</span></a>
-						    <div id="loginBox">                
-						        <form id="loginForm">
-						                <fieldset id="body">
-						                	<fieldset>
-						                          <label for="email">Email Address</label>
-						                          <input type="text" name="email" id="email">
-						                    </fieldset>
-						                    <fieldset>
-						                            <label for="password">Password</label>
-						                            <input type="password" name="password" id="password">
-						                     </fieldset>
-						                    <input type="submit" id="login" value="Sign in">
-						                	<label for="checkbox"><input type="checkbox" id="checkbox"> <i>Remember me</i></label>
-						            	</fieldset>
-						            <span><a href="#">Forgot your password?</a></span>
-								</form>
-							</div>
+	<!-- END HOME SLIDER -->
+
+	<!-- features-area start -->
+	<div class="features-area pad-60" id="page_landing">
+		<div class="container">
+			<!-- section-heading start -->
+			<div class="row">
+				<div class="col-md-12">
+					<div class="section-heading">
+						<h1>FEATURED PRODUCTS</h1>
+						<div class="title-icon">
+							<span><i class="fa fa-angle-left"></i> <i class="fa fa-angle-right"></i></span>
 						</div>
 					</div>
 				</div>
-				<div class="reg">
-					<a href="register.html">REGISTER</a>
-				</div>
-			<div class="cart box_1">
-				<a href="checkout.html">
-					<h3> <span class="simpleCart_total">$0.00</span> (<span id="simpleCart_quantity" class="simpleCart_quantity">0</span> items)<img src="../../web/images/bag.png" alt=""></h3>
-				</a>	
-				<p><a href="javascript:;" class="simpleCart_empty">(empty card)</a></p>
-				<div class="clearfix"> </div>
 			</div>
-			<div class="create_btn">
-				<a href="checkout.html">CHECKOUT</a>
-			</div>
-			<div class="clearfix"> </div>
-		</div>
-		<div class="search">
-		    <form>
-		    	<input type="text" value="" placeholder="search...">
-				<input type="submit" value="">
-			</form>
-		</div>
-		<div class="clearfix"> </div>
-		</div>
-		<div class="clearfix"> </div>
-	</div>
-		<!-- start header menu -->
-		<ul class="megamenu skyblue">
-			<li class="active grid"><a class="color1" href="index.html">Home</a></li>
-			<li class="grid"><a class="color2" href="#">new arrivals</a>
-				<div class="megapanel">
-					<div class="row">
-						<div class="col1">
-							<div class="h_nav">
-								<h4>Clothing</h4>
-								<ul>
-									<li><a href="women.html">new arrivals</a></li>
-									<li><a href="women.html">men</a></li>
-									<li><a href="women.html">women</a></li>
-									<li><a href="women.html">accessories</a></li>
-									<li><a href="women.html">kids</a></li>
-									<li><a href="women.html">brands</a></li>
-								</ul>	
-							</div>							
-						</div>
-						<div class="col1">
-							<div class="h_nav">
-								<h4>kids</h4>
-								<ul>
-									<li><a href="women.html">Pools&Tees</a></li>
-									<li><a href="women.html">shirts</a></li>
-									<li><a href="women.html">shorts</a></li>
-									<li><a href="women.html">twinsets</a></li>
-									<li><a href="women.html">kurts</a></li>
-									<li><a href="women.html">jackets</a></li>
-								</ul>	
-							</div>							
-						</div>
-						<div class="col1">
-							<div class="h_nav">
-								<h4>Bags</h4>
-								<ul>
-									<li><a href="women.html">Handbag</a></li>
-									<li><a href="women.html">Slingbags</a></li>
-									<li><a href="women.html">Clutches</a></li>
-									<li><a href="women.html">Totes</a></li>
-									<li><a href="women.html">Wallets</a></li>
-									<li><a href="women.html">Laptopbags</a></li>
-								</ul>	
-							</div>												
-						</div>
-						<div class="col1">
-							<div class="h_nav">
-								<h4>account</h4>
-								<ul>
-									<li><a href="#">login</a></li>
-									<li><a href="register.html">create an account</a></li>
-									<li><a href="women.html">create wishlist</a></li>
-									<li><a href="women.html">my shopping bag</a></li>
-									<li><a href="women.html">brands</a></li>
-									<li><a href="women.html">create wishlist</a></li>
-								</ul>	
-							</div>						
-						</div>
-						<div class="col1">
-							<div class="h_nav">
-								<h4>Accessories</h4>
-								<ul>
-									<li><a href="women.html">Belts</a></li>
-									<li><a href="women.html">Pens</a></li>
-									<li><a href="women.html">Eyeglasses</a></li>
-									<li><a href="women.html">accessories</a></li>
-									<li><a href="women.html">Watches</a></li>
-									<li><a href="women.html">Jewellery</a></li>
-								</ul>	
+			<!-- section-heading end -->
+			<div class="row">
+				<div class="col-md-12">
+					<div class="features-tab">
+					  <!-- Nav tabs -->
+					  <ul class="product-nav" role="tablist">
+						<li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Clothing</a></li>
+						<li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Construction</a></li>
+						<li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">School Supplies</a></li>
+						<li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Appliances</a></li>
+						<li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Home Supplies</a></li>
+						<li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Food</a></li>
+						<li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Vehicle</a></li>
+
+					  </ul>
+
+					  <!-- Tab panes -->
+					  <div class="tab-content">
+						<div role="tabpanel" class="tab-pane active" id="home">
+							<div class="row">
+								<div class="features-curosel">
+									<!-- single-product start -->
+									<div class="col-lg-3 col-md-3">
+										<div class="single-product">
+											<span class="sale-text">Sale</span>
+											<div class="product-img">
+												<a href="#">
+													<img class="primary-image" src="../../web/img/product/17.jpg" alt="" />
+													<img class="secondary-image" src="../../web/img/product/18.jpg" alt="" />
+												</a>
+												<div class="actions">
+													<div class="action-buttons">
+														<div class="add-to-cart">
+															<a href="#">Add to cart</a>
+														</div>
+														<div class="add-to-links">
+															<div class="add-to-wishlist">
+																<a href="#" data-toggle="tooltip" title="Add to Wishlist"><i class="fa fa-star"></i>
+																</a>
+															</div>
+															<div class="compare-button">
+																<a href="#" data-toggle="tooltip" title="Compare"><i class="fa fa-exchange"></i></a>
+															</div>									
+														</div>
+														<div class="quickviewbtn">
+															<a href="#" data-toggle="tooltip" title="Quick View"><i class="fa fa-search-plus"></i></a>
+														</div>
+													</div>
+												</div>							
+											</div>
+											<div class="product-content">
+												<h2 class="product-name"><a href="#">Convallis quam sit</a></h2>
+												<div class="pro-rating">
+													<a href="#"><i class="fa fa-star"></i></a>
+													<a href="#"><i class="fa fa-star"></i></a>
+													<a href="#"><i class="fa fa-star"></i></a>
+													<a href="#"><i class="fa fa-star"></i></a>
+													<a href="#"><i class="fa fa-star"></i></a>
+												</div>
+												<div class="price-box">
+													<span class="new-price">£90.00</span>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!-- single-product end -->
+									<!-- single-product start -->
+									<div class="col-lg-3 col-md-3">
+										<div class="single-product">
+											<span class="sale-text">Sale</span>
+											<div class="product-img">
+												<a href="#">
+													<img class="primary-image" src="../../web/img/product/17.jpg" alt="" />
+													<img class="secondary-image" src="../../web/img/product/18.jpg" alt="" />
+												</a>
+												<div class="actions">
+													<div class="action-buttons">
+														<div class="add-to-cart">
+															<a href="#">Add to cart</a>
+														</div>
+														<div class="add-to-links">
+															<div class="add-to-wishlist">
+																<a href="#" data-toggle="tooltip" title="Add to Wishlist"><i class="fa fa-star"></i>
+																</a>
+															</div>
+															<div class="compare-button">
+																<a href="#" data-toggle="tooltip" title="Compare"><i class="fa fa-exchange"></i></a>
+															</div>									
+														</div>
+														<div class="quickviewbtn">
+															<a href="#" data-toggle="tooltip" title="Quick View"><i class="fa fa-search-plus"></i></a>
+														</div>
+													</div>
+												</div>							
+											</div>
+											<div class="product-content">
+												<h2 class="product-name"><a href="#">Convallis quam sit</a></h2>
+												<div class="pro-rating">
+													<a href="#"><i class="fa fa-star"></i></a>
+													<a href="#"><i class="fa fa-star"></i></a>
+													<a href="#"><i class="fa fa-star"></i></a>
+													<a href="#"><i class="fa fa-star"></i></a>
+													<a href="#"><i class="fa fa-star"></i></a>
+												</div>
+												<div class="price-box">
+													<span class="new-price">£90.00</span>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!-- single-product end -->	
+									<!-- single-product start -->
+									<div class="col-lg-3 col-md-3">
+										<div class="single-product">
+											<span class="sale-text">Sale</span>
+											<div class="product-img">
+												<a href="#">
+													<img class="primary-image" src="../../web/img/product/17.jpg" alt="" />
+													<img class="secondary-image" src="../../web/img/product/18.jpg" alt="" />
+												</a>
+												<div class="actions">
+													<div class="action-buttons">
+														<div class="add-to-cart">
+															<a href="#">Add to cart</a>
+														</div>
+														<div class="add-to-links">
+															<div class="add-to-wishlist">
+																<a href="#" data-toggle="tooltip" title="Add to Wishlist"><i class="fa fa-star"></i>
+																</a>
+															</div>
+															<div class="compare-button">
+																<a href="#" data-toggle="tooltip" title="Compare"><i class="fa fa-exchange"></i></a>
+															</div>									
+														</div>
+														<div class="quickviewbtn">
+															<a href="#" data-toggle="tooltip" title="Quick View"><i class="fa fa-search-plus"></i></a>
+														</div>
+													</div>
+												</div>							
+											</div>
+											<div class="product-content">
+												<h2 class="product-name"><a href="#">Convallis quam sit</a></h2>
+												<div class="pro-rating">
+													<a href="#"><i class="fa fa-star"></i></a>
+													<a href="#"><i class="fa fa-star"></i></a>
+													<a href="#"><i class="fa fa-star"></i></a>
+													<a href="#"><i class="fa fa-star"></i></a>
+													<a href="#"><i class="fa fa-star"></i></a>
+												</div>
+												<div class="price-box">
+													<span class="new-price">£90.00</span>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!-- single-product end -->					
+									<!-- single-product start -->
+									<div class="col-lg-3 col-md-3">
+										<div class="single-product">
+											<span class="sale-text">Sale</span>
+											<div class="product-img">
+												<a href="#">
+													<img class="primary-image" src="../../web/img/product/1.jpg" alt="" />
+													<img class="secondary-image" src="../../web/img/product/2.jpg" alt="" />
+												</a>
+												<div class="actions">
+													<div class="action-buttons">
+														<div class="add-to-cart">
+															<a href="#">Add to cart</a>
+														</div>
+														<div class="add-to-links">
+															<div class="add-to-wishlist">
+																<a href="#" data-toggle="tooltip" title="Add to Wishlist"><i class="fa fa-star"></i>
+																</a>
+															</div>
+															<div class="compare-button">
+																<a href="#" data-toggle="tooltip" title="Compare"><i class="fa fa-exchange"></i></a>
+															</div>									
+														</div>
+														<div class="quickviewbtn">
+															<a href="#" data-toggle="tooltip" title="Quick View"><i class="fa fa-search-plus"></i></a>
+														</div>
+													</div>
+												</div>							
+											</div>
+											<div class="product-content">
+												<h2 class="product-name"><a href="#">Vestibulum suscipit</a></h2>
+												<div class="pro-rating">
+													<a href="#"><i class="fa fa-star"></i></a>
+													<a href="#"><i class="fa fa-star"></i></a>
+													<a href="#"><i class="fa fa-star"></i></a>
+													<a href="#"><i class="fa fa-star"></i></a>
+													<a href="#"><i class="fa fa-star"></i></a>
+												</div>
+												<div class="price-box">
+													<span class="new-price">£50.00</span>
+													<span class="old-price">£80.00</span>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!-- single-product end -->	
+									<!-- single-product start -->
+									<div class="col-lg-3 col-md-3">
+										<div class="single-product">
+											<div class="product-img">
+												<a href="#">
+													<img class="primary-image" src="../../web/img/product/3.jpg" alt="" />
+													<img class="secondary-image" src="../../web/img/product/4.jpg" alt="" />
+												</a>
+												<div class="actions">
+													<div class="action-buttons">
+														<div class="add-to-cart">
+															<a href="#">Add to cart</a>
+														</div>
+														<div class="add-to-links">
+															<div class="add-to-wishlist">
+																<a href="#" data-toggle="tooltip" title="Add to Wishlist"><i class="fa fa-star"></i>
+																</a>
+															</div>
+															<div class="compare-button">
+																<a href="#" data-toggle="tooltip" title="Compare"><i class="fa fa-exchange"></i></a>
+															</div>									
+														</div>
+														<div class="quickviewbtn">
+															<a href="#" data-toggle="tooltip" title="Quick View"><i class="fa fa-search-plus"></i></a>
+														</div>
+													</div>
+												</div>							
+											</div>
+											<div class="product-content">
+												<h2 class="product-name"><a href="#">Vestibulum dictum magna</a></h2>
+												<div class="pro-rating">
+													<a href="#"><i class="fa fa-star"></i></a>
+													<a href="#"><i class="fa fa-star"></i></a>
+													<a href="#"><i class="fa fa-star"></i></a>
+													<a href="#"><i class="fa fa-star"></i></a>
+													<a href="#"><i class="fa fa-star"></i></a>
+												</div>
+												<div class="price-box">
+													<span class="new-price">£150.00</span>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!-- single-product end -->	
+									<!-- single-product start -->
+									<div class="col-lg-3 col-md-3">
+										<div class="single-product">
+											<span class="sale-text">Sale</span>
+											<div class="product-img">
+												<a href="#">
+													<img class="primary-image" src="../../web/img/product/5.jpg" alt="" />
+													<img class="secondary-image" src="../../web/img/product/6.jpg" alt="" />
+												</a>
+												<div class="actions">
+													<div class="action-buttons">
+														<div class="add-to-cart">
+															<a href="#">Add to cart</a>
+														</div>
+														<div class="add-to-links">
+															<div class="add-to-wishlist">
+																<a href="#" data-toggle="tooltip" title="Add to Wishlist"><i class="fa fa-star"></i>
+																</a>
+															</div>
+															<div class="compare-button">
+																<a href="#" data-toggle="tooltip" title="Compare"><i class="fa fa-exchange"></i></a>
+															</div>									
+														</div>
+														<div class="quickviewbtn">
+															<a href="#" data-toggle="tooltip" title="Quick View"><i class="fa fa-search-plus"></i></a>
+														</div>
+													</div>
+												</div>							
+											</div>
+											<div class="product-content">
+												<h2 class="product-name"><a href="#">Tincidunt malesuada</a></h2>
+												<div class="pro-rating">
+													<a href="#"><i class="fa fa-star"></i></a>
+													<a href="#"><i class="fa fa-star"></i></a>
+													<a href="#"><i class="fa fa-star"></i></a>
+													<a href="#"><i class="fa fa-star"></i></a>
+													<a href="#"><i class="fa fa-star"></i></a>
+												</div>
+												<div class="price-box">
+													<span class="new-price">£90.00</span>
+													<span class="old-price">£120.00</span>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!-- single-product end -->		
+								</div>
 							</div>
 						</div>
-						<div class="col1">
-							<div class="h_nav">
-								<h4>Footwear</h4>
-								<ul>
-									<li><a href="women.html">new arrivals</a></li>
-									<li><a href="women.html">men</a></li>
-									<li><a href="women.html">women</a></li>
-									<li><a href="women.html">accessories</a></li>
-									<li><a href="women.html">kids</a></li>
-									<li><a href="women.html">style videos</a></li>
-								</ul>	
-							</div>
+						<div role="tabpanel" class="tab-pane" id="profile">
+							<div class="row">
+								<div class="features-curosel">
+									<!-- single-product start -->
+									<div class="col-lg-3 col-md-3">
+										<div class="single-product">
+											<div class="product-img">
+												<a href="#">
+													<img class="primary-image" src="../../web/img/product/women/2.jpg" alt="" />
+													<img class="secondary-image" src="../../web/img/product/women/1.jpg" alt="" />
+												</a>
+												<div class="actions">
+													<div class="action-buttons">
+														<div class="add-to-cart">
+															<a href="#">Add to cart</a>
+														</div>
+														<div class="add-to-links">
+															<div class="add-to-wishlist">
+																<a href="#" data-toggle="tooltip" title="Add to Wishlist"><i class="fa fa-star"></i>
+																</a>
+															</div>
+															<div class="compare-button">
+																<a href="#" data-toggle="tooltip" title="Compare"><i class="fa fa-exchange"></i></a>
+															</div>									
+														</div>
+														<div class="quickviewbtn">
+															<a href="#" data-toggle="tooltip" title="Quick View"><i class="fa fa-search-plus"></i></a>
+														</div>
+													</div>
+												</div>							
+											</div>
+											<div class="product-content">
+												<h2 class="product-name"><a href="#">Pellentesque posuere</a></h2>
+												<div class="pro-rating">
+													<a href="#"><i class="fa fa-star"></i></a>
+													<a href="#"><i class="fa fa-star"></i></a>
+													<a href="#"><i class="fa fa-star"></i></a>
+													<a href="#"><i class="fa fa-star"></i></a>
+													<a href="#"><i class="fa fa-star"></i></a>
+												</div>
+												<div class="price-box">
+													<span class="new-price">£100.00</span>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!-- single-product end -->		
+								</div>
+							</div>	
 						</div>
-					</div>
-					<div class="row">
-						<div class="col2"></div>
-						<div class="col1"></div>
-						<div class="col1"></div>
-						<div class="col1"></div>
-						<div class="col1"></div>
-					</div>
-    				</div>
-				</li>
-			<li><a class="color4" href="#">TUXEDO</a>
-				<div class="megapanel">
-					<div class="row">
-						<div class="col1">
-							<div class="h_nav">
-								<h4>Clothing</h4>
-								<ul>
-									<li><a href="women.html">new arrivals</a></li>
-									<li><a href="women.html">men</a></li>
-									<li><a href="women.html">women</a></li>
-									<li><a href="women.html">accessories</a></li>
-									<li><a href="women.html">kids</a></li>
-									<li><a href="women.html">brands</a></li>
-								</ul>	
-							</div>							
+						<div role="tabpanel" class="tab-pane" id="messages">
+							<div class="row">
+								<div class="features-curosel">
+									<!-- single-product start -->
+									<div class="col-lg-3 col-md-3">
+										<div class="single-product">
+											<span class="sale-text">Sale</span>
+											<div class="product-img">
+												<a href="#">
+													<img class="primary-image" src="../../web/img/product/15.jpg" alt="" />
+													<img class="secondary-image" src="../../web/img/product/16.jpg" alt="" />
+												</a>
+												<div class="actions">
+													<div class="action-buttons">
+														<div class="add-to-cart">
+															<a href="#">Add to cart</a>
+														</div>
+														<div class="add-to-links">
+															<div class="add-to-wishlist">
+																<a href="#" data-toggle="tooltip" title="Add to Wishlist"><i class="fa fa-star"></i>
+																</a>
+															</div>
+															<div class="compare-button">
+																<a href="#" data-toggle="tooltip" title="Compare"><i class="fa fa-exchange"></i></a>
+															</div>									
+														</div>
+														<div class="quickviewbtn">
+															<a href="#" data-toggle="tooltip" title="Quick View"><i class="fa fa-search-plus"></i></a>
+														</div>
+													</div>
+												</div>							
+											</div>
+											<div class="product-content">
+												<h2 class="product-name"><a href="#">Curabitur vulputate urna</a></h2>
+												<div class="pro-rating">
+													<a href="#"><i class="fa fa-star"></i></a>
+													<a href="#"><i class="fa fa-star"></i></a>
+													<a href="#"><i class="fa fa-star"></i></a>
+													<a href="#"><i class="fa fa-star"></i></a>
+													<a href="#"><i class="fa fa-star"></i></a>
+												</div>
+												<div class="price-box">
+													<span class="new-price">£90.00</span>
+													<span class="old-price">£120.00</span>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!-- single-product end -->				
+								</div>
+							</div>	
 						</div>
-						<div class="col1">
-							<div class="h_nav">
-								<h4>kids</h4>
-								<ul>
-									<li><a href="women.html">Pools&Tees</a></li>
-									<li><a href="women.html">shirts</a></li>
-									<li><a href="women.html">shorts</a></li>
-									<li><a href="women.html">twinsets</a></li>
-									<li><a href="women.html">kurts</a></li>
-									<li><a href="women.html">jackets</a></li>
-								</ul>	
-							</div>							
-						</div>
-						<div class="col1">
-							<div class="h_nav">
-								<h4>Bags</h4>
-								<ul>
-									<li><a href="women.html">Handbag</a></li>
-									<li><a href="women.html">Slingbags</a></li>
-									<li><a href="women.html">Clutches</a></li>
-									<li><a href="women.html">Totes</a></li>
-									<li><a href="women.html">Wallets</a></li>
-									<li><a href="women.html">Laptopbags</a></li>
-								</ul>	
-							</div>												
-						</div>
-						<div class="col1">
-							<div class="h_nav">
-								<h4>account</h4>
-								<ul>
-									<li><a href="#">login</a></li>
-									<li><a href="register.html">create an account</a></li>
-									<li><a href="women.html">create wishlist</a></li>
-									<li><a href="women.html">my shopping bag</a></li>
-									<li><a href="women.html">brands</a></li>
-									<li><a href="women.html">create wishlist</a></li>
-								</ul>	
-							</div>						
-						</div>
-						<div class="col1">
-							<div class="h_nav">
-								<h4>Accessories</h4>
-								<ul>
-									<li><a href="women.html">Belts</a></li>
-									<li><a href="women.html">Pens</a></li>
-									<li><a href="women.html">Eyeglasses</a></li>
-									<li><a href="women.html">accessories</a></li>
-									<li><a href="women.html">Watches</a></li>
-									<li><a href="women.html">Jewellery</a></li>
-								</ul>	
-							</div>
-						</div>
-						<div class="col1">
-							<div class="h_nav">
-								<h4>Footwear</h4>
-								<ul>
-									<li><a href="women.html">new arrivals</a></li>
-									<li><a href="women.html">men</a></li>
-									<li><a href="women.html">women</a></li>
-									<li><a href="women.html">accessories</a></li>
-									<li><a href="women.html">kids</a></li>
-									<li><a href="women.html">style videos</a></li>
-								</ul>	
-							</div>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col2"></div>
-						<div class="col1"></div>
-						<div class="col1"></div>
-						<div class="col1"></div>
-						<div class="col1"></div>
-					</div>
-    				</div>
-				</li>				
-				<li><a class="color5" href="#">SWEATER</a>
-				<div class="megapanel">
-					<div class="row">
-						<div class="col1">
-							<div class="h_nav">
-								<h4>Clothing</h4>
-								<ul>
-									<li><a href="women.html">new arrivals</a></li>
-									<li><a href="women.html">men</a></li>
-									<li><a href="women.html">women</a></li>
-									<li><a href="women.html">accessories</a></li>
-									<li><a href="women.html">kids</a></li>
-									<li><a href="women.html">brands</a></li>
-								</ul>	
-							</div>							
-						</div>
-						<div class="col1">
-							<div class="h_nav">
-								<h4>kids</h4>
-								<ul>
-									<li><a href="women.html">Pools&Tees</a></li>
-									<li><a href="women.html">shirts</a></li>
-									<li><a href="women.html">shorts</a></li>
-									<li><a href="women.html">twinsets</a></li>
-									<li><a href="women.html">kurts</a></li>
-									<li><a href="women.html">jackets</a></li>
-								</ul>	
-							</div>							
-						</div>
-						<div class="col1">
-							<div class="h_nav">
-								<h4>Bags</h4>
-								<ul>
-									<li><a href="women.html">Handbag</a></li>
-									<li><a href="women.html">Slingbags</a></li>
-									<li><a href="women.html">Clutches</a></li>
-									<li><a href="women.html">Totes</a></li>
-									<li><a href="women.html">Wallets</a></li>
-									<li><a href="women.html">Laptopbags</a></li>
-								</ul>	
-							</div>												
-						</div>
-						<div class="col1">
-							<div class="h_nav">
-								<h4>account</h4>
-								<ul>
-									<li><a href="#">login</a></li>
-									<li><a href="register.html">create an account</a></li>
-									<li><a href="women.html">create wishlist</a></li>
-									<li><a href="women.html">my shopping bag</a></li>
-									<li><a href="women.html">brands</a></li>
-									<li><a href="women.html">create wishlist</a></li>
-								</ul>	
-							</div>						
-						</div>
-						<div class="col1">
-							<div class="h_nav">
-								<h4>Accessories</h4>
-								<ul>
-									<li><a href="women.html">Belts</a></li>
-									<li><a href="women.html">Pens</a></li>
-									<li><a href="women.html">Eyeglasses</a></li>
-									<li><a href="women.html">accessories</a></li>
-									<li><a href="women.html">Watches</a></li>
-									<li><a href="women.html">Jewellery</a></li>
-								</ul>	
-							</div>
-						</div>
-						<div class="col1">
-							<div class="h_nav">
-								<h4>Footwear</h4>
-								<ul>
-									<li><a href="women.html">new arrivals</a></li>
-									<li><a href="women.html">men</a></li>
-									<li><a href="women.html">women</a></li>
-									<li><a href="women.html">accessories</a></li>
-									<li><a href="women.html">kids</a></li>
-									<li><a href="women.html">style videos</a></li>
-								</ul>	
-							</div>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col2"></div>
-						<div class="col1"></div>
-						<div class="col1"></div>
-						<div class="col1"></div>
-						<div class="col1"></div>
-					</div>
-    				</div>
-				</li>
-				<li><a class="color6" href="#">SHOES</a>
-				<div class="megapanel">
-					<div class="row">
-						<div class="col1">
-							<div class="h_nav">
-								<h4>Clothing</h4>
-								<ul>
-									<li><a href="women.html">new arrivals</a></li>
-									<li><a href="women.html">men</a></li>
-									<li><a href="women.html">women</a></li>
-									<li><a href="women.html">accessories</a></li>
-									<li><a href="women.html">kids</a></li>
-									<li><a href="women.html">brands</a></li>
-								</ul>	
-							</div>							
-						</div>
-						<div class="col1">
-							<div class="h_nav">
-								<h4>kids</h4>
-								<ul>
-									<li><a href="women.html">Pools&Tees</a></li>
-									<li><a href="women.html">shirts</a></li>
-									<li><a href="women.html">shorts</a></li>
-									<li><a href="women.html">twinsets</a></li>
-									<li><a href="women.html">kurts</a></li>
-									<li><a href="women.html">jackets</a></li>
-								</ul>	
-							</div>							
-						</div>
-						<div class="col1">
-							<div class="h_nav">
-								<h4>Bags</h4>
-								<ul>
-									<li><a href="women.html">Handbag</a></li>
-									<li><a href="women.html">Slingbags</a></li>
-									<li><a href="women.html">Clutches</a></li>
-									<li><a href="women.html">Totes</a></li>
-									<li><a href="women.html">Wallets</a></li>
-									<li><a href="women.html">Laptopbags</a></li>
-								</ul>	
-							</div>												
-						</div>
-						<div class="col1">
-							<div class="h_nav">
-								<h4>account</h4>
-								<ul>
-									<li><a href="#">login</a></li>
-									<li><a href="register.html">create an account</a></li>
-									<li><a href="women.html">create wishlist</a></li>
-									<li><a href="women.html">my shopping bag</a></li>
-									<li><a href="women.html">brands</a></li>
-									<li><a href="women.html">create wishlist</a></li>
-								</ul>	
-							</div>						
-						</div>
-						<div class="col1">
-							<div class="h_nav">
-								<h4>Accessories</h4>
-								<ul>
-									<li><a href="women.html">Belts</a></li>
-									<li><a href="women.html">Pens</a></li>
-									<li><a href="women.html">Eyeglasses</a></li>
-									<li><a href="women.html">accessories</a></li>
-									<li><a href="women.html">Watches</a></li>
-									<li><a href="women.html">Jewellery</a></li>
-								</ul>	
-							</div>
-						</div>
-						<div class="col1">
-							<div class="h_nav">
-								<h4>Footwear</h4>
-								<ul>
-									<li><a href="women.html">new arrivals</a></li>
-									<li><a href="women.html">men</a></li>
-									<li><a href="women.html">women</a></li>
-									<li><a href="women.html">accessories</a></li>
-									<li><a href="women.html">kids</a></li>
-									<li><a href="women.html">style videos</a></li>
-								</ul>	
-							</div>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col2"></div>
-						<div class="col1"></div>
-						<div class="col1"></div>
-						<div class="col1"></div>
-						<div class="col1"></div>
-					</div>
-    				</div>
-				</li>				
-			
-				<li><a class="color7" href="#">GLASSES</a>
-				<div class="megapanel">
-					<div class="row">
-						<div class="col1">
-							<div class="h_nav">
-								<h4>Clothing</h4>
-								<ul>
-									<li><a href="women.html">new arrivals</a></li>
-									<li><a href="women.html">men</a></li>
-									<li><a href="women.html">women</a></li>
-									<li><a href="women.html">accessories</a></li>
-									<li><a href="women.html">kids</a></li>
-									<li><a href="women.html">brands</a></li>
-								</ul>	
-							</div>							
-						</div>
-						<div class="col1">
-							<div class="h_nav">
-								<h4>kids</h4>
-								<ul>
-									<li><a href="women.html">Pools&Tees</a></li>
-									<li><a href="women.html">shirts</a></li>
-									<li><a href="women.html">shorts</a></li>
-									<li><a href="women.html">twinsets</a></li>
-									<li><a href="women.html">kurts</a></li>
-									<li><a href="women.html">jackets</a></li>
-								</ul>	
-							</div>							
-						</div>
-						<div class="col1">
-							<div class="h_nav">
-								<h4>Bags</h4>
-								<ul>
-									<li><a href="women.html">Handbag</a></li>
-									<li><a href="women.html">Slingbags</a></li>
-									<li><a href="women.html">Clutches</a></li>
-									<li><a href="women.html">Totes</a></li>
-									<li><a href="women.html">Wallets</a></li>
-									<li><a href="women.html">Laptopbags</a></li>
-								</ul>	
-							</div>												
-						</div>
-						<div class="col1">
-							<div class="h_nav">
-								<h4>account</h4>
-								<ul>
-									<li><a href="#">login</a></li>
-									<li><a href="register.html">create an account</a></li>
-									<li><a href="women.html">create wishlist</a></li>
-									<li><a href="women.html">my shopping bag</a></li>
-									<li><a href="women.html">brands</a></li>
-									<li><a href="women.html">create wishlist</a></li>
-								</ul>	
-							</div>						
-						</div>
-						<div class="col1">
-							<div class="h_nav">
-								<h4>Accessories</h4>
-								<ul>
-									<li><a href="women.html">Belts</a></li>
-									<li><a href="women.html">Pens</a></li>
-									<li><a href="women.html">Eyeglasses</a></li>
-									<li><a href="women.html">accessories</a></li>
-									<li><a href="women.html">Watches</a></li>
-									<li><a href="women.html">Jewellery</a></li>
-								</ul>	
-							</div>
-						</div>
-						<div class="col1">
-							<div class="h_nav">
-								<h4>Footwear</h4>
-								<ul>
-									<li><a href="women.html">new arrivals</a></li>
-									<li><a href="women.html">men</a></li>
-									<li><a href="women.html">women</a></li>
-									<li><a href="women.html">accessories</a></li>
-									<li><a href="women.html">kids</a></li>
-									<li><a href="women.html">style videos</a></li>
-								</ul>	
-							</div>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col2"></div>
-						<div class="col1"></div>
-						<div class="col1"></div>
-						<div class="col1"></div>
-						<div class="col1"></div>
-					</div>
-    				</div>
-				</li>				
-			
-				<li><a class="color8" href="#">T-SHIRT</a>
-				<div class="megapanel">
-					<div class="row">
-						<div class="col1">
-							<div class="h_nav">
-								<h4>Clothing</h4>
-								<ul>
-									<li><a href="women.html">new arrivals</a></li>
-									<li><a href="women.html">men</a></li>
-									<li><a href="women.html">women</a></li>
-									<li><a href="women.html">accessories</a></li>
-									<li><a href="women.html">kids</a></li>
-									<li><a href="women.html">brands</a></li>
-								</ul>	
-							</div>							
-						</div>
-						<div class="col1">
-							<div class="h_nav">
-								<h4>kids</h4>
-								<ul>
-									<li><a href="women.html">trends</a></li>
-									<li><a href="women.html">sale</a></li>
-									<li><a href="women.html">style videos</a></li>
-									<li><a href="women.html">accessories</a></li>
-									<li><a href="women.html">kids</a></li>
-									<li><a href="women.html">style videos</a></li>
-								</ul>	
-							</div>							
-						</div>
-						<div class="col1">
-							<div class="h_nav">
-								<h4>Bags</h4>
-								<ul>
-									<li><a href="women.html">trends</a></li>
-									<li><a href="women.html">sale</a></li>
-									<li><a href="women.html">style videos</a></li>
-									<li><a href="women.html">accessories</a></li>
-									<li><a href="women.html">kids</a></li>
-									<li><a href="women.html">style videos</a></li>
-								</ul>	
-							</div>												
-						</div>
-						<div class="col1">
-							<div class="h_nav">
-								<h4>account</h4>
-								<ul>
-									<li><a href="#">login</a></li>
-									<li><a href="register.html">create an account</a></li>
-									<li><a href="women.html">create wishlist</a></li>
-									<li><a href="women.html">my shopping bag</a></li>
-									<li><a href="women.html">brands</a></li>
-									<li><a href="women.html">create wishlist</a></li>
-								</ul>	
-							</div>						
-						</div>
-						<div class="col1">
-							<div class="h_nav">
-								<h4>Accessories</h4>
-								<ul>
-									<li><a href="women.html">trends</a></li>
-									<li><a href="women.html">sale</a></li>
-									<li><a href="women.html">style videos</a></li>
-									<li><a href="women.html">accessories</a></li>
-									<li><a href="women.html">kids</a></li>
-									<li><a href="women.html">style videos</a></li>
-								</ul>	
-							</div>
-						</div>
-						<div class="col1">
-							<div class="h_nav">
-								<h4>Footwear</h4>
-								<ul>
-									<li><a href="women.html">new arrivals</a></li>
-									<li><a href="women.html">men</a></li>
-									<li><a href="women.html">women</a></li>
-									<li><a href="women.html">accessories</a></li>
-									<li><a href="women.html">kids</a></li>
-									<li><a href="women.html">style videos</a></li>
-								</ul>	
-							</div>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col2"></div>
-						<div class="col1"></div>
-						<div class="col1"></div>
-						<div class="col1"></div>
-						<div class="col1"></div>
-					</div>
-    				</div>
-				</li>
-				<li><a class="color9" href="#">WATCHES</a>
-				<div class="megapanel">
-					<div class="row">
-						<div class="col1">
-							<div class="h_nav">
-								<h4>Clothing</h4>
-								<ul>
-									<li><a href="women.html">new arrivals</a></li>
-									<li><a href="women.html">men</a></li>
-									<li><a href="women.html">women</a></li>
-									<li><a href="women.html">accessories</a></li>
-									<li><a href="women.html">kids</a></li>
-									<li><a href="women.html">brands</a></li>
-								</ul>	
-							</div>							
-						</div>
-						<div class="col1">
-							<div class="h_nav">
-								<h4>kids</h4>
-								<ul>
-									<li><a href="women.html">trends</a></li>
-									<li><a href="women.html">sale</a></li>
-									<li><a href="women.html">style videos</a></li>
-									<li><a href="women.html">accessories</a></li>
-									<li><a href="women.html">kids</a></li>
-									<li><a href="women.html">style videos</a></li>
-								</ul>	
-							</div>							
-						</div>
-						<div class="col1">
-							<div class="h_nav">
-								<h4>Bags</h4>
-								<ul>
-									<li><a href="women.html">trends</a></li>
-									<li><a href="women.html">sale</a></li>
-									<li><a href="women.html">style videos</a></li>
-									<li><a href="women.html">accessories</a></li>
-									<li><a href="women.html">kids</a></li>
-									<li><a href="women.html">style videos</a></li>
-								</ul>	
-							</div>												
-						</div>
-						<div class="col1">
-							<div class="h_nav">
-								<h4>account</h4>
-								<ul>
-									<li><a href="#">login</a></li>
-									<li><a href="register.html">create an account</a></li>
-									<li><a href="women.html">create wishlist</a></li>
-									<li><a href="women.html">my shopping bag</a></li>
-									<li><a href="women.html">brands</a></li>
-									<li><a href="women.html">create wishlist</a></li>
-								</ul>	
-							</div>						
-						</div>
-						<div class="col1">
-							<div class="h_nav">
-								<h4>Accessories</h4>
-								<ul>
-									<li><a href="women.html">trends</a></li>
-									<li><a href="women.html">sale</a></li>
-									<li><a href="women.html">style videos</a></li>
-									<li><a href="women.html">accessories</a></li>
-									<li><a href="women.html">kids</a></li>
-									<li><a href="women.html">style videos</a></li>
-								</ul>	
-							</div>
-						</div>
-						<div class="col1">
-							<div class="h_nav">
-								<h4>Footwear</h4>
-								<ul>
-									<li><a href="women.html">new arrivals</a></li>
-									<li><a href="women.html">men</a></li>
-									<li><a href="women.html">women</a></li>
-									<li><a href="women.html">accessories</a></li>
-									<li><a href="women.html">kids</a></li>
-									<li><a href="women.html">style videos</a></li>
-								</ul>	
-							</div>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col2"></div>
-						<div class="col1"></div>
-						<div class="col1"></div>
-						<div class="col1"></div>
-						<div class="col1"></div>
-					</div>
-    				</div>
-				</li>
-		 </ul> 
-	</div>
-</div>
-</div>
-<div class="arriv">
-	<div class="container">
-		<div class="arriv-top">
-			<div class="col-md-6 arriv-left">
-				<img src="../../web/images/1.jpg" class="img-responsive" alt="">
-				<div class="arriv-info">
-					<h3>NEW ARRIVALS</h3>
-					<p>REVIVE YOUR WARDROBE WITH CHIC KNITS</p>
-					<div class="crt-btn">
-						<a href="details.html">TAKE A LOOK</a>
-					</div>
+					  </div>
+					</div>				
 				</div>
 			</div>
-			<div class="col-md-6 arriv-right">
-				<img src="../../web/images/2.jpg" class="img-responsive" alt="">
-				<div class="arriv-info">
-					<h3>TUXEDO</h3>
-					<p>REVIVE YOUR WARDROBE WITH CHIC KNITS</p>
-					<div class="crt-btn">
-						<a href="details.html">SHOP NOW</a>
-					</div>
-				</div>
-			</div>
-			<div class="clearfix"> </div>
-		</div>
-		<div class="arriv-bottm">
-			<div class="col-md-8 arriv-left1">
-				<img src="../../web/images/3.jpg" class="img-responsive" alt="">
-				<div class="arriv-info1">
-					<h3>SWEATER</h3>
-					<p>REVIVE YOUR WARDROBE WITH CHIC KNITS</p>
-					<div class="crt-btn">
-						<a href="details.html">SHOP NOW</a>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-4 arriv-right1">
-				<img src="../../web/images/4.jpg" class="img-responsive" alt="">
-				<div class="arriv-info2">
-					<a href="details.html"><h3>Trekking Shoes<i class="ars"></i></h3></a>
-				</div>
-			</div>
-			<div class="clearfix"> </div>
-		</div>
-		<div class="arriv-las">
-			<div class="col-md-4 arriv-left2">
-				<img src="../../web/images/5.jpg" class="img-responsive" alt="">
-				<div class="arriv-info2">
-					<a href="details.html"><h3>Casual Glasses<i class="ars"></i></h3></a>
-				</div>
-			</div>
-			<div class="col-md-4 arriv-middle">
-				<img src="../../web/images/6.jpg" class="img-responsive" alt="">
-				<div class="arriv-info3">
-					<h3>FRESH LOOK T-SHIRT</h3>
-					<div class="crt-btn">
-						<a href="details.html">SHOP NOW</a>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-4 arriv-right2">
-				<img src="../../web/images/7.jpg" class="img-responsive" alt="">
-				<div class="arriv-info2">
-					<a href="details.html"><h3>Elegant Watches<i class="ars"></i></h3></a>
-				</div>
-			</div>
-			<div class="clearfix"> </div>
 		</div>
 	</div>
-</div>
-<div class="special">
-	<div class="container">
-		<h3>Special Offers</h3>
-		<div class="specia-top">
-			<ul class="grid_2">
-		<li>
-				<a href="details.html"><img src="../../web/images/8.jpg" class="img-responsive" alt=""></a>
-				<div class="special-info grid_1 simpleCart_shelfItem">
-					<h5>Lorem ipsum dolor</h5>
-					<div class="item_add"><span class="item_price"><h6>ONLY $40.00</h6></span></div>
-					<div class="item_add"><span class="item_price"><a href="#">add to cart</a></span></div>
+	<!-- features-area end -->
+
+	<!-- User Account Page -->
+	<div class="blog-area pad-60" id="page_useraccount" style="display: none">
+		<div class="container">
+			<div class="row">
+				<!-- blog-left-sidebar start -->
+				<div class="col-lg-3 col-md-3">
+					<!-- widget-search start -->
+					<!-- <aside class="widget widget-search">
+						<h3 class="sidebar-title">Search</h3>
+						<form action="#">
+							<div class="widget-form">
+								<input type="text" placeholder="search" />
+								<button type="submit"><i class="fa fa-search"></i></button>					
+							</div>
+						</form>
+					</aside> -->
+					<!-- widget-search end -->
+					<!-- widget-categories start -->
+					<aside class="widget widget-categories">
+						<h3 class="sidebar-title">My Account</h3>
+						<ul class="sidebar-menu">
+							<li onclick="getuseraccount();"><a href="#">My Account</a> (2)</li>
+							<li><a href="#">My Wallet</a> (1)</li>
+							<li><a href="#">Order Tracking</a> (1)</li>
+							<li><a href="#">Exchange and Return</a> (1)</li>
+							<li><a href="#">Preferences</a> (5)</li>
+							<li><a href="#">Wishlist</a> (2)</li>
+							<li><a href="#">Rewards</a> (4)</li>
+						</ul>
+					</aside>
+					<!-- widget-categories end -->	
+					
 				</div>
-		</li>
-		<li>
-				<a href="details.html"><img src="../../web/images/9.jpg" class="img-responsive" alt=""></a>
-				<div class="special-info grid_1 simpleCart_shelfItem">
-					<h5>Consectetur adipis</h5>
-					<div class="item_add"><span class="item_price"><h6>ONLY $60.00</h6></span></div>
-					<div class="item_add"><span class="item_price"><a href="#">add to cart</a></span></div>
-			</div>
-		</li>
-		<li>
-				<a href="details.html"><img src="../../web/images/10.jpg" class="img-responsive" alt=""></a>
-				<div class="special-info grid_1 simpleCart_shelfItem">
-					<h5>Commodo consequat</h5>
-					<div class="item_add"><span class="item_price"><h6>ONLY $14.00</h6></span></div>
-					<div class="item_add"><span class="item_price"><a href="#">add to cart</a></span></div>
-			</div>
-		</li>
-		<li>
-				<a href="details.html"><img src="../../web/images/11.jpg" class="img-responsive" alt=""></a>
-				<div class="special-info grid_1 simpleCart_shelfItem">
-					<h5>Voluptate velit</h5>
-					<div class="item_add"><span class="item_price"><h6>ONLY $37.00</h6></span></div>
-					<div class="item_add"><span class="item_price"><a href="#">add to cart</a></span></div>
+				<!-- blog-left-sidebar end -->
+				<div class="col-lg-9 col-md-9">
+
+					<!-- personal details -->
+					<article class="blog-post-wrapper">
+						<div class="post-information">
+							<h2><b><a href="#">Personal Details</a></b></h2>
+							<hr>
+							<!-- <p>Donec vitae hendrerit arcu, sit amet faucibus nisl. Cras pretium arcu ex. Aenean posuere libero eu augue condimentum rhoncus. Praesent ornare tortor</p>
+							<a class="readmore" href="#">Update</a> -->
+							<div id="useraccountpersonaldetails"></div>
+						</div>
+					</article>
+					
+					<!-- personal details -->
+
+					<!-- billingaddress -->
+					<!-- <div id="useraccountbillingaddress"></div> -->
+					<!-- billinaddress -->
+
+					<!-- permanentaddress -->
+					<div id="useraccountpermanentaddress"></div>
+					<!-- permanentaddress -->
+
+					<!-- pagination start -->
+					<div class="pagination">
+						<ul>
+							<li class="active">1</li>
+							<li><a href="#">2</a></li>
+							<li><a href="#">3</a></li>
+							<li><a href="#"><i class="fa fa-chevron-right"></i></a></li>
+						</ul>
+					</div>
+					<!-- pagination end -->
 				</div>
-		</li>
-		<div class="clearfix"> </div>
-	</ul>
+			</div>
 		</div>
 	</div>
-</div>
-<div class="foot-top">
-	<div class="container">
-		<div class="col-md-6 s-c">
-			<li>
-				<div class="fooll">
-					<h5>follow us on</h5>
+	<!-- User Account Page -->
+
+	<!-- All Products Page -->
+	<div class="shop-area" id="page_products" style="display: none">
+		<div class="container">
+			<div class="row">
+				<!-- shop-left-sidebar start -->
+				<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+					<!-- widget-categories start -->
+					<aside class="widget widget-categories">
+						<h3 class="sidebar-title">Categories</h3>
+						<ul class="sidebar-menu">
+							<li><a href="#">Clothes</a> <span class="count">(14)</span></li>
+							<li><a href="#">Men</a> <span class="count">(9)</span></li>
+							<li><a href="#">Shoes</a> <span class="count">(2)</span></li>
+							<li><a href="#">Sunglasses</a> <span class="count">(2)</span></li>
+							<li><a href="#">Women</a> <span class="count">(8)</span></li>
+						</ul>
+					</aside>
+					<!-- widget-categories end -->
+					<!-- shop-filter start -->
+					<aside class="widget shop-filter">
+						<h3 class="sidebar-title">price</h3>
+						<div class="info_widget">
+							<div class="price_filter">
+								<div id="slider-range"></div>
+								<div class="price_slider_amount">
+									<input type="text" id="amount" name="price"  placeholder="Add Your Price" />
+									<input type="submit"  value="Filter"/>  
+								</div>
+							</div>
+						</div>							
+					</aside>
+					<!-- shop-filter end -->
+					<!-- filter-by start -->
+					<aside class="widget filter-by">
+						<h3 class="sidebar-title">Filter by</h3>
+						<ul class="sidebar-menu">
+							<li><a href="#">L</a> <span class="count">(1)</span></li>
+							<li><a href="#">M</a> <span class="count">(1)</span></li>
+							<li><a href="#">S</a> <span class="count">(1)</span></li>
+							<li><a href="#">XL</a> <span class="count">(1)</span></li>
+						</ul>						
+					</aside>
+					<!-- filter-by end -->
+					<!-- widget-tags start -->
+					<aside class="widget widget-tags">
+						<h3 class="sidebar-title">Tags</h3>
+						<ul>
+							<li><a href="#">asian</a></li>
+							<li><a href="#">brown</a></li>
+							<li><a href="#">euro</a></li>
+							<li><a href="#">fashion</a></li>
+							<li><a href="#">france</a></li>
+							<li><a href="#">hat</a></li>
+							<li><a href="#">travel</a></li>
+							<li><a href="#">white</a></li>
+							<li><a href="#">t-shirt</a></li>
+							<li><a href="#">teen</a></li>
+						</ul>
+					</aside>
+					<!-- widget-tags end -->					
+					<!-- widget-recent start -->
+					<aside class="widget top-product-widget">
+						<h3 class="sidebar-title">Top rated products</h3>
+						<ul>
+							<li>
+								<div class="single-product">
+									<div class="product-img">
+										<a href="#">
+											<img class="primary-image" src="../../web/img/product/15.jpg" alt="" />
+											<img class="secondary-image" src="../../web/img/product/16.jpg" alt="" />
+										</a>						
+									</div>
+									<div class="product-content">
+										<div class="pro-info">
+											<h2 class="product-name"><a href="#">Curabitur vulputate</a></h2>
+											<div class="price-box">
+												<span class="new-price">£90.00</span>
+												<span class="old-price">£120.00</span>
+											</div>								
+										</div>									
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="single-product">
+									<div class="product-img">
+										<a href="#">
+											<img class="primary-image" src="../../web/img/product/women/8.jpg" alt="" />
+											<img class="secondary-image" src="../../web/img/product/women/1.jpg" alt="" />
+										</a>						
+									</div>
+									<div class="product-content">
+										<div class="pro-info">
+											<h2 class="product-name"><a href="#">Aliquam lobortis est</a></h2>
+											<div class="price-box">
+												<span class="new-price">£70.00</span>
+												<span class="old-price">£100.00</span>
+											</div>								
+										</div>								
+									</div>
+								</div>	
+							</li>
+							<li>
+								<div class="single-product">
+									<div class="product-img">
+										<a href="#">
+											<img class="primary-image" src="../../web/img/product/6.jpg" alt="" />
+											<img class="secondary-image" src="../../web/img/product/7.jpg" alt="" />
+										</a>						
+									</div>
+									<div class="product-content">
+										<div class="pro-info">
+											<h2 class="product-name"><a href="#">Pellentesque posuere</a></h2>
+											<div class="price-box">
+												<span class="new-price">£50.00</span>
+											</div>								
+										</div>									
+									</div>
+								</div>
+							</li>
+						</ul>
+					</aside>
+					<!-- widget-recent end -->
 				</div>
-			</li>
-			<li>
-				<div class="social-ic">
-					<ul>
-						<li><a href="#"><i class="facebok"> </i></a></li>
-						<li><a href="#"><i class="twiter"> </i></a></li>
-						<li><a href="#"><i class="goog"> </i></a></li>
-						<li><a href="#"><i class="be"> </i></a></li>
-						<li><a href="#"><i class="pp"> </i></a></li>
-							<div class="clearfix"></div>	
-					</ul>
+				<!-- blog-left-sidebar end -->
+				<div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+					<!-- toolbar start -->
+					<div class="toolbar">
+						<div class="view-mode">
+							<a class="active" href="shop.html"><i class="fa fa-th-large"></i></a>
+							<a class="list" href="shop-list.html"><i class="fa fa-th-list"></i></a>
+						</div>
+						<div class="show-result">
+							<p> Showing 1–12 of 19 results</p>
+						</div>
+						<div class="toolbar-form">
+							<form action="#">
+								<div class="tolbar-select">
+									<select>
+									  <option value="volvo">Sort by popularity</option>
+									  <option value="saab">Default sorting</option>
+									  <option value="mercedes">Sort by average rating</option>
+									  <option value="audi">Sort by newness</option>
+									  <option value="audi">Sort by price: low to high</option>
+									  <option value="audi">Sort by price: high to low</option>
+									</select> 
+								</div>
+							</form>								
+						</div>
+					</div>	
+					<!-- toolbar end -->
+					<div class="clear"></div>
+					<div class="row">
+						<div class="grid-view">
+							<!-- single-product start -->
+							<div class="col-lg-4 col-md-4 col-sm-4">
+								<div class="single-product">
+									<span class="sale-text">Sale</span>
+									<div class="product-img">
+										<a href="#">
+											<img class="primary-image" src="../../web/img/product/17.jpg" alt="" />
+											<img class="secondary-image" src="../../web/img/product/18.jpg" alt="" />
+										</a>
+										<div class="actions">
+											<div class="action-buttons">
+												<div class="add-to-cart">
+													<a href="#">Add to cart</a>
+												</div>
+												<div class="add-to-links">
+													<div class="add-to-wishlist">
+														<a href="#" data-toggle="tooltip" title="Add to Wishlist"><i class="fa fa-star"></i>
+														</a>
+													</div>
+													<div class="compare-button">
+														<a href="#" data-toggle="tooltip" title="Compare"><i class="fa fa-exchange"></i></a>
+													</div>									
+												</div>
+												<div class="quickviewbtn">
+													<a href="#" data-toggle="tooltip" title="Quick View"><i class="fa fa-search-plus"></i></a>
+												</div>
+											</div>
+										</div>							
+									</div>
+									<div class="product-content">
+										<h2 class="product-name"><a href="#">Convallis quam sit</a></h2>
+										<div class="pro-rating">
+											<a href="#"><i class="fa fa-star"></i></a>
+											<a href="#"><i class="fa fa-star"></i></a>
+											<a href="#"><i class="fa fa-star"></i></a>
+											<a href="#"><i class="fa fa-star"></i></a>
+											<a href="#"><i class="fa fa-star"></i></a>
+										</div>
+										<div class="price-box">
+											<span class="new-price">£90.00</span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- single-product end -->				
+							<!-- single-product start -->
+							<div class="col-lg-4 col-md-4 col-sm-4">
+								<div class="single-product">
+									<span class="sale-text">Sale</span>
+									<div class="product-img">
+										<a href="#">
+											<img class="primary-image" src="../../web/img/product/1.jpg" alt="" />
+											<img class="secondary-image" src="../../web/img/product/2.jpg" alt="" />
+										</a>
+										<div class="actions">
+											<div class="action-buttons">
+												<div class="add-to-cart">
+													<a href="#">Add to cart</a>
+												</div>
+												<div class="add-to-links">
+													<div class="add-to-wishlist">
+														<a href="#" data-toggle="tooltip" title="Add to Wishlist"><i class="fa fa-star"></i>
+														</a>
+													</div>
+													<div class="compare-button">
+														<a href="#" data-toggle="tooltip" title="Compare"><i class="fa fa-exchange"></i></a>
+													</div>									
+												</div>
+												<div class="quickviewbtn">
+													<a href="#" data-toggle="tooltip" title="Quick View"><i class="fa fa-search-plus"></i></a>
+												</div>
+											</div>
+										</div>							
+									</div>
+									<div class="product-content">
+										<h2 class="product-name"><a href="#">Vestibulum suscipit</a></h2>
+										<div class="pro-rating">
+											<a href="#"><i class="fa fa-star"></i></a>
+											<a href="#"><i class="fa fa-star"></i></a>
+											<a href="#"><i class="fa fa-star"></i></a>
+											<a href="#"><i class="fa fa-star"></i></a>
+											<a href="#"><i class="fa fa-star"></i></a>
+										</div>
+										<div class="price-box">
+											<span class="new-price">£50.00</span>
+											<span class="old-price">£80.00</span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- single-product end -->
+							<!-- single-product start -->
+							<div class="col-lg-4 col-md-4 col-sm-4">
+								<div class="single-product">
+									<div class="product-img">
+										<a href="#">
+											<img class="primary-image" src="../../web/img/product/women/2.jpg" alt="" />
+											<img class="secondary-image" src="../../web/img/product/women/1.jpg" alt="" />
+										</a>
+										<div class="actions">
+											<div class="action-buttons">
+												<div class="add-to-cart">
+													<a href="#">Add to cart</a>
+												</div>
+												<div class="add-to-links">
+													<div class="add-to-wishlist">
+														<a href="#" data-toggle="tooltip" title="Add to Wishlist"><i class="fa fa-star"></i>
+														</a>
+													</div>
+													<div class="compare-button">
+														<a href="#" data-toggle="tooltip" title="Compare"><i class="fa fa-exchange"></i></a>
+													</div>									
+												</div>
+												<div class="quickviewbtn">
+													<a href="#" data-toggle="tooltip" title="Quick View"><i class="fa fa-search-plus"></i></a>
+												</div>
+											</div>
+										</div>							
+									</div>
+									<div class="product-content">
+										<h2 class="product-name"><a href="#">Pellentesque posuere</a></h2>
+										<div class="pro-rating">
+											<a href="#"><i class="fa fa-star"></i></a>
+											<a href="#"><i class="fa fa-star"></i></a>
+											<a href="#"><i class="fa fa-star"></i></a>
+											<a href="#"><i class="fa fa-star"></i></a>
+											<a href="#"><i class="fa fa-star"></i></a>
+										</div>
+										<div class="price-box">
+											<span class="new-price">£100.00</span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- single-product end -->
+							<!-- single-product start -->
+							<div class="col-lg-4 col-md-4 col-sm-4">
+								<div class="single-product">
+									<div class="product-img">
+										<a href="#">
+											<img class="primary-image" src="../../web/img/product/women/7.jpg" alt="" />
+											<img class="secondary-image" src="../../web/img/product/women/2.jpg" alt="" />
+										</a>
+										<div class="actions">
+											<div class="action-buttons">
+												<div class="add-to-cart">
+													<a href="#">Add to cart</a>
+												</div>
+												<div class="add-to-links">
+													<div class="add-to-wishlist">
+														<a href="#" data-toggle="tooltip" title="Add to Wishlist"><i class="fa fa-star"></i>
+														</a>
+													</div>
+													<div class="compare-button">
+														<a href="#" data-toggle="tooltip" title="Compare"><i class="fa fa-exchange"></i></a>
+													</div>									
+												</div>
+												<div class="quickviewbtn">
+													<a href="#" data-toggle="tooltip" title="Quick View"><i class="fa fa-search-plus"></i></a>
+												</div>
+											</div>
+										</div>							
+									</div>
+									<div class="product-content">
+										<h2 class="product-name"><a href="#">Pellentesque posuere</a></h2>
+										<div class="pro-rating">
+											<a href="#"><i class="fa fa-star"></i></a>
+											<a href="#"><i class="fa fa-star"></i></a>
+											<a href="#"><i class="fa fa-star"></i></a>
+											<a href="#"><i class="fa fa-star"></i></a>
+											<a href="#"><i class="fa fa-star"></i></a>
+										</div>
+										<div class="price-box">
+											<span class="new-price">£100.00</span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- single-product end -->							
+							<!-- single-product start -->
+							<div class="col-lg-4 col-md-4 col-sm-4">
+								<div class="single-product">
+									<div class="product-img">
+										<a href="#">
+											<img class="primary-image" src="../../web/img/product/3.jpg" alt="" />
+											<img class="secondary-image" src="../../web/img/product/4.jpg" alt="" />
+										</a>
+										<div class="actions">
+											<div class="action-buttons">
+												<div class="add-to-cart">
+													<a href="#">Add to cart</a>
+												</div>
+												<div class="add-to-links">
+													<div class="add-to-wishlist">
+														<a href="#" data-toggle="tooltip" title="Add to Wishlist"><i class="fa fa-star"></i>
+														</a>
+													</div>
+													<div class="compare-button">
+														<a href="#" data-toggle="tooltip" title="Compare"><i class="fa fa-exchange"></i></a>
+													</div>									
+												</div>
+												<div class="quickviewbtn">
+													<a href="#" data-toggle="tooltip" title="Quick View"><i class="fa fa-search-plus"></i></a>
+												</div>
+											</div>
+										</div>							
+									</div>
+									<div class="product-content">
+										<h2 class="product-name"><a href="#">Vestibulum dictum magna</a></h2>
+										<div class="pro-rating">
+											<a href="#"><i class="fa fa-star"></i></a>
+											<a href="#"><i class="fa fa-star"></i></a>
+											<a href="#"><i class="fa fa-star"></i></a>
+											<a href="#"><i class="fa fa-star"></i></a>
+											<a href="#"><i class="fa fa-star"></i></a>
+										</div>
+										<div class="price-box">
+											<span class="new-price">£150.00</span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- single-product end -->
+							<!-- single-product start -->
+							<div class="col-lg-4 col-md-4 col-sm-4">
+								<div class="single-product">
+									<div class="product-img">
+										<a href="#">
+											<img class="primary-image" src="../../web/img/product/women/8.jpg" alt="" />
+											<img class="secondary-image" src="../../web/img/product/women/3.jpg" alt="" />
+										</a>
+										<div class="actions">
+											<div class="action-buttons">
+												<div class="add-to-cart">
+													<a href="#">Add to cart</a>
+												</div>
+												<div class="add-to-links">
+													<div class="add-to-wishlist">
+														<a href="#" data-toggle="tooltip" title="Add to Wishlist"><i class="fa fa-star"></i>
+														</a>
+													</div>
+													<div class="compare-button">
+														<a href="#" data-toggle="tooltip" title="Compare"><i class="fa fa-exchange"></i></a>
+													</div>									
+												</div>
+												<div class="quickviewbtn">
+													<a href="#" data-toggle="tooltip" title="Quick View"><i class="fa fa-search-plus"></i></a>
+												</div>
+											</div>
+										</div>							
+									</div>
+									<div class="product-content">
+										<h2 class="product-name"><a href="#">Light house shoes</a></h2>
+										<div class="pro-rating">
+											<a href="#"><i class="fa fa-star"></i></a>
+											<a href="#"><i class="fa fa-star"></i></a>
+											<a href="#"><i class="fa fa-star"></i></a>
+											<a href="#"><i class="fa fa-star"></i></a>
+											<a href="#"><i class="fa fa-star"></i></a>
+										</div>
+										<div class="price-box">
+											<span class="new-price">£90.00</span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- single-product end -->							
+						</div>
+					</div>
+					<!-- pagination start -->
+					<div class="shop-pagination">
+						<div class="pagination">
+							<ul>
+								<li class="active">1</li>
+								<li><a href="#">2</a></li>
+								<li><a href="#">3</a></li>
+								<li><a href="#"><i class="fa fa-chevron-right"></i></a></li>
+							</ul>
+						</div>					
+					</div>
+					<!-- pagination end -->
 				</div>
-			</li>
-				<div class="clearfix"> </div>
+			</div>
 		</div>
-		<div class="col-md-6 s-c">
-			<div class="stay">
-						<div class="stay-left">
-							<form>
-								<input type="text" placeholder="Enter your email to join our newsletter" required="">
+	</div>
+	<!-- All Products Page -->
+
+	<!-- Product Detail Page -->
+	<div id="page_productdetails" style="display: none">
+		<div class="product-simple-area" >
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+						<div class="single-product-image">
+							<div class="single-product-tab">
+							  <!-- Nav tabs -->
+							  <ul class="nav nav-tabs" role="tablist">
+								<li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab"><img alt="" src="../../web/img/product/tab/s1.jpg"></a></li>
+								<li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab"><img alt="" src="../../web/img/product/tab/s2.jpg"></a></li>
+								<li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab"><img alt="" src="../../web/img/product/tab/s3.jpg"></a></li>
+								<li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab"><img alt="" src="../../web/img/product/tab/s4.jpg"></a></li>
+							  </ul>
+
+							  <!-- Tab panes -->
+							  <div class="tab-content">
+								<div role="tabpanel" class="tab-pane active" id="home"><img alt="" src="../../web/img/product/tab/1.jpg"></div>
+								<div role="tabpanel" class="tab-pane" id="profile"><img alt="" src="../../web/img/product/tab/2.jpg"></div>
+								<div role="tabpanel" class="tab-pane" id="messages"><img alt="" src="../../web/img/product/tab/3.jpg"></div>
+								<div role="tabpanel" class="tab-pane" id="settings"><img alt="" src="../../web/img/product/tab/4.jpg"></div>
+							  </div>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+						<div class="single-product-info">
+							<div class="product-nav">
+								<a href="#"><i class="fa fa-angle-right"></i></a>
+							</div>
+							<h1 class="product_title">Integer consequat ante lectus</h1>
+							<div class="price-box">
+								<span class="new-price">£150.00</span>
+								<span class="old-price">£190.00</span>
+							</div>
+							<div class="pro-rating">
+								<a href="#"><i class="fa fa-star"></i></a>
+								<a href="#"><i class="fa fa-star"></i></a>
+								<a href="#"><i class="fa fa-star"></i></a>
+								<a href="#"><i class="fa fa-star"></i></a>
+								<a href="#"><i class="fa fa-star"></i></a>
+							</div>
+							<div class="short-description">
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla augue nec est tristique auctor. Donec non est at libero vulputate rutrum. Morbi ornare lectus quis justo gravida semper. Nulla tellus mi, vulputate adipiscing cursus eu, suscipit id nulla.</p>						
+							</div>
+							<div class="stock-status">
+								<label>Availability</label>: <strong>In stock</strong>
+							</div>
+							<form action="#">
+								<div class="quantity">
+									<input type="number" value="1" />
+									<button type="submit">Add to cart</button>
+								</div>
 							</form>
+							<div class="add-to-wishlist">
+								<a href="#" data-toggle="tooltip" title="Add to Wishlist"><i class="fa fa-star"></i></a>
+								<a href="#" data-toggle="tooltip" title="Compare"><i class="fa fa-exchange"></i></a>
+							</div>
+							<div class="share_buttons">
+								<a href="#"><img src="img/share-img.png" alt="" /></a>
+							</div>
 						</div>
-						<div class="btn-1">
-							<form>
-								<input type="submit" value="join">
-							</form>
-						</div>
-							<div class="clearfix"> </div>
-			</div>
-		</div>
-			<div class="clearfix"> </div>
-	</div>
-</div>
-<div class="footer">
-	<div class="container">
-		<div class="col-md-3 cust">
-			<h4>CUSTOMER CARE</h4>
-				<li><a href="#">Help Center</a></li>
-				<li><a href="#">FAQ</a></li>
-				<li><a href="buy.html">How To Buy</a></li>
-				<li><a href="#">Delivery</a></li>
-		</div>
-		<div class="col-md-2 abt">
-			<h4>ABOUT US</h4>
-				<li><a href="#">Our Stories</a></li>
-				<li><a href="#">Press</a></li>
-				<li><a href="#">Career</a></li>
-				<li><a href="contact.html">Contact</a></li>
-		</div>
-		<div class="col-md-2 myac">
-			<h4>MY ACCOUNT</h4>
-				<li><a href="register.html">Register</a></li>
-				<li><a href="#">My Cart</a></li>
-				<li><a href="#">Order History</a></li>
-				<li><a href="buy.html">Payment</a></li>
-		</div>
-		<div class="col-md-5 our-st">
-			<div class="our-left">
-				<h4>OUR STORES</h4>
-			</div>
-			<div class="our-left1">
-				<div class="cr_btn">
-					<a href="#">SOLO</a>
+					</div>
 				</div>
 			</div>
-			<div class="our-left1">
-				<div class="cr_btn1">
-					<a href="#">BOGOR</a>
+		</div>
+		<!-- product-simple-area end -->
+		<div class="product-tab-area">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-9 col-md-9">
+						<div class="product-tabs">
+							<div>
+							  <!-- Nav tabs -->
+							  <ul class="nav nav-tabs" role="tablist">
+								<li role="presentation" class="active"><a href="#tab-desc" aria-controls="tab-desc" role="tab" data-toggle="tab">Description</a></li>
+								<li role="presentation"><a href="#page-comments" aria-controls="page-comments" role="tab" data-toggle="tab">Reviews (1)</a></li>
+							  </ul>
+							  <!-- Tab panes -->
+							  <div class="tab-content">
+								<div role="tabpanel" class="tab-pane active" id="tab-desc">
+									<div class="product-tab-desc">
+										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla augue nec est tristique auctor. Donec non est at libero vulputate rutrum. Morbi ornare lectus quis justo gravida semper. Nulla tellus mi, vulputate adipiscing cursus eu, suscipit id nulla.</p>
+										<p>Pellentesque aliquet, sem eget laoreet ultrices, ipsum metus feugiat sem, quis fermentum turpis eros eget velit. Donec ac tempus ante. Fusce ultricies massa massa. Fusce aliquam, purus eget sagittis vulputate, sapien libero hendrerit est, sed commodo augue nisi non neque. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempor, lorem et placerat vestibulum, metus nisi posuere nisl, in accumsan elit odio quis mi. Cras neque metus, consequat et blandit et, luctus a nunc. Etiam gravida vehicula tellus, in imperdiet ligula euismod eget.</p>
+									</div>
+								</div>
+								<div role="tabpanel" class="tab-pane" id="page-comments">
+									<div class="product-tab-desc">
+										<div class="product-page-comments">
+											<h2>1 review for Integer consequat ante lectus</h2>
+											<ul>
+												<li>
+													<div class="product-comments">
+														<img src="../../web/img/blog/avatar.png" alt="" />
+														<div class="product-comments-content">
+															<p><strong>admin</strong> -
+																<span>March 7, 2015:</span>
+																<span class="pro-comments-rating">
+																	<i class="fa fa-star"></i>								
+																	<i class="fa fa-star"></i>								
+																	<i class="fa fa-star"></i>								
+																	<i class="fa fa-star"></i>								
+																</span>
+															</p>
+															<div class="desc">
+																Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla augue nec est tristique auctor. Donec non est at libero vulputate rutrum.
+															</div>
+														</div>
+													</div>
+												</li>
+											</ul>
+											<div class="review-form-wrapper">
+												<h3>Add a review</h3>
+												<form action="#">
+													<input type="text" placeholder="your name"/>
+													<input type="email" placeholder="your email"/>
+													<div class="your-rating">
+														<h5>Your Rating</h5>
+														<span>
+															<a href="#"><i class="fa fa-star"></i></a>
+															<a href="#"><i class="fa fa-star"></i></a>
+														</span>
+														<span>
+															<a href="#"><i class="fa fa-star"></i></a>
+															<a href="#"><i class="fa fa-star"></i></a>
+															<a href="#"><i class="fa fa-star"></i></a>
+														</span>
+														<span>
+															<a href="#"><i class="fa fa-star"></i></a>
+															<a href="#"><i class="fa fa-star"></i></a>
+															<a href="#"><i class="fa fa-star"></i></a>
+															<a href="#"><i class="fa fa-star"></i></a>
+														</span>
+														<span>
+															<a href="#"><i class="fa fa-star"></i></a>
+															<a href="#"><i class="fa fa-star"></i></a>
+															<a href="#"><i class="fa fa-star"></i></a>
+															<a href="#"><i class="fa fa-star"></i></a>
+															<a href="#"><i class="fa fa-star"></i></a>
+														</span>
+													</div>
+													<textarea id="product-message" cols="30" rows="10" placeholder="Your Rating"></textarea>
+													<input type="submit" value="submit" />
+												</form>
+											</div>
+										</div>
+									</div>
+								</div>
+							  </div>
+							</div>						
+						</div>
+						<div class="clear"></div>
+					</div>
 				</div>
 			</div>
-			<div class="clearfix"> </div>
-				<li><i class="add"> </i>Jl. Haji Muhidin, Blok G no.69</li>
-				<li><i class="phone"> </i>025-2839341</li>
-				<li><a href="mailto:info@example.com"><i class="mail"> </i>info@sitename.com </a></li>
-			
 		</div>
-		<div class="clearfix"> </div>
-			<p>Copyrights © 2015 Gretong. All rights reserved | Template by <a href="http://w3layouts.com/">W3layouts</a></p>
 	</div>
-</div>
-</body>
+	<!-- Product Details Page -->
+	
+	
+	<!-- footer start -->
+	<footer>
+		<!-- footer-top-area start -->
+		<div class="footer-top-area">
+			<div class="container">
+				<div class="row">
+					<!-- footer-widget start -->
+					<div class="col-lg-3 col-md-3 col-sm-4">
+						<div class="footer-widget">
+							<img src="../../web/img/logo/logo.png" alt="" />
+							<p>Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. .</p>
+							<div class="widget-icon">
+								<a href="#"><i class="fa fa-facebook"></i></a>
+								<a href="#"><i class="fa fa-twitter"></i></a>
+								<a href="#"><i class="fa fa-linkedin"></i></a>
+								<a href="#"><i class="fa fa-google-plus"></i></a>
+							</div>
+						</div>
+					</div>
+					<!-- footer-widget end -->
+					<!-- footer-widget start -->
+					<div class="col-lg-3 col-md-3 hidden-sm">
+						<div class="footer-widget">
+							<h3>Our services</h3>
+							<ul class="footer-menu">
+								<li><a href="#">Shipping & Returns</a></li>
+								<li><a href="#">Secure Shopping</a></li>
+								<li><a href="#">International Shipping</a></li>
+								<li><a href="#">Affiliates</a></li>
+								<li><a href="#">Contact</a></li>
+							</ul>
+						</div>
+					</div>
+					<!-- footer-widget end -->
+					<!-- footer-widget start -->
+					<div class="col-lg-3 col-md-3 col-sm-4">
+						<div class="footer-widget">
+							<h3>Our services</h3>
+							<ul class="footer-menu">
+								<li><a href="#">Shipping & Returns</a></li>
+								<li><a href="#">Secure Shopping</a></li>
+								<li><a href="#">International Shipping</a></li>
+								<li><a href="#">Affiliates</a></li>
+								<li><a href="#">Contact</a></li>
+							</ul>
+						</div>
+					</div>
+					<!-- footer-widget end -->
+					<!-- footer-widget start -->
+					<div class="col-lg-3 col-md-3 col-sm-4">
+						<div class="footer-widget">
+							<h3>CONTACT US</h3>
+							<ul class="footer-contact">
+								<li>
+									<i class="fa fa-map-marker"> </i>
+									Addresss: 123 Pall Mall, London England
+								</li>
+								<li>
+									<i class="fa fa-envelope"> </i>	
+									Email: admin@themepure.net
+								</li>
+								<li>
+									<i class="fa fa-phone"> </i>
+									Phone: +8801912 199981  
+								</li>
+							</ul>
+						</div>
+					</div>
+					<!-- footer-widget end -->
+				</div>
+			</div>
+		</div>
+		<!-- footer-top-area end -->
+		<!-- footer-bottom-area start -->
+		<div class="footer-bottom-area">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-6 col-md-6 col-sm-6">
+						<div class="copyright">
+							<p>Copyright © <a href="#">ThemePure</a>. All Rights Reserved</p>
+						</div>
+					</div>
+					<div class="col-lg-6 col-md-6 col-sm-6">
+						<div class="payment-img">
+							<img src="../../web/img/payment.png" alt="" />
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- footer-bottom-area end -->
+	</footer>
+	<!-- footer end -->
+
+		<!-- JS -->
+		
+		<!-- jquery js -->
+        <script src="../../web/js/vendor/jquery-1.12.0.min.js"></script>
+		
+		<!-- price-slider js -->
+        <script src="../../web/js/price-slider.js"></script>		
+		
+		<!-- bootstrap js -->
+        <script src="../../web/js/bootstrap.min.js"></script>
+		
+		<!-- owl.carousel.min js -->
+        <script src="../../web/js/owl.carousel.min.js"></script>
+		
+		<!-- jquery.scrollUp js -->
+        <script src="../../web/js/jquery.scrollUp.min.js"></script>
+		
+		<!-- mixitup js -->
+        <script src="../../web/js/jquery.mixitup.min.js"></script>
+
+		<!-- fancybox js -->
+		<script src="../../web/js/fancybox/jquery.fancybox.pack.js"></script>	
+
+		<!-- jquery-counterup js -->
+        <script src="../../web/js/jquery.counterup.min.js"></script>
+        <script src="../../web/js/waypoints.min.js"></script>	
+
+		<!-- jquery-meanmenu js -->
+		<script src="../../web/js/jquery.meanmenu.js"></script>
+		
+		<!-- RS-Plugin JS
+		============================================ -->
+		<script type="text/javascript" src="../../web/lib/rs-plugin/js/jquery.themepunch.tools.min.js"></script>   
+		<script type="text/javascript" src="../../web/lib/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+		<script src="../../web/lib/rs-plugin/rs.home.js"></script>		
+		
+		<!-- plugins js -->
+        <script src="../../web/js/plugins.js"></script>
+		
+		<!-- main js -->
+        <script src="../../web/js/main.js"></script>
+
+        <script type="text/javascript" src="../../js/post.js"></script>
+		<script type="text/javascript" src="../../js/routes.js"></script>
+		<script type="text/javascript" src="../../js/sorttables.js"></script>
+		<script type="text/javascript" src="../../js/get_customer.js"></script>
+
+    </body>
 </html>

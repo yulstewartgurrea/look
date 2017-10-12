@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def helloworld():
-    return "hello world"
+    return 'hello world!'
 
 
 @app.route('/login', methods=['POST'])
@@ -27,15 +27,26 @@ def login():
 
     if 'Login successful' in str(res):
         # role = get_loginrole(request.form.get('email_address'))
-        role = get_loginrole(jsn['email_address'])
+        user = get_userbyemail(jsn['email_address'])
         # session['email_address'] = role[0][0]
-        session['is_admin'] = role[0][0]
-        session['is_establishment'] = role[0][1]
-        session['is_customer'] = role[0][2]
-        session['is_active'] = role[0][3]
-        return jsonify({'status': 'Login successful', 'message': res[0][0], 'admin': session['is_admin'],
-                        'establishment': session['is_establishment'], 'customer': session['is_customer'],
-                        'active': session['is_active']})
+        session['email_address'] = user[0][0]
+        session['user_id'] = user[0][1]
+        session['is_admin'] = user[0][2]
+        session['is_establishment'] = user[0][3]
+        session['is_customer'] = user[0][4]
+        session['is_active'] = user[0][5]
+        session['fname'] = user[0][6]
+        session['lname'] = user[0][7]
+        session['img'] = user[0][8]
+
+        recsuser = []
+        for r in user:
+            recsuser.append({'email_address': session['email_address'], 'user_id': session['user_id'],
+                'is_admin': session['is_admin'], 'is_customer': session['is_customer'], 'is_establishment': session['is_establishment'],
+                'is_active': session['is_active'], 'fname': session['fname'], 'lname': session['lname'],
+                'img': session['img']})
+
+        return jsonify({'status': 'Login successful', 'message': res[0][0], 'userinfo': recsuser, 'countuserinfo': len(recsuser)})
 
 
 @app.route('/logout', methods=['POST'])
@@ -44,18 +55,14 @@ def logout():
     session.clear()
     return jsonify({'message': 'Successfuly logged out'})
 
-
-def get_loginrole(email_address):
-    return spcall('get_loginrole', (email_address,))
+def get_userbyemail(email_address):
+    return spcall('get_userbyemail', (email_address,))
 
 
 # test if db is connected
 @app.route('/api/get/users', methods=['GET'])
 def get_users():
     res = spcall('get_users', ())
-
-    if 'Error' in str(res[0][0]):
-        return jsonify({'status': 'error', 'message': res[0][0]})
 
     recs = []
     for r in res:
@@ -79,19 +86,18 @@ def new_admin():
 
     return jsonify({'status': 'ok', 'message': res[0][0]})
 
+
 # Get admins
 @app.route('/api/get/admins', methods=['GET'])
 def get_admins():
     res = spcall("get_admins", ())
-
-    if 'Error' in str(res[0][0]):
-        return jsonify({'status': 'error', 'message': res[0][0]})
 
     recs = []
     for r in res:
         recs.append({'user_id': str(r[0]), 'email_address': str(r[1]), 'is_admin': str(r[2]), 'is_active':str(r[3])})
 
     return jsonify({'status': 'ok', 'entries': recs, 'count': len(recs)})
+
 
 # Create new establishment personnels
 @app.route("/api/add/establishment_personnel", methods=['POST'])
@@ -107,18 +113,17 @@ def new_establishment_personnel():
 
     return jsonify({'status': 'ok', 'message': res[0][0]})
 
+
 @app.route('/api/get/establishment_personnels', methods=['GET'])
 def get_establishment_personnels():
     res = spcall("get_establishment_personnels", ())
-
-    if 'Error' in str(res[0][0]):
-        return jsonify({'status': 'error', 'message': res[0][0]})
 
     recs = []
     for r in res:
         recs.append({'user_id': str(r[0]), 'email_address': str(r[1]), 'is_establishment': str(r[2]), 'is_active':str(r[3])})
 
     return jsonify({'status': 'ok', 'entries': recs, 'count': len(recs)})
+
 
 @app.route("/api/add/customer", methods=['POST'])
 def new_customer():
@@ -133,18 +138,44 @@ def new_customer():
 
     return jsonify({'status': 'ok', 'message': res[0][0]})
 
+
 @app.route('/api/get/customers', methods=['GET'])
 def get_customers():
     res = spcall("get_customers", ())
-
-    if 'Error' in str(res[0][0]):
-        return jsonify({'status': 'error', 'message': res[0][0]})
 
     recs = []
     for r in res:
         recs.append({'user_id': str(r[0]), 'email_address': str(r[1]), 'is_customer': str(r[2]), 'is_active':str(r[3])})
 
     return jsonify({'status': 'ok', 'entries': recs, 'count': len(recs)})
+
+
+@app.route('/account/<string:user_id>', methods=['GET'])
+def useraccount(user_id):
+    res = spcall('get_userbyid', (user_id,), )
+
+    res_billingaddress = spcall('get_billingaddressbyid', (user_id,),)
+
+    res_permananentaddress = spcall('get_permanentaddressbyid', (user_id,),)
+
+    recs = []
+    for r in res:
+        recs.append({'email_address': str(r[0]), 'user_id': str(r[1]), 'is_admin': str(r[2]), 'is_establishment': str(r[3]),
+            'is_customer': str(r[4]), 'is_active': str(r[5]), 'fname': str(r[6]), 'lname': str(r[7]), 'img': str(r[8])})
+
+    recs_billingaddress = []
+    for r in res_billingaddress:
+        recs_billingaddress.append({'user_id': str(r[0]), 'postalcode': str(r[1]), 'brgy': str(r[2]), 'city': str(r[3]),
+            'street': str(r[4]), 'pnum': str(r[5])})
+
+    recs_permananentaddress = []
+    for r in res_permananentaddress:
+        recs_permananentaddress.append({'user_id': str(r[0]), 'postalcode': str(r[1]), 'brgy': str(r[2]), 'city': str(r[3]), 'street': str(r[4]), 'pnum': str(r[5])})
+
+    print recs
+
+    return jsonify({'status': 'Ok', 'useraccount': recs, 'useraccountcount': len(recs), 'billingaddress': recs_billingaddress,
+        'billingaddresscount': len(recs_billingaddress),'permanentaddress': recs_permananentaddress, 'permanentaddresscount': len(recs_permananentaddress)}) 
 
 
 @app.route('/api/add/establishment', methods=['POST'])
@@ -164,9 +195,6 @@ def add_establishment():
 @app.route('/api/get/establishment', methods=['GET'])
 def get_establishment():
     res = spcall("get_establishment", ())
-
-    if 'Error' in str(res[0][0]):
-        return jsonify({'status': 'error', 'message': res[0][0]})
 
     recs = []
 
@@ -193,9 +221,6 @@ def add_gender():
 def get_gender():
     res = spcall("get_gender", ())
 
-    if 'Error' in str(res[0][0]):
-        return jsonify({'status': 'error', 'message': res[0][0]})
-
     recs = []
     for r in res:
         recs.append({'gender_id': str(r[0]), 'gender_name': str(r[1])})
@@ -219,9 +244,6 @@ def new_catalog():
 @app.route("/api/get/catalog", methods=['GET'])
 def get_catalog():
     res = spcall("get_catalog", ())
-
-    if 'Error' in str(res[0][0]):
-        return jsonify({'status': 'error', 'message': res[0][0]})
 
     recs = []
 
@@ -250,9 +272,6 @@ def new_category():
 def get_category():
     res = spcall("get_category", ())
 
-    if 'Error' in str(res[0][0]):
-        return jsonify({'status': 'error', 'message': res[0][0]})
-
     recs = []
 
     for r in res:
@@ -278,9 +297,6 @@ def new_subcategory():
 @app.route("/api/get/subcategory", methods=['GET'])
 def get_subcategory():
     res = spcall("get_subcategory", ())
-
-    if 'Error' in str(res[0][0]):
-        return jsonify({'status': 'error', 'message': res[0][0]})
 
     recs = []
 
@@ -333,9 +349,6 @@ def update_product(product_id):
 def get_product():
     res = spcall('get_product', ())
 
-    if 'Error' in str(res[0][0]):
-        return jsonify({'status': 'error', 'message': res[0][0]})
-
     recs = []
 
     for r in res:
@@ -346,9 +359,6 @@ def get_product():
 @app.route("/api/get/product/<product_id>", methods=['GET'])
 def get_productby_id(product_id):
     res = spcall('get_productby_id', (product_id,),)
-
-    if 'Error' in str(res[0][0]):
-        return jsonify({'status': 'Error', 'message': res[0][0]})
 
     recs = []
 
@@ -362,9 +372,6 @@ def get_productby_id(product_id):
 def get_productby_catalog(catalog_id):
     res = spcall('get_productby_catalog', (catalog_id),)
 
-    if 'Error' in str(res[0][0]):
-        return jsonify({'status': 'ok', 'message': res[0][0]})
-
     recs = []
 
     for r in res:
@@ -375,9 +382,6 @@ def get_productby_catalog(catalog_id):
 @app.route("/api/get/catalog/<string:catalog_id>/gender/<string:gender_id>", methods=['GET'])
 def get_productby_catalog_gender(catalog_id, gender_id):
     res = spcall('get_productby_catalog_gender', (catalog_id, gender_id),)
-
-    if 'Error' in str(res[0][0]):
-        return jsonify({'status': 'ok', 'message': res[0][0]})
 
     recs = []
 
@@ -390,9 +394,6 @@ def get_productby_catalog_gender(catalog_id, gender_id):
 def get_productby_catalog_gender_category(catalog_id, gender_id, category_id):
     res = spcall('get_productby_catalog_gender_category', (catalog_id, gender_id, category_id),)
 
-    if 'Error' in str(res[0][0]):
-        return jsonify({'status': 'ok', 'message': res[0][0]})
-
     recs = []
 
     for r in res:
@@ -403,9 +404,6 @@ def get_productby_catalog_gender_category(catalog_id, gender_id, category_id):
 @app.route("/api/get/catalog/<string:catalog_id>/gender/<string:gender_id>/category/<string:category_id>/subcategory/<string:subcategory_id>")
 def get_productby_catalog_gender_category_subcategory(catalog_id, gender_id, category_id, subcategory_id):
     res = spcall('get_productby_catalog_gender_category_subcategory', (catalog_id, gender_id, category_id, subcategory_id),)
-
-    if 'Error' in str(res[0][0]):
-        return jsonify({'status': 'ok', 'message': res[0][0]})
 
     recs = []
 

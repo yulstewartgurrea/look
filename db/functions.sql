@@ -34,12 +34,51 @@ $$
 
 -- get info of user logged in
 
-create or replace function get_loginrole(in p_email text, out p_is_admin boolean, out p_is_establishment boolean,
-										out p_is_cutomer boolean, out p_is_active boolean) returns setof record as
+create or replace function get_loginrole(in p_email text, out boolean, out boolean,	out boolean,
+										out boolean) returns setof record as
 $$
 	select is_admin, is_establishment, is_customer, is_active from UserAccount where email_address = p_email;
 $$
+	language 'sql';	
+
+-- Login role with users email
+create or replace function get_userbyemail(in p_email text, out text, out int, out boolean,
+                                           out boolean, out boolean ,out boolean, out text, out text, out text) returns setof record as
+$$
+	select email_address, user_id, is_admin, is_establishment, is_customer, is_active, fname, lname, img from UserAccount where email_address = p_email;
+$$
 	language 'sql';
+
+-- Get User by id
+create or replace function get_userbyid(in p_user_id int, out text, out int, out boolean,
+                                           out boolean, out boolean ,out boolean, out text, out text, out text) returns setof record as
+$$
+	select email_address, user_id, is_admin, is_establishment, is_customer, is_active, fname, lname, img from UserAccount where user_id = p_user_id;
+$$
+	language 'sql';
+
+-- Get userprofile by id
+create or replace function get_userprofile(in p_user_id int, out int, out text, out text, out text, out text,
+							out text, out text, out text, out text, out text) returns setof record as
+$$
+	select UserAccount.user_id, UserAccount.email_address, UserAccount.fname, UserAccount.lname, UserAccount.img,
+	BillingAddress.postalcode, BillingAddress.brgy, BillingAddress.city, BillingAddress.street, BillingAddress.pnum
+	from UserAccount CROSS JOIN BillingAddress where UserAccount.user_id = p_user_id
+	and BillingAddress.user_id = p_user_id;
+$$
+	language 'sql'
+
+create or replace function get_userprofile(in p_user_id int, out int, out text, out text, out text, out text,
+							out text, out text, out text, out text, out text,
+							out text, out text, out text, out text, out text) returns setof record as
+$$
+	select UserAccount.user_id, UserAccount.email_address, UserAccount.fname, UserAccount.lname, UserAccount.img,
+	BillingAddress.postalcode, BillingAddress.brgy, BillingAddress.city, BillingAddress.street, BillingAddress.pnum,
+	PermanentAddress.postalcode, PermanentAddress.brgy, PermanentAddress.city, PermanentAddress.street, PermanentAddress.pnum 
+	from UserAccount CROSS JOIN BillingAddress CROSS JOIN PermanentAddress where UserAccount.user_id = p_user_id
+	and BillingAddress.user_id = p_user_id and PermanentAddress.user_id = p_user_id;
+$$
+	language 'sql'
 
 --User Account
 create or replace function new_admin(p_email text, p_password text) returns text as
@@ -68,7 +107,7 @@ $$
 	language 'plpgsql';
 
 -- Get admins
-create or replace function get_admins(out user_id int, out email_address text, out is_admin boolean, out is_active boolean) returns setof record as
+create or replace function get_admins(out int, out text, out boolean, out boolean) returns setof record as
 $$
   select user_id, email_address, is_admin, is_active from UserAccount where is_admin = TRUE and is_active = TRUE;
 $$
@@ -100,7 +139,7 @@ $$
 	language 'plpgsql';
 
 -- Get establishment_personnel
-create or replace function get_establishment_personnels(out user_id int, out email_address text, out is_establishment boolean, out is_active boolean) returns setof record as
+create or replace function get_establishment_personnels(out int, out text, out boolean, out boolean) returns setof record as
 $$
   select user_id, email_address, is_establishment, is_active from UserAccount where is_establishment = TRUE and is_active = TRUE;
 $$
@@ -133,7 +172,7 @@ $$
 	language 'plpgsql';
 
 -- Get customer
-create or replace function get_customers(out user_id int, out email_address text, out is_customer boolean, out is_active boolean) returns setof record as
+create or replace function get_customers(out int, out text, out boolean, out boolean) returns setof record as
 $$
   select user_id, email_address, is_customer, is_active from UserAccount where is_customer = TRUE and is_active = TRUE;
 $$
@@ -152,6 +191,44 @@ $$
 
 -- Get only Admin
 -- select email_address from Useraccount where is_admin=True
+
+-- Create billingaddress
+create or replace function new_billingaddress(p_user_id int, p_postalcode text, p_brgy text, p_city text, p_street text, p_pnum text) returns text as
+$$
+declare
+	v_user_id text;
+	v_res text;
+
+begin
+	select into v_user_id BillingAddress.user_id from BillingAddress where BillingAddress.user_id = p_user_id;
+
+		if v_user_id isnull or v_user_id = '' then	
+			insert into BillingAddress(user_id,postalcode, brgy, city, street, pnum )
+				values(p_user_id, p_postalcode, p_brgy, p_city, p_street, p_pnum);
+				v_res = 'Ok';
+		else 
+			v_res = 'Billing Address already exists';
+		end if;
+		return v_res;
+end;
+$$
+	language 'plpgsql';
+
+-- select new_billingaddress(4, '9200', 'Hinaplanon', 'Iligan', '#16 Purok 9 Bayug', '0995-631-9907');
+
+-- Get Billing Address
+create or replace function get_billingaddressbyid(in p_user_id int, out int, out text, out text, out text, out text, out text) returns setof record as
+$$
+	select user_id, postalcode, brgy, city, street, pnum from BillingAddress where user_id = p_user_id;
+$$
+	language 'sql';
+
+-- Get Permanent Address
+create or replace function get_permanentaddressbyid(in p_user_id int, out int, out text, out text, out text, out text, out text) returns setof record as
+$$
+	select user_id, postalcode, brgy, city, street, pnum from PermanentAddress where user_id = p_user_id;
+$$
+	language 'sql';
 
 --Add Establishment
 create or replace function new_establishment_name(p_establishment_name text, p_user_id int) returns text as
@@ -187,7 +264,7 @@ $$
 	language 'sql';
 
 -- Get establishments by id
-create or replace function get_establishmentbyid(In par_establishment_id int, par_establishment_name text, par_establishment_is_active boolean) returns setof record as
+create or replace function get_establishmentbyid(In par_establishment_id int, out text, out boolean) returns setof record as
 $$
 	select establishment_name, establishment_is_active from Establishment where establishment_id = par_establishment_id;
 $$

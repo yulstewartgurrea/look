@@ -5,12 +5,7 @@ CREATE TABLE UserAccount(
 	is_admin BOOLEAN DEFAULT FALSE,
 	is_establishment BOOLEAN DEFAULT FALSE,
 	is_customer BOOLEAN DEFAULT FALSE,
-	is_active BOOLEAN DEFAULT TRUE
-
-);
-
-CREATE TABLE UserProfile(
-	user_id INT REFERENCES UserAccount(user_id),
+	is_active BOOLEAN DEFAULT TRUE,
 	fname TEXT,
 	lname TEXT,
 	img TEXT
@@ -23,7 +18,7 @@ CREATE TABLE BillingAddress(
 	city TEXT,
 	street TEXT,
 	pnum TEXT,
-	user_id INT REFERENCES UserAccount(user_id)
+	user_id INT REFERENCES UserAccount(user_id) on delete CASCADE
 
 );
 
@@ -33,15 +28,16 @@ CREATE TABLE PermanentAddress(
 	city TEXT,
 	street TEXT,
 	pnum TEXT,
-	user_id INT REFERENCES UserAccount(user_id)
+	user_id INT REFERENCES UserAccount(user_id) on delete CASCADE
 
 );
 
 CREATE TABLE Establishment(
 	establishment_id SERIAL PRIMARY KEY,
 	establishment_name TEXT,
+	establishment_location TEXT,
 	establishment_is_active BOOLEAN DEFAULT TRUE,
-	user_id INT REFERENCES UserAccount(user_id)
+	user_id INT REFERENCES UserAccount(user_id) on delete CASCADE
 
 );
 
@@ -60,15 +56,15 @@ CREATE TABLE Gender(
 CREATE TABLE Category(
 	category_id SERIAL PRIMARY KEY,
 	category_name TEXT,
-	catalog_id INT REFERENCES Catalog(catalog_id),
-	gender_id INT REFERENCES Gender(gender_id)
+	catalog_id INT REFERENCES Catalog(catalog_id) on delete CASCADE,
+	gender_id INT REFERENCES Gender(gender_id) on delete CASCADE
 
 );
 
 CREATE TABLE SubCategory(
 	subcategory_id SERIAL PRIMARY KEY,
 	subcategory_name TEXT,
-	category_id INT REFERENCES Category(category_id)
+	category_id INT REFERENCES Category(category_id) on delete CASCADE
 
 );
 
@@ -84,25 +80,25 @@ CREATE TABLE Product(
 	product_name TEXT,
 	product_description TEXT,
 	date_added DATE DEFAULT CURRENT_DATE,
-	catalog_id INT REFERENCES Catalog(catalog_id),
-	gender_id INT REFERENCES Gender(gender_id),
-	category_id INT REFERENCES Category(category_id),
-	subcategory_id INT REFERENCES SubCategory(subcategory_id),
-	establishment_id INT REFERENCES Establishment(establishment_id)
+	catalog_id INT REFERENCES Catalog(catalog_id) on delete CASCADE,
+	gender_id INT REFERENCES Gender(gender_id) on delete CASCADE,
+	category_id INT REFERENCES Category(category_id) on delete CASCADE,
+	subcategory_id INT REFERENCES SubCategory(subcategory_id) on delete CASCADE,
+	establishment_id INT REFERENCES Establishment(establishment_id) on delete CASCADE
 
 );
 
 CREATE TABLE Color_Product(
-	color_id INT REFERENCES Color(color_id),
-	product_id INT REFERENCES Product(product_id),
-	CONSTRAINT color_product_id PRIMARY KEY (color_id, product_id)
-
+	color_id INT REFERENCES Color(color_id) on delete CASCADE,
+	product_id INT REFERENCES Product(product_id) on delete CASCADE,
+	CONSTRAINT color_product_id PRIMARY KEY (color_id, product_id) on delete CASCADE
+ 
 );
 
 CREATE TABLE Stocks(
 	stocks_id SERIAL PRIMARY KEY,
 	num INT,
-	size_id INT REFERENCES Size(size_id)
+	size_id INT REFERENCES Size(size_id) on delete CASCADE
 
 );
 
@@ -110,7 +106,7 @@ CREATE TABLE Size(
 	size_id SERIAL PRIMARY KEY,
 	size_num TEXT,
 	product_count NUMERIC,
-	product_id INT REFERENCES Product(product_id)
+	product_id INT REFERENCES Product(product_id) on delete CASCADE
 );
 
 CREATE TABLE Image(
@@ -119,7 +115,7 @@ CREATE TABLE Image(
 	image2 TEXT,
 	image3 TEXT,
 	image4 TEXT,
-	product_id INT REFERENCES Product(product_id)
+	product_id INT REFERENCES Product(product_id) on delete CASCADE
 
 );
 
