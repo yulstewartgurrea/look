@@ -8,6 +8,11 @@ window.onload = function () {
     $('#fullname3').html(fname+ ' '+ lname);
     $('#fullname4').html('Welcome, '+fname+ ' '+ lname);
     $('#myaccount').html('<li onclick="getuseraccount('+user_id+');">'+'<a href="#">'+'My Account'+'</a>'+'</li>');
+    $('#updateuseraccount1').html('<a class="readmore" href="#">'+ 'Update'+ '</a>');
+    $('#updateuseraccount2').html('<a class="readmore" href="#">'+ 'Update'+ '</a>');
+    $('#updateuseraccount3').html('<a class="readmore" href="#">'+ 'Update'+ '</a>');
+
+
     // $('#admins').html(admins);
 
 
@@ -87,12 +92,9 @@ function getuseraccount(user_id) {
     });
 }
 
-function getuseraccountpersonaldetailshtml(user_id, first_name, last_name, address1, address2, mobile_no, img) {
-	return 	'Name: ' + first_name + 
-			'<p>Donec vitae hendrerit arcu, sit amet faucibus nisl. Cras pretium arcu ex. Aenean posuere libero eu augue condimentum rhoncus. Praesent ornare tortor</p>'+
-			'<a class="readmore" href="#">Update</a>'+
-			'Sample' + user_id+
-			'sample'
+function getuseraccountpersonaldetailshtml(user_id, fname, lname, email_address, img) {
+	return 	'<p> Name: ' + fname + ' ' + lname + '</p>' +
+			'<p> Email_address: ' + email_address + '</p>' 
 
 
 
@@ -100,24 +102,12 @@ function getuseraccountpersonaldetailshtml(user_id, first_name, last_name, addre
 
 function getuseraccountbillingaddresshtml(billingaddress_user_id, billingaddress_postalcode,
                     	billingaddress_brgy, billingaddress_city, billingaddress_street, billingaddress_pnum) {
-	return 	'<article class="blog-post-wrapper">'+
-				'<div class="post-information">'+
-					'<h2><b><a href="#">Billing Address</a></b></h2>'+
-					'<p>Aliquam et metus pharetra, bibendum massa nec, fermentum odio. Nunc id leo ultrices, mollis ligula in, finibus tortor. Mauris eu dui ut</p>'+
-					'<a class="readmore" href="#">Update</a>'+
-				'</div>'+
-			'</article>'
+	return 	'<p>' + billingaddress_street + ' ' + billingaddress_brgy + ' ' + billingaddress_city  + ' City' +'</p>' 
 	
 }
 
 function getuseraccountpermanentaddresshtml(permanentaddress_user_id, permanentaddress_postalcode,
                     	permanentaddress_brgy, permanentaddress_city, permanentaddress_street, permanentaddress_pnum) {
-	return 	'<article class="blog-post-wrapper">'+
-				'<div class="post-information">'+
-					'<h2><b><a href="#">Billing Address</a></b></h2>'+
-					'<p>Donec vitae hendrerit arcu, sit amet faucibus nisl. Cras pretium arcu ex. Aenean posuere libero eu augue condimentum rhoncus. Praesent ornare tortor</p>'+
-					'<a class="readmore" href="#">Update</a>'+
-				'</div>'+
-			'</article>'
+	return 	'<p>' + permanentaddress_street + ' ' + permanentaddress_brgy + ' ' + permanentaddress_city  + ' City' +'</p>' 
 	
 }
