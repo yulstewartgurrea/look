@@ -37,6 +37,8 @@ CREATE TABLE Establishment(
 	establishment_name TEXT,
 	establishment_location TEXT,
 	establishment_is_active BOOLEAN DEFAULT TRUE,
+	latitude TEXT,
+	longitude TEXT
 	user_id INT REFERENCES UserAccount(user_id) on delete CASCADE
 
 );
@@ -75,10 +77,10 @@ CREATE TABLE Color(
 
 CREATE TABLE Product(
 	product_id SERIAL PRIMARY KEY,
-	image TEXT,
-	price NUMERIC,
 	product_name TEXT,
 	product_description TEXT,
+	price NUMERIC,
+	image TEXT,
 	date_added DATE DEFAULT CURRENT_DATE,
 	catalog_id INT REFERENCES Catalog(catalog_id) on delete CASCADE,
 	gender_id INT REFERENCES Gender(gender_id) on delete CASCADE,
@@ -95,18 +97,18 @@ CREATE TABLE Color_Product(
  
 );
 
-CREATE TABLE Stocks(
-	stocks_id SERIAL PRIMARY KEY,
-	num INT,
-	size_id INT REFERENCES Size(size_id) on delete CASCADE
-
-);
-
 CREATE TABLE Size(
 	size_id SERIAL PRIMARY KEY,
 	size_num TEXT,
 	product_count NUMERIC,
 	product_id INT REFERENCES Product(product_id) on delete CASCADE
+);
+
+CREATE TABLE Stocks(
+	stocks_id SERIAL PRIMARY KEY,
+	stocks INT,
+	size_id INT REFERENCES Size(size_id) on delete CASCADE
+
 );
 
 CREATE TABLE Image(
@@ -119,26 +121,16 @@ CREATE TABLE Image(
 
 );
 
-CREATE TABLE PriceRange(
-
-);
-
-CREATE TABLE Image(
-);
-
 CREATE TABLE Cart(
-  cart_id SERIAL PRIMARY KEY,
-  total NUMERIC ,
+  cart_id int,
+  -- total NUMERIC,
   date_added DATE DEFAULT CURRENT_DATE,
-  product_id INT REFERENCES Product(product_id)
+  is_checkedout boolean,
+  product_id INT REFERENCES Product(product_id),
+  user_id INT REFERENCES UserAccount(user_id) on delete CASCADE
 );
 
--- CREATE TABLE Cart_items(
---   cart_id INT REFERENCES Cart(cart_id),
---   product_id INT REFERENCES Product(product_id),
---   quantity INT,
---   date_added DATE DEFAULT CURRENT_DATE
--- );
+
 
 
 

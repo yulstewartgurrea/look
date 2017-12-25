@@ -2,9 +2,15 @@ from flask import Flask, jsonify, request, session, render_template
 import json, os, sys
 import flask
 from config import *
+import paypalrestsdk as paypal
+from paypalrestsdk import *
 
 app = Flask(__name__)
 
+paypal.configure({
+    "mode": "sandbox",  # sandbox or live
+    "client_id": "ATcNxfmVFttFZG3v6mnrjuGGL9RzZqBZeGpPUiiarEpdzXyoe1ecgKTljdnDNfuQzBsEq3yW_YpFc_2O",
+    "client_secret": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"})
 
 @app.route('/')
 def helloworld():
@@ -46,7 +52,15 @@ def login():
                 'is_active': session['is_active'], 'fname': session['fname'], 'lname': session['lname'],
                 'img': session['img']})
 
-        return jsonify({'status': 'Login successful', 'message': res[0][0], 'userinfo': recsuser, 'countuserinfo': len(recsuser)})
+        rescatalog = spcall("get_catalog", ())
+
+        recscatalog = []
+
+        for r in rescatalog:
+            recscatalog.append({'catalog_id': str(r[0]), 'catalog_name': str(r[1])})
+
+        return jsonify({'status': 'Login successful', 'message': res[0][0], 'userinfo': recsuser, 'countuserinfo': len(recsuser),
+                        'catalog':recscatalog, 'catalogcount': len(recscatalog)})
 
 
 @app.route('/logout', methods=['POST'])
@@ -349,61 +363,138 @@ def update_product(product_id):
 def get_product():
     res = spcall('get_product', ())
 
-    recs = []
-
-    for r in res:
-        recs.append({'product_id': str(r[0]), 'product_name': str(r[1]), 'price': str(r[2]), 'image': str(r[3])})
-
-    return jsonify({'status': 'ok', 'entries': recs, 'count': len(recs)})
-
-@app.route("/api/get/product/<product_id>", methods=['GET'])
-def get_productby_id(product_id):
-    res = spcall('get_productby_id', (product_id,),)
+    rescatalog = spcall("get_catalog", ())   
 
     recs = []
 
+    recscatalog = []
+
     for r in res:
-        recs.append({'product_name': str(r[0]), 'product_description': str(r[1]), 'image': str(r[2]), 'price': str(r[3])})
+        recs.append({'product_id': str(r[0]), 'product_name': str(r[1]), 'product_description': str(r[2]), 'price': str(r[3]), 'image': str(r[4]),
+            'catalog_id': str(r[5]), 'gender_id': str(r[6]), 'category_id': str(r[7]), 'subcategory_id': str(r[8]),
+            'establishment_id': str(r[9])})
+
+    for r in rescatalog:
+        recscatalog.append({'catalog_id': str(r[0]), 'catalog_name': str(r[1])})
+
+    return jsonify({'status': 'Ok', 'entries': recs, 'count': len(recs), 'catalog': recscatalog,
+                    'catalogcount': len(recscatalog)})
+
+@app.route("/api/get/product/<string:product_id>/<string:establishment_id>", methods=['GET'])
+def get_productby_id(product_id, establishment_id):
+    res = spcall('get_productby_id', (product_id, establishment_id,),)
+
+    recs = []
+
+    for r in res:
+        recs.append({'product_id': str(r[0]),
+                    'product_name': str(r[1]),
+                    'product_description': str(r[2]),
+                    'image': str(r[3]),
+                    'price': str(r[4]),
+                    'establishment_id': str(r[5]),
+                    'establishment_name': str(r[6]),
+                    'latitude': str(r[7]),
+                    'longitude': str(r[8]),
+                    'establishment_location': str(r[9]),
+                    'image_id': str(r[10]),
+                    'image1': str(r[11]),
+                    'image2': str(r[12]),
+                    'image3': str(r[13]),
+                    'image4': str(r[14]) })
 
     return jsonify({'status': 'Ok', 'entries': recs, 'count': len(recs)})
 
 
+# @app.route("/api/get/catalog/<string:catalog_id>", methods=['GET'])
+# def get_productby_catalog(catalog_id):
+#     res = spcall('get_productby_catalog', (catalog_id,),)
+
+#     recs = []
+
+#     for r in res:
+#         recs.append({'product_id': str(r[0]), 'product_name': str(r[1]), 'price': str(r[2]), 'image': str(r[3])})
+
+#     return jsonify({'status': 'ok', 'entries': recs, 'count': len(recs)})
+
 @app.route("/api/get/catalog/<string:catalog_id>", methods=['GET'])
 def get_productby_catalog(catalog_id):
-    res = spcall('get_productby_catalog', (catalog_id),)
+    res = spcall('get_productby_catalog', (catalog_id,),)
+    resgender = spcall('get_gender2', ())
+    rescategory = spcall('get_categorybycatalog', (catalog_id,),)
 
     recs = []
 
     for r in res:
-        recs.append({'product_id': str(r[0]), 'product_name': str(r[1]), 'price': str(r[2]), 'image': str(r[3])})
+        recs.append({'product_id': str(r[0]), 'product_name': str(r[1]), 'price': str(r[2]), 'image': str(r[3]),
+                    'catalog_id': str(r[4]), 'establishment_id': str(r[5])})
 
-    return jsonify({'status': 'ok', 'entries': recs, 'count': len(recs)})
+    recsgender = []
+
+    for r in resgender:
+        recsgender.append({'gender_id': str(r[0]), 'gender_name': str(r[1])})
+
+    recscategory = []
+
+    for r in rescategory:
+        recscategory.append({'category_id': str(r[0]), 'category_name': str(r[1]), 'catalog_id': str(r[2]), 'gender_id': str(r[3])})
+
+    return jsonify({'status': 'Ok', 'entries': recs, 'count': len(recs),
+                    'genderentries':recsgender, 'gendercount': len(recsgender),
+                    'categoryentries':recscategory, 'categorycount': len(recscategory)})
 
 @app.route("/api/get/catalog/<string:catalog_id>/gender/<string:gender_id>", methods=['GET'])
 def get_productby_catalog_gender(catalog_id, gender_id):
-    res = spcall('get_productby_catalog_gender', (catalog_id, gender_id),)
+    res = spcall('get_productby_catalog_gender', (catalog_id, gender_id,),)
+    resgender = spcall('get_gender2', ())
+    rescategory = spcall('get_categorymale', (catalog_id, gender_id,),)
 
     recs = []
 
     for r in res:
-        recs.append({'product_id': str(r[0]), 'product_name': str(r[1]), 'price': str(r[2]), 'image': str(r[3])})
+        recs.append({'product_id': str(r[0]), 'product_name': str(r[1]), 'price': str(r[2]), 'image': str(r[3]),
+                    'catalog_id': str(r[4]), 'gender_id': str(r[5]), 'establishment_id': str(r[6])})
 
-    return jsonify({'status': 'ok', 'entires': recs, 'count': len(recs)})
+    recsgender = []
+
+    for r in resgender:
+        recsgender.append({'gender_id': str(r[0]), 'gender_name': str(r[1])})
+
+    recscategory = []
+
+    for r in rescategory:
+        recscategory.append({'category_id': str(r[0]), 'category_name': str(r[1]), 'catalog_id': str(r[2]), 'gender_id': str(r[3])})
+
+    return jsonify({'status': 'Ok', 'entries': recs, 'count': len(recs),
+                    'genderentries':recsgender, 'gendercount': len(recsgender),
+                    'categoryentries': recscategory, 'categorycount': len(recscategory)})
+
+@app.route("/api/get/catalog/<string:catalog_id>/category/<string:category_id>", methods=['GET'])
+def get_productby_catalog_category(catalog_id, category_id):
+    res = spcall('get_productby_catalog_category', (catalog_id, category_id,),)
+
+    recs = []
+
+    for r in res:
+        recs.append({'product_id': str(r[0]), 'product_name': str(r[1]), 'price': str(r[2]), 'image': str(r[3]),
+                    'establishment_id': str(r[4])})
+
+    return jsonify({'status': 'Ok', 'entries': recs, 'count': len(recs)})
 
 @app.route("/api/get/catalog/<string:catalog_id>/gender/<string:gender_id>/category/<string:category_id>")
 def get_productby_catalog_gender_category(catalog_id, gender_id, category_id):
-    res = spcall('get_productby_catalog_gender_category', (catalog_id, gender_id, category_id),)
+    res = spcall('get_productby_catalog_gender_category', (catalog_id, gender_id, category_id,),)
 
     recs = []
 
     for r in res:
-        recs.append({'product_id': str(r[0]), 'product_name': str(r[1]), 'price': str(r[2]), 'image': str(r[3])})
+        recs.append({'product_id': str(r[0]), 'product_name': str(r[1]), 'price': str(r[2]), 'image': str(r[3]), 'establishment_id': str(r[4])})
 
-    return jsonify({'status': 'ok', 'entires': recs, 'count': len(recs)})
+    return jsonify({'status': 'Ok', 'entries': recs, 'count': len(recs)})
 
 @app.route("/api/get/catalog/<string:catalog_id>/gender/<string:gender_id>/category/<string:category_id>/subcategory/<string:subcategory_id>")
 def get_productby_catalog_gender_category_subcategory(catalog_id, gender_id, category_id, subcategory_id):
-    res = spcall('get_productby_catalog_gender_category_subcategory', (catalog_id, gender_id, category_id, subcategory_id),)
+    res = spcall('get_productby_catalog_gender_category_subcategory', (catalog_id, gender_id, category_id, subcategory_id,),)
 
     recs = []
 
@@ -412,9 +503,74 @@ def get_productby_catalog_gender_category_subcategory(catalog_id, gender_id, cat
 
     return jsonify({'status': 'ok', 'entires': recs, 'count': len(recs)})
 
+# @app.route('/api/add/cart', methods=['POST'])
+# def addtocart():
+#     jsn = json.loads(request.data)
+
+#     res = spcall('addtocart', (
+#         jsn['cart_id'],
+#         jsn['product_id'],
+#         jsn['user_id']), True)
+
+#     if 'Error' in str(res[0][0]):
+#         return jsonify({'status': 'Error', 'message': res[0][0]})
+
+#     return jsonify({'status': 'Ok', 'message': res[0][0]})
+
+@app.route('/api/add/cart', methods=['POST'])
+def addtocart():
+    jsn = json.loads(request.data)
+
+    inc = 0
+
+    # res = spcall('addtocart', (
+    #     jsn['cart_id'],
+    #     jsn['product_id'],
+    #     jsn['user_id'],), False)
+
+    cart = get_productbycartuser(jsn['cart_id'], jsn['user_id'],)
+    if cart[0][0] == 1:
+        res = spcall('addtocart', (
+                jsn['cart_id'],
+                jsn['product_id'],
+                jsn['user_id'],), True)
+        # if cart[0][2] == True:
+        #     # newcartid = jsn['cart_id'] + 1
+        #     res = spcall('addtocart', (
+        #         jsn['cart_id'],
+        #         jsn['product_id'],
+        #         jsn['user_id'],), True)
+        #     # return cart[0][2]
+        # else:
+        #     res = spcall('addtocart', (
+        #         jsn['cart_id'],
+        #         jsn['product_id'],
+        #         jsn['user_id'],), True)
+        # return cart[0][2]
+        
+    return jsonify({'status': 'Ok', 'message': res[0][0]})
+
+def get_productbycartuser(cart_id, user_id):
+    return spcall('get_productbycartuser', (cart_id, user_id,),)
 
 
 
+@app.route("/api/get/cart/<string:cart_id>/<string:user_id>")
+def get_productbycartuser2(cart_id, user_id):
+    total = 0
+    res = spcall('get_productbycartuser', (cart_id, user_id,),)
+
+    recs = []
+
+    for r in res:
+        recs.append({'cart_id': str(r[0]), 'user_id': str(r[1]), 'is_checkedout': str(r[2]), 'product_id': str(r[3]),
+                    'product_name': str(r[4]), 'product_description': str(r[5]), 'product_price': str(r[6]),
+                    'product_image': str(r[7]), 'establishment_id': str(r[8])})
+        total = total + r[6]
+
+    print total
+
+    return jsonify({'status': 'ok', 'entires': recs, 'count': len(recs), 'total': str(total)})
 
 @app.after_request
 def add_cors(resp):

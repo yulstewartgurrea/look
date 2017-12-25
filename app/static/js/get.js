@@ -2,17 +2,19 @@ window.onload = function () {
     var fname = window.localStorage.getItem('fname', fname)
     var lname = window.localStorage.getItem('lname', lname)
     var user_id = window.localStorage.getItem('user_id', user_id)
+    var catalog_name = window.localStorage.getItem('catalog_name', catalog_name)
 
     $('#fullname').html(fname+ ' '+ lname);
     $('#fullname2').html(fname+ ' '+ lname + ' - Web Developer <small>Member since Nov. 2012</small>');
     $('#fullname3').html(fname+ ' '+ lname);
     $('#fullname4').html('Welcome, '+fname+ ' '+ lname);
     // $('#admins').html(admins);
+    $('#catalog_name').html('<p>' +catalog_name+ '</p>')   
 
 
 
 }
-
+    
 // function getuseraccount
 
 function getadminhtml(email_address, is_admin, is_active) {
@@ -479,7 +481,7 @@ function getproducts() {
         dataType: 'json',
         success: function(res){
             $("#products").html("");
-            if(res.status=='ok'){
+            if(res.status=='Ok'){
                 for(i=0; i<res.count; i++){
                     product_id = res.entries[i].product_id;
                     product_name = res.entries[i].product_name;

@@ -364,6 +364,14 @@ $$
 $$
 	language 'sql';
 
+create or replace function get_gender2(out int, out text) returns setof record as
+$$
+	select gender_id, gender_name 
+	from Gender
+	where gender_name = 'Male' or gender_name ='Female';
+$$
+	language 'sql';
+
 create or replace function update_gender(p_gender_id int, p_gender_name) returns void as
 $$
 	update Gender
@@ -382,23 +390,32 @@ declare
 	v_res text;
 
 begin
-	select into v_category_name category_name from Category where category_name = p_category_name;
-
-		if v_category_name isnull then
-			if p_category_name = '' or p_catalog_id = null or p_gender_id = null then
-				v_res = 'Error';
-			else
-				insert into Category(category_name, catalog_id, gender_id)
-					values(p_category_name, p_catalog_id, p_gender_id);
-					v_res = 'Ok';
-			end if;
-		else
-			v_res = 'Category already exists';
-		end if;
-		return v_res;
+	if v_category_name isnull or v_category_name = '' then
+		insert into Category(category_name, catalog_id, gender_id)
+			values(p_category_name, p_catalog_id, p_gender_id);
+				v_res = 'Ok';
+	end if;
+	return v_res;
 end;
 $$
 	language 'plpgsql';
+
+# Get category by catalog and gender Note: Not only male but also female
+create or replace function get_categorymale(out int, out text, out int, out int, In par_catalog_id int, In par_gender_id int ) returns setof record as
+$$
+	select category_id, category_name, catalog_id, gender_id
+	from Category
+	where catalog_id = par_catalog_id and gender_id = par_gender_id;
+$$
+	language 'sql';
+
+create or replace function get_categorybycatalog(out int, out text, out int, out int, In par_catalog_id int) returns setof record as
+$$
+	select category_id, category_name, catalog_id, gender_id
+	from Category
+	where catalog_id = par_catalog_id;
+$$
+	language 'sql';
 
 -- Get all category
 create or replace function get_category(out int, out text, out int, out int) returns setof record as
@@ -555,38 +572,62 @@ $$
 	language 'sql';
 
 -- Get all product
-create or replace function get_product(out int, out text, out numeric, out text) returns setof record as
+create or replace function get_product(out int, out text, out text, out numeric, out text, out int,
+						out int, out int, out int, out int) returns setof record as
 $$
-	select product_id, product_name, price, image from Product;
+	select product_id, product_name, product_description, price, image, catalog_id,
+	gender_id, category_id, subcategory_id, establishment_id
+	from Product;
 $$
 	language 'sql'; 
 
 -- Get product by id 
-create or replace function get_productby_id(In par_id int, out text, out text, out text, out numeric) returns setof record as
+create or replace function get_productby_id(In par_productid int, In par_establishmentid int, out int, out text, out text, out text, out numeric, out int,
+                                           out text, out numeric, out numeric, out text,
+                                            out int, out text, out text, out text, out text) returns setof record as
 $$
-	select product_name, product_description, image, price from Product where product_id = par_id;
+	select Product.product_id, Product.product_name, Product.product_description, Product.image, Product.price, Product.establishment_id,
+	Establishment.establishment_name, Establishment.latitude, Establishment.longitude, Establishment.establishment_location,
+	Image.image_id, Image.image1, Image.image2, Image.image3, Image.image4
+	from Product
+	INNER JOIN Establishment ON Product.establishment_id = Establishment.establishment_id
+	INNER JOIN Image ON Product.product_id = Image.product_id 
+	where Product.product_id = par_productid and Establishment.establishment_id = par_establishmentid;
 $$
 	language 'sql';
 
 -- -- Get product by catalog
-create or replace function get_productby_catalog(out numeric, out text, out int, out text, In par_product_catalog int) returns setof record as
+create or replace function get_productby_catalog(In par_product_catalogid int, out int, out text, out numeric, out text, out int, out int) returns setof record as
 $$
-	select product_id, product_name, price, image from Product where catalog_id = par_product_catalog;
+	select product_id, product_name, price, image, Product.catalog_id, Product.establishment_id
+	from Product 
+	where Product.catalog_id = par_product_catalogid;
 $$
 	language 'sql'; 
 
 -- -- Get product by catalog and gender
-create or replace function get_productby_catalog_gender(out int, out text, out numeric, out text, In par_product_catalog int, In par_product_gender int) returns setof record as
+create or replace function get_productby_catalog_gender(out int, out text, out numeric, out text, out int, out int, out int, In par_product_catalog int, In par_product_gender int) returns setof record as
 $$
-	select product_id, product_name, price, image from Product where catalog_id = par_product_catalog and gender_id = par_product_gender;
+	select product_id, product_name, price, image, catalog_id, gender_id, Product.establishment_id
+	from Product
+	where Product.catalog_id = par_product_catalog and Product.gender_id = par_product_gender;
+$$
+	language 'sql';
+
+create or replace function get_productby_catalog_category(out int, out text, out numeric, out text,
+									out int, In par_product_catalog int, In par_product_category int) returns setof record as
+$$
+	select Product.product_id, Product.product_name, Product.price, Product.image, Product.establishment_id
+	from Product
+	where Product.catalog_id = par_product_catalog and Product.category_id = par_product_category;
 $$
 	language 'sql';
 
 -- -- Get product by catalog, gender and category
-create or replace function get_productby_catalog_gender_category(out int, out text, out numeric, out text, In par_product_catalog int, In par_product_gender int,
+create or replace function get_productby_catalog_gender_category(out int, out text, out numeric, out text, out int, In par_product_catalog int, In par_product_gender int,
 							In par_product_category int) returns setof record as
 $$
-	select product_id, product_name, price, image from Product where catalog_id = par_product_catalog and gender_id = par_product_gender and
+	select product_id, product_name, price, image, Product.establishment_id from Product where catalog_id = par_product_catalog and gender_id = par_product_gender and
 			category_id = par_product_category;
 $$
 	language 'sql';
@@ -607,3 +648,35 @@ $$
 $$
 	language 'sql';
 
+create or replace function addtocart(p_cart_id int, p_product_id int, p_user_id int) returns text as
+$$
+declare 
+	v_product_id text;
+	v_res text;
+
+begin 
+	if v_product_id isnull or v_product_id = '' then
+		insert to Cart(cart_id, product_id, user_id)
+			values(p_cart_id, p_product_id, p_user_id);
+				v_res = 'Ok';
+	end if;
+		return v_res;
+end;
+$$
+	language 'plpgsql';
+
+create or replace function get_allcart(out int, out int, out int, out numeric, out boolean) returns setof record as
+$$
+	select cart_id, product_id, user_id, is_checkedout from Cart;
+$$
+	language 'sql';
+
+create or replace function get_productbycartuser(in p_cartid int, in p_userid int, out int, out int, out boolean,
+					out int, out text, out text, out numeric, out text, out int) returns setof record as
+$$
+	select Cart.cart_id, Cart.user_id, is_checkedout,
+	Product.product_id, Product.product_name, Product.product_description, Product.price, Product.image, Product.establishment_id
+	from Cart INNER JOIN Product ON Cart.product_id = Product.product_id
+	where cart_id = p_cartid and user_id = p_userid and Cart.product_id = Product.product_id;
+$$
+	language 'sql';

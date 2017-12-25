@@ -13,14 +13,17 @@ function login() {
         data: data,
         dataType: 'json',
         success: function(res) {
-            $("#fname").html("");
+            // $("#customercatalogs").html("");
             if(res.status === 'Login successful' && res.userinfo[0].is_admin===true && res.userinfo[0].is_active===true) {
                 window.location.href="../partials/admin/dashboard.html";
+                // window.location.assign();
                 alert('Login Successful');
 
                 localStorage.setItem('fname', res.userinfo[0].fname);
                 localStorage.setItem('lname', res.userinfo[0].lname);
                 localStorage.setItem('user_id', res.userinfo[0].user_id);
+
+                
 
                 console.log(res)
 
@@ -28,9 +31,9 @@ function login() {
                 alert('Login Successful');
                 window.location.href="../partials/establishment/e_dashboard.html";
 
-                localStorage.setItem('efname', res.userinfo[0].fname);
-                localStorage.setItem('lname', res.userinfo[0].lname);
-                localStorage.setItem('user_id', res.userinfo[0].user_id);
+                window.localStorage.setItem('fname', res.userinfo[0].fname);
+                window.localStorage.setItem('lname', res.userinfo[0].lname);
+                window.localStorage.setItem('user_id', res.userinfo[0].user_id);
 
                 console.log(res)
                 alert('Welcome ' + fname);
@@ -44,6 +47,20 @@ function login() {
                 window.localStorage.setItem('lname', res.userinfo[0].lname);
                 window.localStorage.setItem('user_id', res.userinfo[0].user_id);
 
+                for(i=0; i<res.catalogcount; i++){
+                  catalog_id = res.catalog[i].catalog_id;
+                  catalog_name = res.catalog[i].catalog_name;
+                  $("#customercatalogs").append(get_customercataloghtml(catalog_id, catalog_name))
+                }
+
+                // $("#page_login").hide();
+                $("#page_landing").show();
+                $("#page_useraccount").hide();
+                $("#page_products").hide();
+                $("#page_productdetails").hide();
+
+                $("#customercatalogs").show();
+
                 console.log(res)
             } else {
                    alert('Invalid email or password');
@@ -51,6 +68,11 @@ function login() {
         }
 
     });
+}
+
+function get_customercataloghtml(catalog_id, catalog_name) {
+    return '<p>' + catalog_id+ ' ' + catalog_name + '</p>' +
+            '<p id="catalog_name"'> + '</p>'   
 }
 
 function fnamehtml(fname) {
@@ -86,7 +108,7 @@ function addadmin() {
             if(res.message=='Ok') {
                 
 
-                $('#modal-add-admin').modal('hide');
+                $('#modal-add-user').modal('hide');
                 
                 alert("Admin Added")
 
@@ -114,7 +136,7 @@ function addestablishment_personnel() {
             if(res.message=='Ok') {
                 alert("Establishment Personnel Added")
 
-                $('#modal-add-establishment').modal('hide');
+                $('#modal-add-user').modal('hide');
 
             } else {
                 alert(res.message)
@@ -140,7 +162,7 @@ function addcustomer() {
             if(res.message=='Ok') {
                 alert("Customer Added")
 
-                $('#modal-add-customer').modal('hide');
+                $('#modal-add-user').modal('hide');
 
             } else {
                 alert(res.message)

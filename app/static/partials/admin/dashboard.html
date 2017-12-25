@@ -399,29 +399,29 @@
           <div class="col-xs-12">
             <div class="box box-primary">
 
-            <div class="box-header">
-            <div class=row>
+              <div class="box-header">
+                <div class=row>
 
-              <div class="col-md-4">
-                <div class="input-group">
-                  <input class="form-control" type="text" onkeyup="sorttable()" id="myInput" name="" placeholder="Search...">
-                  <span class="input-group-btn">
-                  <button type="button" class="btn btn-flat">
-                  <i class="fa fa-search"></i>
-                  </button>
-                  </span>
+                  <div class="col-md-4">
+                    <div class="input-group">
+                      <input class="form-control" type="text" onkeyup="sorttable()" id="myInput" name="" placeholder="Search...">
+                      <span class="input-group-btn">
+                      <button type="button" class="btn btn-flat">
+                      <i class="fa fa-search"></i>
+                      </button>
+                      </span>
+                    </div>
+                  </div>
+
+                  <div class="col-md-8" align="right">
+                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modal-add-user"><i class="fa fa-plus"> Add User </i>
+                    </button>
+                    
+                  </div>
+                  
                 </div>
               </div>
-
-              <div class="col-md-8" align="right">
-                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modal-add-admin"><i class="fa fa-plus"> Add User </i>
-                </button>
-                
-              </div>
-              
-            </div>
-          </div>
-          <!-- /.box-header -->
+              <!-- /.box-header -->
               <div class="box-body">
                 <div class="row">
                   <div class="col-md-12">
@@ -477,7 +477,7 @@
                                 <thead>
                                 <tr>
                                   <th>Email</th>
-                                  <th>is_admin</th>
+                                  <th>is_establishmentpersonnel</th>
                                   <th>is_active</th>
                                 </tr>
                                 </thead>
@@ -486,7 +486,7 @@
                                 <tfoot>
                                 <tr>
                                   <th>Email</th>
-                                  <th>is_admin</th>
+                                  <th>is_establishmentpersonnel</th>
                                   <th>is_active</th>
                                 </tr>
                                 </tfoot>
@@ -507,7 +507,7 @@
                                 <thead>
                                 <tr>
                                   <th>Email</th>
-                                  <th>is_admin</th>
+                                  <th>is_customer</th>
                                   <th>is_active</th>
                                 </tr>
                                 </thead>
@@ -516,7 +516,7 @@
                                 <tfoot>
                                 <tr>
                                   <th>Email</th>
-                                  <th>is_admin</th>
+                                  <th>is_customer</th>
                                   <th>is_active</th>
                                 </tr>
                                 </tfoot>
@@ -1012,100 +1012,127 @@
 <!-- ./wrapper -->
 
 <!-- Add admin modal -->
-<div class="modal fade" id="modal-add-admin">
+<div class="modal fade" id="modal-add-user">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">Add Admin</h4>
+        <h4 class="modal-title">Add User</h4>
       </div>
-      <form role="form">
-        <div class="modal-body">
-          <div class="form-group">
-            <label for="email_address">Email address</label>
-            <input type="email" class="form-control" id="email_address" placeholder="Enter email">
+
+      <div class="box-body">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="nav-tabs-custom">
+              <div class="row">
+                <div class="col-md-12">
+                  <ul class="nav nav-tabs">
+                    <li class="active"><a href="#add_admin" data-toggle="tab">Admin</a></li>
+                    <li class=""><a href="#add_establishment_personnel" data-toggle="tab">Establishment Personnel</a></li>
+                    <li class=""><a href="#add_customer" data-toggle="tab">Customer</a></li>
+                    
+                  </ul>
+                  
+                </div>
+                
+              </div>
+              
+              <div class="tab-content">
+                <div class="active tab-pane" id="add_admin">
+
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <form role="form">
+                        <div class="modal-body">
+                          <div class="form-group">
+                            <label for="email_address">Email address</label>
+                            <input type="email" class="form-control" id="email_address" placeholder="Enter email">
+                          </div>
+                          <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" class="form-control" id="password" placeholder="Password">
+                          </div>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Cancel</button>
+                          <input type="button" class="btn btn-success" onclick="addadmin()" value="Add Admin">
+                        </div>
+                      <!-- /.box-body -->
+                      </form>
+                    </div> 
+                  </div>
+                  <!-- row -->
+
+                </div>
+                <!-- /.tab-pane -->
+
+                <div class="tab-pane" id="add_establishment_personnel">
+
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <form role="form">
+                        <div class="modal-body">
+                          <div class="form-group">
+                            <label for="email_address2">Email address</label>
+                            <input type="text" class="form-control" id="email_address2" placeholder="Enter Establishment">
+                          </div>
+                          <div class="form-group">
+                            <label for="password2">Password</label>
+                            <input type="password" class="form-control" id="password2" placeholder="Enter Password">
+                          </div>
+                          <!-- <input type="button" class="btn btn-primary" onclick="addestablishment_personnel()" value="Add Establishment"> -->
+
+                        </div>
+                      <!-- /.box-body -->
+                      <div class="modal-footer">
+                          <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Cancel</button>
+                          <input type="button" class="btn btn-success" onclick="addestablishment_personnel()" value="Add Establishment Personnel">
+                        </div>
+                      </form>
+                      
+                    </div>
+                      
+                  </div>
+
+                </div>
+                <!-- /.tab-pane -->
+
+                <div class="tab-pane" id="add_customer">
+
+                  <div class="row">
+                    <div class="col-md-12">
+                      <form role="form">
+                        <div class="modal-body">
+                          <div class="form-group">
+                            <label for="email_address3">Email address</label>
+                            <input type="email" class="form-control" id="email_address3" placeholder="Enter email">
+                          </div>
+                          <div class="form-group">
+                            <label for="password3">Password</label>
+                            <input type="password" class="form-control" id="password3" placeholder="Password">
+                          </div>
+                        </div>
+                        <!-- /.box-body -->
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Cancel</button>
+                          <input type="button" class="btn btn-success" onclick="addcustomer()" value="Add Customer">
+                        </div>
+                      </form> 
+                    </div>      
+                  </div>
+                </div>
+                <!-- /.tab-pane -->
+              </div>
+              <!-- /.tab-content -->
+            </div>
+            <!-- /.nav-tabs-custom -->
           </div>
-          <div class="form-group">
-            <label for="password">Password</label>
-            <input type="password" class="form-control" id="password" placeholder="Password">
-          </div>
+          <!-- /.col -->  
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Cancel</button>
-          <input type="button" class="btn btn-success" onclick="addadmin()" value="Add Admin">
-        </div>
+
+      </div>
       <!-- /.box-body -->
-      </form>
-    </div>
-    <!-- /.modal-content -->
-  </div>
-  <!-- /.modal-dialog -->
-</div>
-<!-- /.modal -->
-
-<!-- Add establishment personnel modal -->
-<div class="modal fade" id="modal-add-establishment-personnel">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">Add Establishment Personnel</h4>
-      </div>
-      <form role="form">
-        <div class="modal-body">
-          <div class="form-group">
-            <label for="email_address2">Email address</label>
-            <input type="text" class="form-control" id="email_address2" placeholder="Enter Establishment">
-          </div>
-          <div class="form-group">
-            <label for="password2">Password</label>
-            <input type="password" class="form-control" id="password2" placeholder="Enter Password">
-          </div>
-          <!-- <input type="button" class="btn btn-primary" onclick="addestablishment_personnel()" value="Add Establishment"> -->
-
-        </div>
-      <!-- /.box-body -->
-      <div class="modal-footer">
-          <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Cancel</button>
-          <input type="button" class="btn btn-primary" onclick="addestablishment_personnel()" value="Add Establishment Personnel">
-        </div>
-      </form>
-    </div>
-    <!-- /.modal-content -->
-  </div>
-  <!-- /.modal-dialog -->
-</div>
-<!-- /.modal -->
-
-<!-- Add customer modal -->
-<div class="modal fade" id="modal-add-customer">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">Add Customer</h4>
-      </div>
-
-      <form role="form">
-        <div class="modal-body">
-          <div class="form-group">
-            <label for="email_address3">Email address</label>
-            <input type="email" class="form-control" id="email_address3" placeholder="Enter email">
-          </div>
-          <div class="form-group">
-            <label for="password3">Password</label>
-            <input type="password" class="form-control" id="password3" placeholder="Password">
-          </div>
-        </div>
-        <!-- /.box-body -->
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Cancel</button>
-          <input type="button" class="btn btn-success" onclick="addcustomer()" value="Add Customer">
-        </div>
-      </form>
     </div>
     <!-- /.modal-content -->
   </div>
